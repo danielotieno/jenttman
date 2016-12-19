@@ -17,13 +17,13 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var mongo = require('mongodb');
-var mongostore = require('connect-mongo/es6')(session);
+var mongostore = require('connect-mongo')(session);
 var bcrypt = require('bcryptjs');
 var expressvalidator = require('express-validator');
 
 
-var db = require('./config/database.js');
-mongoose.connect(db.url);
+//var db = require('./config/database.js');
+//mongoose.connect(db.url);
 
 // set static folder
 app.use(express.static(__dirname + '/assets'));
