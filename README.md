@@ -1,4 +1,4 @@
-# Dashboard 
+# Jenttmen
   An online clothing wear line exclusively for men 
 
 ## Testing
