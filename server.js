@@ -1,22 +1,29 @@
 var express = require('express');
 var app = express();
+
+var path = require('path');
 var util = require('util'); 
 var mongoose = require('mongoose');
 var fs = require('fs');
 var multer = require('multer');
-var path = require('path');
 var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var connect = require('connect');
 var qs = require('query-string');
 var url = require('url');
 var base64url = require('base64url');
-
-var upload = multer({ dest: 'uploads/' });
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+var mongo = require('mongodb');
+var mongostore = require('connect-mongo/es6')(session);
 var bcrypt = require('bcryptjs');
 var expressvalidator = require('express-validator');
 
 
+var db = require('./config/database.js');
+mongoose.connect(db.url);
 
 // set static folder
 app.use(express.static(__dirname + '/assets'));
