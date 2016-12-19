@@ -1,0 +1,23 @@
+{
+  "name": "jenttman",
+  "version": "1.0.0",
+  "description": "online clothing wear",
+  "main": "index.js",
+  "dependencies": {
+    "base64url": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danielotieno/jenttman.git"
+  },
+  "author": "Daniel $ Mercy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danielotieno/jenttman/issues"
+  },
+  "homepage": "https://github.com/Danielotieno/jenttman#readme"
+}
