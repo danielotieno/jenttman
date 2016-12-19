@@ -17,6 +17,15 @@ var bcrypt = require('bcryptjs');
 var expressvalidator = require('express-validator');
 
 
+
+// set static folder
+app.use(express.static(__dirname + '/assets'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
+app.use('/uploads', express.static('uploads'));
+
+
+
 //Create EJS Engine view 
 app.set('view engine', 'ejs');
 
