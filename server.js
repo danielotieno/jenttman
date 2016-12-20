@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 var path = require('path');
-var util = require('util'); 
+var util = require('util');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var multer = require('multer');
@@ -17,13 +17,9 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var passport = require('passport');
 var mongo = require('mongodb');
-var mongostore = require('connect-mongo/es6')(session);
 var bcrypt = require('bcryptjs');
 var expressvalidator = require('express-validator');
 
-
-var db = require('./config/database.js');
-mongoose.connect(db.url);
 
 // set static folder
 app.use(express.static(__dirname + '/assets'));
@@ -33,7 +29,7 @@ app.use('/uploads', express.static('uploads'));
 
 
 
-//Create EJS Engine view 
+//Create EJS Engine view
 app.set('view engine', 'ejs');
 
 
