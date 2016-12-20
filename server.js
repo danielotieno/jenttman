@@ -43,7 +43,9 @@ app.use(bodyParser.urlencoded({extended: false }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-
+ app.get('/', function(request, response){
+        response.sendFile('index.html', {'root' : 'views/pages'});
+    });
 
 
 app.set('port', (process.env.PORT || 8080));
