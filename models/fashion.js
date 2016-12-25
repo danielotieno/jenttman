@@ -7,7 +7,8 @@ var FashionSchema = Schema({
   category: {type: String},
   brands: {type: String},
   description:{ type:String},
-  sizes:{type:String}
+  sizes:{type:String},
+  user: [{type:Schema.Types.ObjectId, ref:User}]
 });
 
 module.exports = mongoose.model('Fashion', FashionSchema);
