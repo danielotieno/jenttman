@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-
 var path = require('path');
 var util = require('util');
 var mongoose = require('mongoose');
@@ -18,10 +17,13 @@ var session = require('express-session');
 var passport = require('passport');
 var mongo = require('mongodb');
 var mongostore = require('connect-mongo')(session);
-
 var bcrypt = require('bcryptjs');
 var expressvalidator = require('express-validator');
 
+var configDB = require('./config/database.js');
+mongoose.connect(configDB.url);
+
+var routes    =  require('./routes/index');
 //var db = require('./config/database.js');
 //mongoose.connect(db.url);
 
@@ -31,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
 
-
+//routes middleware
+app.use(routes);
 
 //Create EJS Engine view
 app.set('view engine', 'ejs');
@@ -43,9 +46,9 @@ app.use(bodyParser.urlencoded({extended: false }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 
- app.get('/', function(request, response){
+ /*app.get('/', function(request, response){
     response.sendFile('index.html', {'root' : 'views/pages'});
-});
+});*/
 
 
 app.set('port', (process.env.PORT || 8080));
