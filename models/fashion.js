@@ -1,5 +1,6 @@
 var mongoose   = require('mongoose');
 var Schema     = mongoose.Schema;
+var User       = require('./user');
 
 var FashionSchema = Schema({
   name : {type:String, index:true},
