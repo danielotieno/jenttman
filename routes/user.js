@@ -1,5 +1,5 @@
 var User          = require('../models/user');
-
+var Role          = require('../models/role');
 module.exports    = {
   new : function(req, res){
     res.render('users/new', {
@@ -9,16 +9,15 @@ module.exports    = {
   },
 
   create : function(req, res){
-   /* User.findOne({ 'user.local.email' : User.local.email }, function(err, user) {
-      if(err) return(err);*/
-      var user             =  new User();
-      user.local.fname =  req.body.fname;
-      user.local.lname   =  req.body.lname;
-      user.local.username  =  req.body.username;
-      user.local.phonenumber     =  req.body.phonenumber;
-      user.local.email     =  req.body.email;
-      user.local.password  =  req.body.password;
-
+   Role.findOne({ name:req.body.role}, function(err, role){
+      if(err) return(err);
+      var fname=req.body.fname;
+      var lname=req.body.lname;
+      var email=req.body.email;
+      var phonenumber=req.body.phonenumber;
+      var username=req.body.username;
+      var password=req.body.password;
+      var password2=req.body.password2;
       User.getUserByUsername({username: req.body.username}, function(err, foundUser, done){
         var message = 'That username is already taken';
         if(err) throw err;
@@ -44,6 +43,6 @@ module.exports    = {
           });
         }
       });
-    }
+    });
   }
-  //}
+ }
