@@ -1,12 +1,16 @@
-var express= require('express');
-var router=express.Router();
+
+/*
+ * Routes for rendering home index page
+ */
+
+var Fashion = require('../models/fashion.js');
 
 module.exports = {
   index : function(req, res){
-    Event.find({}, function(error, events){
-      if(error) res.send(error);
-      res.render('index',{
-          title  : 'Home'
+    Fashion.find({}, function(err, fashion){
+      if(err) res.send(err);
+      res.render('pages/index',{
+          fashion : fashion
       });
     });
   }
