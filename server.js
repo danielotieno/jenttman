@@ -29,10 +29,6 @@ var env = process.env.NODE_ENV || 'development';
 dotenv.load();
 
 
-var routes    =  require('./routes/index');
-//var db = require('./config/database.js');
-//mongoose.connect(db.url);
-
 var db = require('./config/setting');
 mongoose.connect(db.getDB(env));
 
@@ -43,9 +39,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
 
-
-//routes middleware
-app.use(routes);
 
 app.use(cookieParser());
 
