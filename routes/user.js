@@ -2,7 +2,8 @@ var User          = require('../models/user');
 var Role          = require('../models/role');
 module.exports    = {
   new : function(req, res){
-    res.render('users/new', {
+    var message='';
+    res.render('pages/register', {
         message : req.flash('signupMessage'),
         title   : "Sign Up"
     });

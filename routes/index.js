@@ -5,10 +5,6 @@ var userRoutes    =  require('./user');
 var sessionRoutes =  require('./session');
 var homeRoutes    =  require('./home');
 
-//get Homepage
-/*router.get('/',function(req, res){
-  res.render('index');
-});*/
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
@@ -23,8 +19,8 @@ router.get('/', homeRoutes.index);
 /*
  * @user routes
 */
-router.get('/signup',           userRoutes.new);
-router.post('/register',    userRoutes.create);
+router.get('/register',           userRoutes.new);
+router.post('/signup',    userRoutes.create);
 
 /*
  * @session routes 
