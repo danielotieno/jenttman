@@ -21,7 +21,7 @@ var passport = require('passport');
 var mongo = require('mongodb');
 var mongostore = require('connect-mongo')(session);
 var bcrypt = require('bcryptjs');
-var expressvalidator = require('express-validator');
+var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
 
 var env = process.env.NODE_ENV || 'development';
@@ -57,6 +57,7 @@ app.set('view engine', 'ejs');
 //body-parser and cokie-parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false }));
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
@@ -66,6 +67,7 @@ app.use(flash());
 app.use(function(req,res,next){
   res.locals.user   = req.user;
   res.locals.messages = req.flash();
+  res.locals.errors = req.validationErrors();
   next();
 });
 
