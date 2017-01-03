@@ -10,8 +10,6 @@ var UserSchema = Schema({
     fname: { type: String },
     lname: { type: String },
     email:    { type: String },
-    phonenumber: { type: Number },
-    names: { type: String },
     role:     [{type: Schema.Types.ObjectId, ref:Role }]
 });
 
