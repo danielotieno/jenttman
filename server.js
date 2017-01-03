@@ -26,8 +26,8 @@ var dotenv = require('dotenv');
 
 var env = process.env.NODE_ENV || 'development';
 
-dotenv.load();
 
+require('dotenv').config({silent: true})
 
 var db = require('./config/setting');
 mongoose.connect(db.getDB(env));
