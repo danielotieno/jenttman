@@ -32,6 +32,7 @@ dotenv.load();
 var db = require('./config/setting');
 mongoose.connect(db.getDB(env));
 
+require('./config/passport.js')(passport);
 
 // set static folder
 app.use(express.static(__dirname + '/assets'));
@@ -53,6 +54,9 @@ app.use(session({
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
+app.use(passport.initialize());
+
+app.use(passport.session());
 
 //body-parser and cokie-parser middleware
 app.use(bodyParser.json());
