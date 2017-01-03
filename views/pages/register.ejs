@@ -198,35 +198,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class=" container">
 <div class=" register">
 	<h1>Register</h1>
-		  	  <form> 
+		  	  <form action="/signup" method="post"> 
+            <% if(errors.length>0){ %>
+              <% for(var i=0; i<errors.length; i++){ %>
+                <p><%= errors[i].msg %></p>
+              <% } %>
+            <% } %>
+            <div>
+              <div></div>
+            </div>
 				 <div class="col-md-6 register-top-grid">
 					<h3>Personal infomation</h3>
 					 <div>
 						<span>First Name</span>
-						<input type="text"> 
+						<input type="text" name="fname"> 
 					 </div>
 					 <div>
 						<span>Last Name</span>
-						<input type="text"> 
+						<input type="text" name="lname"> 
 					 </div>
 					 <div>
 						 <span>Email Address</span>
-						 <input type="text"> 
+						 <input type="text" name="email"> 
 					 </div>
-					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
-					   </a>
+           <div>
+						 <span>Username</span>
+						 <input type="text" name="username"> 
+					 </div>
 					 </div>
 				     <div class="col-md-6 register-bottom-grid">
 						    <h3>Login information</h3>
+           
 							 <div>
 								<span>Password</span>
-								<input type="password">
+								<input type="password" name="password">
 							 </div>
 							 <div>
 								<span>Confirm Password</span>
-								<input type="password">
+								<input type="password" name="password2">
 							 </div>
+               <div>
+               <a class="news-letter" href="#">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
+					   </a>
+               </div>
+             
+
 							 <input type="submit" value="submit">
 							
 					 </div>
