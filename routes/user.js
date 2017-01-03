@@ -12,10 +12,23 @@ module.exports    = {
   create : function(req, res){
    Role.findOne({ name:req.body.role}, function(err, role){
       if(err) return(err);
+
+      req.checkBody('fname','First name is required').notEmpty();
+      req.checkBody('lname','Last name is required').notEmpty();
+      req.checkBody('email','Email is required').notEmpty();
+      req.checkBody('password','Password is required').notEmpty();
+      req.checkBody('password2','Please you need to confirm your password').notEmpty();
+      req.checkBody('password', 'The passwords do not match').isEqual('password2');
+      req.checkBody('email','Email is invalid').isEmail();
+
+      var errors = req.validationErrors();
+      if(errors){
+        res.redirect('/register');
+      }
+
       var fname=req.body.fname;
       var lname=req.body.lname;
       var email=req.body.email;
-      var phonenumber=req.body.phonenumber;
       var username=req.body.username;
       var password=req.body.password;
       var password2=req.body.password2;
