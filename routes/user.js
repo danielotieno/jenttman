@@ -60,7 +60,6 @@ module.exports    = {
               if (!err){
                 console.log(user);
                 res.redirect('/');
-                //res.send(user);
               } else{
                 console.log("there was an error ", err);
               }
