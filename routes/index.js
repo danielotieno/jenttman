@@ -20,13 +20,13 @@ router.get('/', homeRoutes.index);
  * @user routes
 */
 router.get('/register',           userRoutes.new);
-router.post('/signup',    userRoutes.create);
+router.post('/signup',            userRoutes.create);
 
 /*
  * @session routes 
 */
 router.get('/login',           sessionRoutes.new);
-router.post('/login', sessionRoutes.create);
+router.post('/login',          sessionRoutes.create);
 router.get('/logout',          sessionRoutes.delete);
 router.post('/usercreate',     sessionRoutes.usercreate); 
 module.exports=router;
