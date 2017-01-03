@@ -67,7 +67,6 @@ app.use(flash());
 app.use(function(req,res,next){
   res.locals.user   = req.user;
   res.locals.messages = req.flash();
-  res.locals.errors = req.validationErrors();
   next();
 });
 
