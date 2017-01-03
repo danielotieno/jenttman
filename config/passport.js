@@ -21,14 +21,14 @@ module.exports       = function(passport) {
   }, 
   function(req, email, password, done){
     console.log(email);
-    User.findOne({ "local.email": email }, function(err, user){
+    User.getUserByUsername({ "username": email }, function(err, user){
       if (err) return done(err);
 
       if (!user) {
           console.log("can't find user with email ", email); 
           return done(null, false, req.flash('message', ' No user has been found'));
       }
-      User.comparePassword(password, user.local.password, function(err, isMatch){
+      User.comparePassword(password, user.password, function(err, isMatch){
         if(err) throw(err);
 
         if (isMatch) {
