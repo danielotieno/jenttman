@@ -31,18 +31,6 @@ module.exports =  {
     })(req, res, next);
   },
 
-  //User login for the phone application
-  usercreate : function(req, res){
-    passport.authenticate('login', function(err,user){
-      if(err) return err;
-      if(!user){
-        console.log("not a user");
-        res.send(res.send("0"));
-      }
-      res.send(user);
-    });
-  },
-
   delete : function(req, res){
     req.logout();
     res.redirect('/');
