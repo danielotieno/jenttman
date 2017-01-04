@@ -204,6 +204,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p><%= errors[i].msg %></p>
               <% } %>
             <% } %>
+            <% if(message.length>0){ %>
+              <% for(var i=0; i<message.length; i++){ %>
+                <p><%= message[i] %></p>
+              <% } %>
+            <% } %>
+
             <div>
               <div></div>
             </div>
