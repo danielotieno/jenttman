@@ -46,11 +46,8 @@ module.exports    = {
         if(err) throw err;
 
         if(foundUser){
-          res.render('pages/register', {
-            errors:errors,
-            message: req.flash('signupMess'),
-            title:"sign Up"
-          });
+          req.flash('signupMess', 'Username already exists ');
+          res.redirect('/register');
         } else {
           console.log('You have no register errors');
           User.createUser(user,function(err, user){
