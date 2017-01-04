@@ -40,9 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
 
-
-app.use(cookieParser());
-
 app.use(session({
   resave    : true,
   saveUninitialized:true,
@@ -63,6 +60,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
+app.use(express.session());
 app.use(morgan('dev'));
 
 
