@@ -3,11 +3,12 @@ var Role          = require('../models/role');
 
 module.exports    = {
   new : function(req, res){
-    var message='';
+    var message=req.flash('message');
+    console.log(message);
     var errors='';
     res.render('pages/register', {
         errors:errors,
-        message : req.flash('signupMess'),
+        message : req.flash('message'),
         title   : "Sign Up",
     });
   },
@@ -46,7 +47,8 @@ module.exports    = {
         if(err) throw err;
 
         if(foundUser){
-          req.flash('signupMess', 'Username already exists ');
+          req.flash('message', 'Username already exists ');
+          console.log(req.flash('message'));
           res.redirect('/register');
         } else {
           console.log('You have no register errors');
