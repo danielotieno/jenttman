@@ -46,6 +46,7 @@ module.exports = {
       fashion.save(function(err, fashion){
         if(err) res.send(err);
 
+        req.flash('message', 'Item added successfully');
         res.redirect('/admin/index/add');
       });
     });
