@@ -5,10 +5,21 @@ var userRoutes    =  require('./user');
 var sessionRoutes =  require('./session');
 var homeRoutes    =  require('./home');
 var fashionRoutes    =  require('./fashion');
+var categoryRoutes   = require('./category');
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
     return next();
+  }
+  req.session.returnTo = req.path;
+  res.redirect('/login');
+}
+
+function isAdmin(req, res, next) {
+  if(req.isAuthenticated()){
+    if(req.user.role == 'admin'){
+      return next();
+    }
   }
   req.session.returnTo = req.path;
   res.redirect('/login');
@@ -38,4 +49,13 @@ router.get('/admin/new',           fashionRoutes.new);
 router.get('/admin/index/add',           fashionRoutes.add);
 router.get('/admin/index/update',           fashionRoutes.update);
 router.get('/admin/index/delete',           fashionRoutes.delete);
+
+/*
+ * @category Routes
+ */
+router.get('/admin/categoty/new',       categoryRoutes.new);
+router.get('/admin/categoty',       categoryRoutes.get);
+router.post('admin/category/add',        categoryRoutes.add);
+
+
 module.exports=router;
