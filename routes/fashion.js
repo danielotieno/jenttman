@@ -46,10 +46,21 @@ module.exports = {
       fashion.save(function(err, fashion){
         if(err) res.send(err);
 
-        res.redirect('/admin/index');
+        res.redirect('/admin/index/add');
       });
     });
   },
+
+   delete : function(req, res){
+      Fashion.remove({
+          slug : req.params.slug 
+      }, function(err, events) {
+        if (err)
+          res.send(err);
+        console.log('fashion delete');
+       res.redirect('/admin/index/delete');
+      });
+    },
 
   update : function(req, res){
     Fashion.findOne({_id: req.params.id}, function(err, fashion){
@@ -62,7 +73,7 @@ module.exports = {
 
       fashion.update(function(err){
         if(err) res.send(err);
-        res.redirect('/admin/index');
+        res.redirect('/admin/index/update');
       });
     });
   }
