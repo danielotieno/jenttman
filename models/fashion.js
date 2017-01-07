@@ -6,9 +6,9 @@ var FashionSchema = Schema({
   name : {type:String, index:true},
   stock: {type:Number},
   category: {type: String},
-  brands: {type: String},
-  description:{ type:String},
-  sizes:{type:String},
+  brand: {type: String},
+  desc:{ type:String},
+  size:{type:String},
   user: [{type:Schema.Types.ObjectId, ref:User}]
 });
 
