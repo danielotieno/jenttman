@@ -7,39 +7,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <div class=" container">
-		  	  <form action="/admin/index" method="post"> 
-		  	  </form>
-		  	  <form action="/admin/index/add" method="post"> 
+		  	  <form action="/admin/create" method="post"> 
               <div class="col-lg-4">
-						<span>Name</span>
-						<input type="text" name="name"> 
+                     <div>
+                        <span>Name</span> 
+						<input type="text" required class="form-control" id="name" name="Name"/>
 					 </div>
 					 <div>
 						<span>Stock</span>
-						<input type="text" name="stock"> 
+					     <input type="text" required class="form-control" id="stock" name="Stock"/> 
 					 </div>
 					 <div>
-						 <span>Category</span>
-						 <input type="text" name="category"> 
+						<span>Category</span>
+						<input type="text" required class="form-control" id="category" name="Category"/>
 					 </div>
-           <div>
-						 <span>Brands</span>
-						 <input type="text" name="brands"> 
+                     <div>
+                        <span>brands</span>
+					    <input type="text" required class="form-control" id="brand" name="Brands"/> 
 					 </div>
-							 <div>
-								<span>Description</span>
-								<input type="text" name="description">
-							 </div>
-							 <div>
-								<span>Sizes</span>
-								<input type="text" name="sizes">
-							 </div>
-                   <button class="large button success right">Add</button>
+					 <div>
+					    <span>Description</span>
+						<input type="text" required class="form-control" id="desc" name="description"/>
+					 </div>
+					 <div>
+					    <span>Sizes</span>
+						<input type="text" required class="form-control" id="size" name="Sizes"/>
+					 </div>
+					 <div>
+					  <!--<input type="submit" value="submit">-->
+                      <button class="large button success right">Add</button>
 					 </div>
 					 <div class="clearfix"> </div>
 				</form>
 				<div class=" container">
-		  	  <form action="/admin/index/update" method="post"> 
+		  	  <form action="/admin/update" method="post"> 
               <div class="col-lg-4">
 						<span>Name</span>
 						<input type="text" name="name"> 
