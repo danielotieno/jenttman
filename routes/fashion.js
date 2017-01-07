@@ -25,11 +25,11 @@ module.exports = {
   },
 
   new : function(req, res){
-    res.render('admin/new');
+    res.render('admin/index');
   },
 
   add : function(req, res){
-    User.find({username:req.user.username}, function(err, user){
+    User.findOne({username:req.body.username}, function(err, user){
       if(err) res.send(err);
 
       var fashion = new Fashion();
@@ -37,16 +37,17 @@ module.exports = {
       fashion.stock = req.body.stock;
       fashion.category = req.body.category;
       fashion.brand = req.body.brand;
-      fashion.sizes = req.body.size;
-      fashion.description = req.body.desc;
-      fashion.user = user._id;
+      fashion.size = req.body.size;
+      fashion.desc = req.body.desc;
+     // fashion.user = req.body._id;
     
-      console.log("event at this stage", event);
+      console.log("fashion at this stage", fashion);
 
+     
       fashion.save(function(err, fashion){
         if(err) res.send(err);
 
-        res.redirect('/admin/index/add');
+        res.redirect('/admin/create');
       });
     });
   },
@@ -62,18 +63,21 @@ module.exports = {
       });
     },
 
-  update : function(req, res){
+  update : function(req, res, next){
     Fashion.findOne({_id: req.params.id}, function(err, fashion){
       if(err) res.send(err);
 
       var fashion = new Fashion();
-      if(res.body.stock) fashion.stock = req.body.stock;
+      if(res.body.name) fashion.name = req.body.name;
+      //if(res.body.stock) fashion.stock = req.body.stock;
+      if(res.body.category) fashion.category = req.body.category;
+      if(res.body.size) fashion.size = req.body.size;
       if(req.body.desc) fashion.description = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
 
       fashion.update(function(err){
         if(err) res.send(err);
-        res.redirect('/admin/index/update');
+        res.redirect('/admin/update');
       });
     });
   }
