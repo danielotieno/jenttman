@@ -33,9 +33,10 @@ router.get('/logout',          sessionRoutes.delete);
  * @session routes 
 */
 router.get('/admin/index',           fashionRoutes.index);
-router.get('/user/item',           fashionRoutes.single);
-router.get('/admin/new',           fashionRoutes.new);
-router.get('/admin/index/add',           fashionRoutes.add);
-router.get('/admin/index/update',           fashionRoutes.update);
-router.get('/admin/index/delete',           fashionRoutes.delete);
+router.get('/user/item',             fashionRoutes.single);
+//router.get('/admin/new',             fashionRoutes.new);
+router.post('/admin/create',      fashionRoutes.add);
+router.get('/admin/create',      fashionRoutes.new);
+router.post('/admin/update',   fashionRoutes.update);
+router.get('/admin/index/delete',    fashionRoutes.delete);
 module.exports=router;
