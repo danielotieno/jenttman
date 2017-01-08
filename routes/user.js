@@ -14,7 +14,7 @@ module.exports    = {
   },
 
   create : function(req, res){
-   Role.findOne({ name:req.body.role}, function(err, role){
+   Role.findOne({ name:'customer'}, function(err, role){
      if(err) return(err);
 
       req.checkBody('fname','First name is required').notEmpty();
@@ -34,16 +34,17 @@ module.exports    = {
         });
       }
 
-      var user = new User();
-      user.fname=req.body.fname;
-      user.lname=req.body.lname;
-      user.email=req.body.email;
-      user.username=req.body.username;
-      user.password=req.body.password;
+      var user      = new User();
+      user.fname    = req.body.fname;
+      user.lname    = req.body.lname;
+      user.email    = req.body.email;
+      user.username = req.body.username;
+      user.password = req.body.password;
+      user.role     = role._id;
 
       User.getUserByUsername({username: req.body.username}, function(err, foundUser, done){
         var message = 'That username is already taken';
-        var errors = '';
+        var errors  = '';
         if(err) throw err;
 
         if(foundUser){
