@@ -14,9 +14,9 @@ module.exports = {
   },
 
   add : function(req, res){
-    Category.Find({name:req.body.category}, function(err, category){
+    Category.findOne({name:req.body.category}, function(err, foundCategory){
       if(err) res.send(err);
-      if(category) res.send("category already exists idiot");
+      if(foundCategory) res.send("category already exists idiot");
       else{
         var category = new Category();
         category.name = req.body.category;
