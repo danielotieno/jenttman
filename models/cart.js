@@ -1,3 +1,6 @@
+/*
+ * cart schema to pick order from customers
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var User = require('./user.js');
