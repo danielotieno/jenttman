@@ -58,5 +58,4 @@ router.get('/admin/categoty/new',       categoryRoutes.new);
 router.get('/admin/categoty',       categoryRoutes.get);
 router.post('admin/category/add',        categoryRoutes.add);
 
-
 module.exports=router;
