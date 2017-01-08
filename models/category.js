@@ -1,3 +1,6 @@
+/*
+ * Category schema to fill the categories that the website is selling
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var User = require('./user');
