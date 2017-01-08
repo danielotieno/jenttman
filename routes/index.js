@@ -1,11 +1,12 @@
 
-var express= require('express');
-var router=express.Router();
-var userRoutes    =  require('./user');
-var sessionRoutes =  require('./session');
-var homeRoutes    =  require('./home');
-var fashionRoutes    =  require('./fashion');
-var categoryRoutes   = require('./category');
+var express        = require('express');
+var router         = express.Router();
+var userRoutes     = require('./user');
+var sessionRoutes  = require('./session');
+var homeRoutes     = require('./home');
+var fashionRoutes  = require('./fashion');
+var categoryRoutes = require('./category');
+var roleRoutes     = require('./role');
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
@@ -43,19 +44,23 @@ router.get('/logout',          sessionRoutes.delete);
 /*
  * @session routes 
 */
-router.get('/admin/index',           fashionRoutes.index);
-router.get('/user/item',             fashionRoutes.single);
-//router.get('/admin/new',             fashionRoutes.new);
+router.get('/admin/index',        fashionRoutes.index);
+router.get('/user/item',          fashionRoutes.single);
 router.post('/admin/create',      fashionRoutes.add);
-router.get('/admin/create',      fashionRoutes.new);
-router.post('/admin/update',   fashionRoutes.update);
-router.get('/admin/index/delete',    fashionRoutes.delete);
+router.get('/admin/create',       fashionRoutes.new);
+router.post('/admin/update',      fashionRoutes.update);
+router.get('/admin/index/delete', fashionRoutes.delete);
 
 /*
  * @category Routes
  */
-router.get('/admin/categoty/new',       categoryRoutes.new);
-router.get('/admin/categoty',       categoryRoutes.get);
-router.post('admin/category/add',        categoryRoutes.add);
+router.get('/admin/categoty/new', categoryRoutes.new);
+router.get('/admin/categoty',     categoryRoutes.get);
+router.post('admin/category/add', categoryRoutes.add);
 
+/*
+ * @Role routes
+ */
+router.get('/admin/assign/:username/:role', roleRoutes.assign);
+router.get('/admin/role/:role',             roleRoutes.create);
 module.exports=router;
