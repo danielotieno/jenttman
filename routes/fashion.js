@@ -2,8 +2,10 @@
  * Routes to deal with posting fashion to database and finding a specific fashion
  */
 
-var Fashion = require('../models/fashion.js');
-var User    = require('../models/user.js');
+var Fashion  = require('../models/fashion');
+var User     = require('../models/user');
+var Category = require('../models/category');
+var Size     = require('../models/size');
 
 module.exports = {
   index : function(req, res){
@@ -29,26 +31,58 @@ module.exports = {
   },
 
   add : function(req, res){
-    User.findOne({username:req.body.username}, function(err, user){
+    Category.findOne({name:req.body.category}, function(err, foundCategory){    
       if(err) res.send(err);
 
-      var fashion = new Fashion();
-      fashion.name = req.body.name;
-      fashion.stock = req.body.stock;
-      fashion.category = req.body.category;
-      fashion.brand = req.body.brand;
-      fashion.size = req.body.size;
-      fashion.desc = req.body.desc;
-     // fashion.user = req.body._id;
-    
-      console.log("fashion at this stage", fashion);
+      if(foundCategory){
+        User.findOne({username:req.body.username}, function(err, foundUser){
+          if(err) res.send(err);
 
-     
-      fashion.save(function(err, fashion){
-        if(err) res.send(err);
+          console.log(foundCategory);
+          console.log(user);
 
-        res.redirect('/admin/create');
-      });
+          var fashion      = new Fashion();
+          fashion.name     = req.body.name;
+          fashion.category = foundCategory._id;
+          fashion.brand    = req.body.brand;
+          fashion.desc     = req.body.desc;
+          fashion.user     = req.body._id;
+        
+          console.log("fashion at this stage", fashion);
+         
+          fashion.save(function(err, fashion){
+            if(err) res.send(err);
+
+            res.redirect('/admin/create');
+          });
+        });
+      }
+      else{
+        res.send("Category does not exist in db and I believe you are better than this");
+      }
+    });
+  },
+
+  addsize: function(req, res){
+    Fashion.findOne({name :req.body.fashion}, function(err, foundFashion){
+      if(err) res.send(err);
+
+      if(foundFashion){
+
+        var Size = new Size();
+        size.name = req.body.name;
+        size.stock = req.body.stock;
+        size.fashion = foundFashion._id;
+
+        size.save(function(err, size){
+          if(err) res.send(err);
+
+          res.send("size added successfully");
+        });
+      }
+      else{
+        res.send("fashion does not exist so fuck off dude");
+      }
     });
   },
 
