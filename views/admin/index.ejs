@@ -1,131 +1,60 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
-<div class=" container">
-		  	  <form action="/admin/create" method="post"> 
-              <div class="col-lg-4">
-                     <div>
-                        <span>Name</span> 
-						<input type="text" required class="form-control" id="name" name="Name"/>
-					 </div>
-					 <div>
-						<span>Stock</span>
-					     <input type="text" required class="form-control" id="stock" name="Stock"/> 
-					 </div>
-					 <div>
-						<span>Category</span>
-						<input type="text" required class="form-control" id="category" name="Category"/>
-					 </div>
-                     <div>
-                        <span>brands</span>
-					    <input type="text" required class="form-control" id="brand" name="Brands"/> 
-					 </div>
-					 <div>
-					    <span>Description</span>
-						<input type="text" required class="form-control" id="desc" name="description"/>
-					 </div>
-					 <div>
-					    <span>Sizes</span>
-						<input type="text" required class="form-control" id="size" name="Sizes"/>
-						<input type="text" required class="form-control" id="Name" name="name"/>
-					 </div>
-					 <div>
-						<span>Stock</span>
-					     <input type="text" required class="form-control" id="Stock" name="stock"/> 
-					 </div>
-					 <div>
-						<span>Category</span>
-						<input type="text" required class="form-control" id="Category" name="category"/>
-					 </div>
-                     <div>
-                        <span>brands</span>
-					    <input type="text" required class="form-control" id="Brand" name="brand"/> 
-					 </div>
-					 <div>
-					    <span>Description</span>
-						<input type="text" required class="form-control" id="Desc" name="desc"/>
-					 </div>
-					 <div>
-					    <span>Sizes</span>
-						<input type="text" required class="form-control" id="Size" name="size"/>
-					 </div>
-					 <div>
-					  <!--<input type="submit" value="submit">-->
-                      <button class="large button success right">Add</button>
-					 </div>
-					 <div class="clearfix"> </div>
-				</form>
-				<div class=" container">
-		  	  <form action="/admin/update" method="post"> 
-              <div class="col-lg-4">
-						<span>Name</span>
-						<input type="text" name="name"> 
-					 </div>
-					 <div>
-						<span>Stock</span>
-						<input type="text" name="stock"> 
-					 </div>
-					 <div>
-						 <span>Category</span>
-						 <input type="text" name="category"> 
-					 </div>
-           <div>
-						 <span>Brands</span>
-						 <input type="text" name="brands"> 
-					 </div>
-							 <div>
-								<span>Description</span>
-								<input type="text" name="description">
-							 </div>
-							 <div>
-								<span>Sizes</span>
-								<input type="text" name="sizes">
-							 </div>
-                   <button class="large button success right">Update </button>
-							
-					 </div>
-					 <div class="clearfix"> </div>
-				</form>
-
-				<div class=" container">
-		  	  <form action="/admin/index/delete" method="post"> 
-              <div class="col-lg-4">
-						<span>Name</span>
-						<input type="text" name="name"> 
-					 </div>
-					 <div>
-						<span>Stock</span>
-						<input type="text" name="stock"> 
-					 </div>
-					 <div>
-						 <span>Category</span>
-						 <input type="text" name="category"> 
-					 </div>
-           <div>
-						 <span>Brands</span>
-						 <input type="text" name="brands"> 
-					 </div>
-							 <div>
-								<span>Description</span>
-								<input type="text" name="description">
-							 </div>
-							 <div>
-								<span>Sizes</span>
-								<input type="text" name="sizes">
-							 </div>
-                   <button class="large button success right">Delete </button>
-							
-					 </div>
-					 <div class="clearfix"> </div>
-				</form>
-
-			</div>
+<div class="dashboard-top-section">
+  <div class="row">
+    <div class="large-6 columns">
+    </div>
+  </div>
 </div>
-</body>
-</html>
-			
+ <div class="large-6 columns">
+      <!-- Create event button section -->
+      <a class="large button success right " href="/admin/create">Create Fashion</a>
+      <!-- create event button section ends -->
+      <a class="large button success right " href="/admin/add">Create Category</a>
+      <a class="large button success right " href="/admin/another">Create Size</a>
+    </div>
+<div class="row">
+  <div class="large-12 medium-12 columns">
+    <div class="panel panel-white">
+      <div class="panel-heading">
+        <h4 class="panel-title">Fashions</h4>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive project-stats">
+          <table style="width: 100%">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Description</th>
+                <th>Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% fashion.forEach(function(fashion, index){ %>
+              <tr>
+                <th scope="row"><%= index + 1 %></th>
+                <td><%= fashion.name %></td>
+                <td><%= fashion.stock %></td>
+                <td><%= fashion.category %></td>
+                <td><%= fashion.brand %></td>
+                <td><%= fashion.desc %></td>
+                <td><%= fashion.size %></td>
+                <td>
+                  <ul class="options">
+                    <li><a href="/admin/index/edit" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
+                    <li><a href="/admin/delete" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <%});%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
