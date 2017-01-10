@@ -27,25 +27,27 @@ module.exports = {
   },
 
   new : function(req, res){
-    res.render('admin/index');
+    res.render('admin/new');
   },
 
   add : function(req, res){
     Category.findOne({name:req.body.category}, function(err, foundCategory){    
       if(err) res.send(err);
-
       if(foundCategory){
         User.findOne({username:req.body.username}, function(err, foundUser){
           if(err) res.send(err);
 
           console.log(foundCategory);
-          console.log(user);
+          //console.log(user);
 
           var fashion      = new Fashion();
           fashion.name     = req.body.name;
+          fashion.stock = req.body.stock;
           fashion.category = foundCategory._id;
           fashion.brand    = req.body.brand;
-          fashion.desc     = req.body.desc;
+          fashion.size = req.body.size;
+          fashion.desc = req.body.desc;
+          fashion.slug  = req.params.slug;
           fashion.user     = req.body._id;
         
           console.log("fashion at this stage", fashion);
@@ -83,13 +85,13 @@ module.exports = {
       else{
         res.send("fashion does not exist so fuck off dude");
       }
+
     });
   },
 
    delete : function(req, res){
-      Fashion.remove({
-          slug : req.params.slug 
-      }, function(err, events) {
+      Fashion.remove({  
+      }, function(err, fashions) {
         if (err)
           res.send(err);
         console.log('fashion delete');
@@ -97,16 +99,27 @@ module.exports = {
       });
     },
 
-  update : function(req, res, next){
-    Fashion.findOne({_id: req.params.id}, function(err, fashion){
-      if(err) res.send(err);
+    edit : function(req, res){
+      Fashion.findOne({ slug : req.params.slug },function (err, fashion){
+        if(err) return err;
+        var message = '';
+        res.render('admin/edit', {
+            title   : "update",
+            page    : "fashion"
+        });
+      });
+    },
 
-      var fashion = new Fashion();
-      if(res.body.name) fashion.name = req.body.name;
-      //if(res.body.stock) fashion.stock = req.body.stock;
-      //if(res.body.category) fashion.category = req.body.category;
-      if(res.body.size) fashion.size = req.body.size;
-      if(req.body.desc) fashion.description = req.body.desc;
+
+  update : function(req, res, next){
+    Fashion.findOne({slug : req.body.slug}, function(err, fashion){
+     
+      if(err) return next(err);
+      if(req.body.name) fashion.name = req.body.name;
+      if(req.body.stock) fashion.stock = req.body.stock;
+      //if(req.body.category) fashion.category = foundCategory._id;
+      if(req.body.size) fashion.size = req.body.size;
+      if(req.body.desc) fashion.desc = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
 
       console.log("fashion up", fashion);

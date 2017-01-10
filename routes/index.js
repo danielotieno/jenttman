@@ -7,6 +7,7 @@ var homeRoutes     = require('./home');
 var fashionRoutes  = require('./fashion');
 var categoryRoutes = require('./category');
 var roleRoutes     = require('./role');
+var sizeRoutes     = require('./size');
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
@@ -42,23 +43,27 @@ router.post('/login',          sessionRoutes.create);
 router.get('/logout',          sessionRoutes.delete);
 
 /*
- * @fashionroutes 
+ * @session routes 
 */
-router.get('/admin/fashions',        fashionRoutes.index);
-router.get('/user/item',          fashionRoutes.single);
+router.get('/admin/fashions',           fashionRoutes.index);
+router.get('/user/item',             fashionRoutes.single);
+//router.get('/admin/index/new',             fashionRoutes.new);
+//router.post('/admin/create',      fashionRoutes.add);
 router.get('/admin/create',      fashionRoutes.new);
-router.post('/admin/fashions',       fashionRoutes.add);
-router.post('/admin/update',      fashionRoutes.update);
-router.get('/admin/index/edit',   fashionRoutes.edit);
-router.get('/admin/delete', fashionRoutes.delete);
+router.post('/admin/fashions',      fashionRoutes.add);
+router.post('/admin/update',   fashionRoutes.update);
+//router.get('/admin/index/edit',   fashionRoutes.edit);
+router.get('/admin/delete',    fashionRoutes.delete);
 router.post('/admin/another',      fashionRoutes.addsize);
+
 
 /*
  * @category Routes
  */
 router.get('/admin/add', categoryRoutes.index);
-router.get('/admin/new',     categoryRoutes.new);
-router.post('admin/add', categoryRoutes.add);
+router.get('/admin/new', categoryRoutes.new);
+//router.get('/admin/categoty',     categoryRoutes.get);
+router.post('/admin/add', categoryRoutes.add);
 
 /*
  * @size Routes
@@ -69,10 +74,10 @@ router.get('/admin/newer', sizeRoutes.new);
 router.post('/admin/another', sizeRoutes.add);
 
 
-
 /*
  * @Role routes
  */
 router.get('/admin/assign/:username/:role', roleRoutes.assign);
 router.get('/admin/role/:role',             roleRoutes.create);
+
 module.exports=router;
