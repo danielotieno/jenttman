@@ -53,7 +53,7 @@ module.exports = {
           fashion.save(function(err, fashion){
             if(err) res.send(err);
 
-            res.redirect('/admin/create');
+            res.redirect('/admin/fashions');
           });
         });
       }
@@ -93,7 +93,7 @@ module.exports = {
         if (err)
           res.send(err);
         console.log('fashion delete');
-       res.redirect('/admin/index/delete');
+       res.redirect('/admin/fashions');
       });
     },
 
@@ -104,14 +104,16 @@ module.exports = {
       var fashion = new Fashion();
       if(res.body.name) fashion.name = req.body.name;
       //if(res.body.stock) fashion.stock = req.body.stock;
-      if(res.body.category) fashion.category = req.body.category;
+      //if(res.body.category) fashion.category = req.body.category;
       if(res.body.size) fashion.size = req.body.size;
       if(req.body.desc) fashion.description = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
 
-      fashion.update(function(err){
-        if(err) res.send(err);
-        res.redirect('/admin/update');
+      console.log("fashion up", fashion);
+      
+      fashion.save(function(err, fashion){
+        if(err) return next(err);
+        res.redirect('/admin/fashions');
       });
     });
   }
