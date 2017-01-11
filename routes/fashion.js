@@ -11,7 +11,7 @@ module.exports = {
   index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
-      res.render('admin/index',{
+      res.render('admin/dashboard',{
           fashion:fashion
       });
     });
