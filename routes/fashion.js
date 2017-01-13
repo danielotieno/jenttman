@@ -8,6 +8,7 @@ var Category = require('../models/category');
 var Size     = require('../models/size');
 
 module.exports = {
+  //route to view template with fashions already in the system
   index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
@@ -17,17 +18,31 @@ module.exports = {
     });
   },
 
-  single : function(req, res){
-    Fashion.findOne({_id:req.param.id}, function(err, fashion){
+  //route to get all fashion in the database to the browser
+  get : function(req, res){
+    Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
-      res.render('user/item', {
+      res.send(fashion);
+    });
+  },
+
+  //serves both admin and normal user, view description of specific fashion
+  single : function(req, res){
+    Fashion.findOne({_id:req.params.id}, function(err, fashion){
+      if(err) res.send(err);
+      res.render('admin/fashion/item', {
         fashion:fashion
       });
     });
   },
 
   new : function(req, res){
-    res.render('admin/new');
+    Category.find({}, function(err, category){
+      if(err) res.send(err);
+      res.render('admin/fashion/new',{
+        category:category
+      });
+    });
   },
 
   add : function(req, res){
@@ -42,13 +57,11 @@ module.exports = {
 
           var fashion      = new Fashion();
           fashion.name     = req.body.name;
-          fashion.stock = req.body.stock;
           fashion.category = foundCategory._id;
           fashion.brand    = req.body.brand;
-          fashion.size = req.body.size;
           fashion.desc = req.body.desc;
-          fashion.slug  = req.params.slug;
-          fashion.user     = req.body._id;
+          //fashion.slug  = req.params.slug;
+          //fashion.user     = req.body._id;
         
           console.log("fashion at this stage", fashion);
          
@@ -89,41 +102,42 @@ module.exports = {
     });
   },
 
-   delete : function(req, res){
-      Fashion.remove({  
-      }, function(err, fashions) {
-        if (err)
-          res.send(err);
-        console.log('fashion delete');
-       res.redirect('/admin/fashions');
-      });
-    },
+  delete : function(req, res){
+    Fashion.findOne({_id:req.params.id}, function(err, fashion){
+      if(err) res.send(err);
+
+      if(fashion){
+        fashion.remove({}, function(err, fashions) {
+          if (err) res.send(err);
+            console.log('fashion delete');
+            res.redirect('/admin/fashions');
+          });
+        }else{
+          res.send("sms the guy that made the system and tell him his an idiot");
+        }
+    });
+  },
 
     edit : function(req, res){
-      Fashion.findOne({ slug : req.params.slug },function (err, fashion){
+      Fashion.findOne({ _id : req.params.id },function (err, fashion){
         if(err) return err;
         var message = '';
-        res.render('admin/edit', {
+        res.render('admin/fashion/edit', {
             title   : "update",
-            page    : "fashion"
+            fashion : fashion
         });
       });
     },
 
 
   update : function(req, res, next){
-    Fashion.findOne({slug : req.body.slug}, function(err, fashion){
+    Fashion.findOne({_id : req.body.fashionid}, function(err, fashion){
      
       if(err) return next(err);
-      if(req.body.name) fashion.name = req.body.name;
-      if(req.body.stock) fashion.stock = req.body.stock;
-      //if(req.body.category) fashion.category = foundCategory._id;
-      if(req.body.size) fashion.size = req.body.size;
-      if(req.body.desc) fashion.desc = req.body.desc;
+      if(req.body.name) fashion.name   = req.body.name;
+      if(req.body.desc) fashion.desc   = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
 
-      console.log("fashion up", fashion);
-      
       fashion.save(function(err, fashion){
         if(err) return next(err);
         res.redirect('/admin/fashions');
