@@ -50,13 +50,13 @@ module.exports = {
       }
       else{
         var category = new Category();
-        category.name = req.body.name;
+        category.name = req.body.category;
 
         category.save(function(err, category){
           if(err) res.send(err);
           
           //res.flash('message', 'Category saved successfully');
-          res.redirect('/admin/index');
+          res.redirect('/admin/category/index');
         });
       }
     });
