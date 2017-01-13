@@ -43,19 +43,15 @@ router.post('/login',          sessionRoutes.create);
 router.get('/logout',          sessionRoutes.delete);
 
 /*
- * @session routes 
+ * @fashion routes 
 */
-router.get('/admin/fashions',           fashionRoutes.index);
-router.get('/user/item',             fashionRoutes.single);
-//router.get('/admin/index/new',             fashionRoutes.new);
-//router.post('/admin/create',      fashionRoutes.add);
-router.get('/admin/create',      fashionRoutes.new);
-router.post('/admin/fashions',      fashionRoutes.add);
-router.post('/admin/update',   fashionRoutes.update);
-//router.get('/admin/index/edit',   fashionRoutes.edit);
-router.get('/admin/delete',    fashionRoutes.delete);
-router.post('/admin/another',      fashionRoutes.addsize);
-
+router.get('/admin/fashions',         fashionRoutes.index);
+router.get('/admin/fashion/item/:id', fashionRoutes.single);
+router.get('/admin/fashion/create',   fashionRoutes.new);
+router.post('/admin/fashion/add',     fashionRoutes.add);
+router.get('/admin/fashion/edit/:id',     fashionRoutes.edit);
+router.post('/admin/fashion/update',  fashionRoutes.update);
+router.get('/admin/fashion/delete/:id',           fashionRoutes.delete);
 
 /*
  * @category Routes
