@@ -57,7 +57,7 @@ router.get('/admin/fashion/delete/:id',           fashionRoutes.delete);
  * @category Routes
  */
 router.get('/admin/category/index',      categoryRoutes.index);
-router.get('/admin/category/new',        categoryRoutes.new);
+router.get('/admin/category/create',        categoryRoutes.new);
 router.get('/admin/categories',          categoryRoutes.get);
 router.post('/admin/category/add',       categoryRoutes.add);
 router.get('/admin/category/delete/:id', categoryRoutes.delete);
