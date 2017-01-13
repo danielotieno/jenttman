@@ -25,6 +25,7 @@
             <thead>
               <tr>
                 <th>#</th>
+                <th>id</th>
                 <th>Name</th>
                 <th>Stock</th>
                 <th>Category</th>
@@ -37,6 +38,7 @@
               <% fashion.forEach(function(fashion, index){ %>
               <tr>
                 <th scope="row"><%= index + 1 %></th>
+                <td><a href="/admin/fashion/item/<%= fashion.id %>"><%= fashion.id %></a></td>
                 <td><%= fashion.name %></td>
                 <td><%= fashion.stock %></td>
                 <td><%= fashion.category %></td>
@@ -45,8 +47,8 @@
                 <td><%= fashion.size %></td>
                 <td>
                   <ul class="options">
-                    <li><a href="/admin/index/edit" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
-                    <li><a href="/admin/delete" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
+                    <li><a href="/admin/fashion/edit/<%= fashion._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
+                    <li><a href="/admin/fashion/delete/<%= fashion._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
                   </ul>
                 </td>
               </tr>
