@@ -60,10 +60,11 @@ router.post('/admin/another',      fashionRoutes.addsize);
 /*
  * @category Routes
  */
-router.get('/admin/add', categoryRoutes.index);
-router.get('/admin/new', categoryRoutes.new);
-//router.get('/admin/categoty',     categoryRoutes.get);
-router.post('/admin/add', categoryRoutes.add);
+router.get('/admin/category/index',      categoryRoutes.index);
+router.get('/admin/category/new',        categoryRoutes.new);
+router.get('/admin/categories',          categoryRoutes.get);
+router.post('/admin/category/add',       categoryRoutes.add);
+router.get('/admin/category/delete/:id', categoryRoutes.delete);
 
 /*
  * @size Routes
