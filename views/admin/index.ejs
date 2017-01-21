@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <a class="large button success right " href="/admin/fashion/create">Create Fashion</a>
       <!-- create event button section ends -->
       <a class="large button success right " href="/admin/category/create">Create Category</a>
-      <a class="large button success right " href="/admin/another">Create Size</a>
+      <a class="large button success right " href="/admin/size/create/<%= fashion._id %>">Create Size</a>
     </div>
 
   <div class="large-8 columns">
@@ -28,11 +28,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <th>#</th>
                 <th>id</th>
                 <th>Name</th>
-                <th>Stock</th>
                 <th>Category</th>
                 <th>Brand</th>
                 <th>Description</th>
-                <th>Size</th>
               </tr>
             </thead>
             <tbody>
@@ -41,15 +39,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <th scope="row"><%= index + 1 %></th>
                 <td><a href="/admin/fashion/item/<%= fashion.id %>"><%= fashion.id %></a></td>
                 <td><%= fashion.name %></td>
-                <td><%= fashion.stock %></td>
                 <td><%= fashion.category %></td>
                 <td><%= fashion.brand %></td>
                 <td><%= fashion.desc %></td>
-                <td><%= fashion.size %></td>
                 <td>
                   <ul class="options">
                     <li><a href="/admin/fashion/edit/<%= fashion._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
                     <li><a href="/admin/fashion/delete/<%= fashion._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
+                    <li><a href="/admin/size/create/<%= fashion._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Add sizes</a></li>
                   </ul>
                 </td>
               </tr>

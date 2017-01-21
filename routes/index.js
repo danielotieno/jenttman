@@ -65,11 +65,11 @@ router.get('/admin/category/delete/:id', categoryRoutes.delete);
 /*
  * @size Routes
  */
-router.get('/admin/another', sizeRoutes.index);
-router.get('/admin/newer', sizeRoutes.new);
-//router.get('/admin/categoty',     categoryRoutes.get);
-router.post('/admin/another', sizeRoutes.add);
-
+router.get('/admin/size/index',          sizeRoutes.index);
+router.get('/admin/size/create/:id',     sizeRoutes.new);
+router.get('/admin/sizes',               sizeRoutes.get);
+router.post('/admin/size/add',           sizeRoutes.add);
+router.get('/admin/size/delete/:id',     sizeRoutes.delete);
 
 /*
  * @Role routes
