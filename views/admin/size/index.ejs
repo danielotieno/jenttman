@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title>fashion size</title>
+  </head>
+  <body>
+    <ul>
+      <% for(var i=0; i<size.length; i++){ %>
+      <li><%= size[i] %><a href="/admin/size/delete/<%= size[i]._id %>">delete</a></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
