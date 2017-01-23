@@ -12,7 +12,7 @@ module.exports = {
   index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
-      res.render('admin/dashboard',{
+      res.render('dashboard/index',{
           fashion:fashion
       });
     });
