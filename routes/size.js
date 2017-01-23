@@ -38,10 +38,11 @@ module.exports = {
   },
 
   add: function(req, res){
-    Fashion.findOne({name :req.body.fashion}, function(err, foundFashion){
+    Fashion.findOne({_id :req.body.id}, function(err, foundFashion){
       if(err) res.send(err);
 
       if(foundFashion){
+        console.log(foundFashion);
 
         var Size = new Size();
         size.name = req.body.name;
