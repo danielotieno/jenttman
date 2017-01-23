@@ -1,0 +1,19 @@
+<% include ./dashpartials/masthead %>
+<body>
+  <!--header starts -->
+  <header>
+    <!--sticky navigation starts -->
+    <% include dashpartials/navbar %>
+    <!--sticky navigation ends -->
+  </header>
+    <!-- sidebar section starts -->
+  <%= include dashpartials/sidebar %>
+  <!-- sidebar section ends -->
+  <!-- index section starts -->
+  <%= include content %>
+  <!-- index section ends -->
+  <!-- footer section starts -->
+    <% include dashpartials/footer %>
+    <!-- footer section ends -->
+  </body>
+</html>
