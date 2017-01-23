@@ -40,7 +40,7 @@ module.exports    = {
       user.email    = req.body.email;
       user.username = req.body.username;
       user.password = req.body.password;
-      user.role     = role._id;
+      //user.role     = role._id;
 
       User.getUserByUsername({username: req.body.username}, function(err, foundUser, done){
         var message = 'That username is already taken';
