@@ -22,21 +22,6 @@ module.exports = {
     });
   },
 
-  delete : function(req, res){
-    //route should delete category according to id
-    Size.findOne({_id:req.params.id}, function(err, size){
-      if(err) res.send(err);
-      if(size){
-        size.remove(function(err){
-          if(err) res.send(err);
-          res.redirect('/admin/size/index');
-        });
-      }else{
-        res.send("can't delete category not in the system");
-      }
-    });
-  },
-
   add: function(req, res){
     Fashion.findOne({_id :req.body.id}, function(err, foundFashion){
       if(err) res.send(err);
@@ -44,7 +29,7 @@ module.exports = {
       if(foundFashion){
         console.log(foundFashion);
 
-        var Size = new Size();
+        var size = new Size();
         size.name = req.body.name;
         size.stock = req.body.stock;
         size.fashion = foundFashion._id;
@@ -52,7 +37,9 @@ module.exports = {
         size.save(function(err, size){
           if(err) res.send(err);
 
-          res.send("size added successfully");
+          console.log("size added successfully");
+          res.redirect('/admin/size/index')
+ 
         });
       }
       else{

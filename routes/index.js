@@ -69,7 +69,7 @@ router.get('/admin/size/index',          sizeRoutes.index);
 router.get('/admin/size/create/:id',     sizeRoutes.new);
 router.get('/admin/sizes',               sizeRoutes.get);
 router.post('/admin/size/add',           sizeRoutes.add);
-router.get('/admin/size/delete/:id',     sizeRoutes.delete);
+
 
 /*
  * @Role routes
