@@ -1,8 +1,44 @@
 <% layout('admin/dashboard') -%>
-<div class=" container">
-    <ul>
+    <div class=" container">
+<!--inner block start here-->
+<div class="inner-block">
+    <div class="inbox">
+        <h2>Categories</h2>
+       <div class="col-md-4 compose">       
+        <div class="mail-profile">
+          <div class="mail-pic">
+            <a href="#"><img src="images/b3.png" alt=""></a>
+          </div>
+          <div class="mailer-name">       
+              <h5><a href="#">Jenttman</a></h5>            
+                 <h6><a href="mailto:info@example.com">Jenttman@gmail.com</a></h6>   
+          </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="compose-bottom">
+          <ul>
+            <li><a class="hilate" href="#"><i class="fa fa-inbox"> </i>Inbox</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+            <li><a href="#"><i class="fa fa-star-o"> </i>Important</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+            <li><a href="#"><i class="fa fa-trash-o"> </i>Trash</a></li>
+          </ul>
+        </div>
+       </div>      
+        <div class="col-md-8 compose-right">
+  
+
+           <ul>
       <% for(var i=0; i<size.length; i++){ %>
       <li><%= size[i] %></li>
       <% } %>
     </ul>
+          </div>
+        </div>
+      
+          <div class="clearfix"> </div>     
+   </div>
 </div>
+</div>
+<!--inner block end here-->
+
