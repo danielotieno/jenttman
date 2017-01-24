@@ -98,6 +98,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--//skycons-icons-->
 </head>
 <body>
+           <!-- script-for sticky-nav -->
+    <script>
+    $(document).ready(function() {
+       var navoffeset=$(".header-main").offset().top;
+       $(window).scroll(function(){
+        var scrollpos=$(window).scrollTop(); 
+        if(scrollpos >=navoffeset){
+          $(".header-main").addClass("fixed");
+        }else{
+          $(".header-main").removeClass("fixed");
+        }
+       });
+       
+    });
+    </script>
+    <!-- /script-for sticky-nav -->
+    
+<!-- script-for sticky-nav -->
+    <script>
+    $(document).ready(function() {
+       var navoffeset=$(".header-main").offset().top;
+       $(window).scroll(function(){
+        var scrollpos=$(window).scrollTop(); 
+        if(scrollpos >=navoffeset){
+          $(".header-main").addClass("fixed");
+        }else{
+          $(".header-main").removeClass("fixed");
+        }
+       });
+       
+    });
+    </script>
+    
 <!--scrolling js-->
 		<script src="/js2/jquery.nicescroll.js"></script>
 		<script src="/js2/scripts.js"></script>
