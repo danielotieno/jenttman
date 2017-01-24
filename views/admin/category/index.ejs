@@ -1,12 +1,8 @@
-<html>
-  <head>
-    <title>fashion categories</title>
-  </head>
-  <body>
+<% layout('admin/dashboard') %>
+  <div class=" container">
     <ul>
       <% for(var i=0; i<category.length; i++){ %>
       <li><%= category[i] %><a href="/admin/category/delete/<%= category[i]._id %>">delete</a></li>
       <% } %>
     </ul>
-  </body>
-</html>
+</div>

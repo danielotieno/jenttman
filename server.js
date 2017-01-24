@@ -48,6 +48,7 @@ app.use(session({
 }));
 
 //Create EJS Engine view
+app.set('view engine', 'html');
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 

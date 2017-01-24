@@ -6,11 +6,14 @@
     <% include partials/navbar %>
     <!--sticky navigation ends -->
   </header>
+    <!-- sidebar section starts -->
+  <%= include partials/sidebar %>
+  <!-- sidebar section ends -->
   <!-- index section starts -->
-  <%= include index %>
+  <%- body -%>
   <!-- index section ends -->
   <!-- footer section starts -->
-    <% include partials/footer %>
+   
     <!-- footer section ends -->
   </body>
 </html>

@@ -27,8 +27,8 @@ a:hover {
 .fixed{
 	position: fixed;
 	top: 0;
-	 width:87%;
-    margin: 0 auto;
+	 width:100%;
+    margin: 0px 0px 70px 0px;
 	z-index: 1;
 	background:#fff;
 }
@@ -47,6 +47,7 @@ a:hover {
 .left-content {
     float: right;
         width: 86.5%;
+         margin: 0px 10px 0px 0px
 }
 .page-container.sidebar-collapsed {
   transition: all 100ms linear;
@@ -211,6 +212,7 @@ a:hover {
 }
 .menu {
     padding:4.2em 0em 0em 0em;
+
 }
 /*----*/
 .page-container.sidebar-collapsed .left-content .fixed {
@@ -250,6 +252,7 @@ a:hover {
 .header-main {
     background:#fff;
     padding: 1em 2em;
+    margin: 0px 0px 70px 0px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 .header-right {

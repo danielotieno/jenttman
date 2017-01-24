@@ -1,12 +1,8 @@
-<html>
-  <head>
-    <title>fashion size</title>
-  </head>
-  <body>
+<% layout('admin/dashboard') -%>
+<div class=" container">
     <ul>
       <% for(var i=0; i<size.length; i++){ %>
       <li><%= size[i] %></li>
       <% } %>
     </ul>
-  </body>
-</html>
+</div>

@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+<% layout('admin/dashboard') -%>
 <div class=" container">
-		  	  <form  action="/admin/category/add" method="post"> 
-        <div>
+
+		  	  <form  action="/admin/category/create" method="post"> 
+        <div class="small-3 columns">
               <span>Name</span>
             <input type="text" required class="form-control" id="Name" name="category"/>
-           </div>
-           <div>
+          </div>
+          <div class="small-9 columns">
                <button class="large button success right">Add Category</button>
            </div>
-           </div>
            </form>
-           </body>
-</html>
+           
+            </div>
+

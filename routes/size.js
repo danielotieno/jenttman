@@ -23,10 +23,11 @@ module.exports = {
   },
 
   add: function(req, res){
-    Fashion.findOne({n_id :req.body.id}, function(err, foundFashion){
+    Fashion.findOne({_id :req.body.id}, function(err, foundFashion){
       if(err) res.send(err);
 
       if(foundFashion){
+        console.log(foundFashion);
 
         var size = new Size();
         size.name = req.body.name;
