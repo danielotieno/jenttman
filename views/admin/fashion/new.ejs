@@ -1,39 +1,43 @@
-<% layout('/dashboard/index') %>
-<body>
+<% layout('admin/dashboard') -%>
 <div class=" container">
-          <form id="Fashion-form" action="/admin/fashion/add" method="post"> 
-              <div class="col-lg-6">
-                <div>
+<div class=" row">
+          <form id="Fashion-form" action="/admin/fashion/create" method="post"> 
+              <div class="col-md-3">
                   <span>category</span>
+                  </div>
+                  <div class="col-md-9">
                   <select name="category">
                     <% for(var i=0; i<category.length; i++){ %> 
                       <option value="<%= category[i].name %>"><%= category[i].name %></option>
                     <% } %>
                   </select>
-            <div>
-               <span>Name</span> 
+                  </div>
+            <div class="col-md-3">
+               <span>Name</span>
+               </div>
+               <div class="col-md-9"> 
                 <input type="text" required class="form-control" id="Name" name="name"/>
            </div>
-           <div>
+           <div class="col-md-3">
               <span>brands</span>
+              </div>
+              <div class="col-md-9">
               <input type="text" required class="form-control" id="Brand" name="brand"/> 
-           </div>
-           <div>
+              </div>
+          <div class="col-md-3">
               <span>Description</span>
+              </div>
+              <div class="col-md-9">
             <input type="text" required class="form-control" id="Desc" name="desc"/>
            </div>
-           <div>
+           <div class="col-md-6">
             <!--<input type="submit" value="submit">-->
              <button class="large button success right">Add</button>
            </div>
            <div class="clearfix"> </div>
-        </form>
-       <div class="large-6 columns">
-      <!-- Create event button section -->
-      <a class="large button success right " href="/admin/fashions">Dashboard</a>
-      <!-- create event button section ends -->
-    </div>
+    
+    </form>
 </div>
-</body>
-</html>
+</div>
+
       
