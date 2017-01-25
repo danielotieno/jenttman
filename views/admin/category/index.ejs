@@ -1,5 +1,5 @@
 <% layout('admin/dashboard') -%>
-    <div class=" container">
+<div class=" container">
 <!--inner block start here-->
 <div class="inner-block">
     <div class="inbox">
@@ -25,21 +25,36 @@
           </ul>
         </div>
        </div>      
-        <div class="col-md-8 compose-right">
-  
+  </div>
+  <div class="col-md-8 compose-right">
 
-     <ul>
-      <% for(var i=0; i<category.length; i++){ %>
-      <li><%= category[i] %><a href="/admin/category/delete/<%= category[i]._id %>">delete</a></li>
-      <% } %>
-    </ul>
-    
-          </div>
-        </div>
+<table class="table tab-border">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+          <% category.forEach(function(category, index){ %>
+          <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= category._id  %></td>
+          <td><%= category.name %></td>
+          <td>
+          <ul class="options">
+          <a href="/admin/category/delete/<%= category._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
+          </ul>
+        </td>
+      </tr>
+     <%});%>
+  </tbody>
+</table>
       
-          <div class="clearfix"> </div>     
+    <div class="clearfix"> </div>     
    </div>
 </div>
 </div>
 <!--inner block end here-->
-
