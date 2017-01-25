@@ -13,6 +13,7 @@ module.exports = {
   },
   new : function(req, res){
     res.render('admin/size/new');
+    
   },
 
   get : function(req, res){
