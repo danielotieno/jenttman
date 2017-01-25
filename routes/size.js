@@ -12,8 +12,9 @@ module.exports = {
     });
   },
   new : function(req, res){
-    res.render('admin/size/new');
-    
+    res.render('admin/size/new',{
+      id:req.params.id
+    });
   },
 
   get : function(req, res){
