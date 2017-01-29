@@ -31,16 +31,21 @@
               Add  Category 
             </div>
             <div class="inbox-details-body">
-              <div class="alert alert-info">
-                Please fill details to add new category
-              </div>
+            <div class = "alert alert-success alert-dismissable">
+            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+           &times;
+          </button>
+          Please fill details to add new category
+         </div>
+
         <form  action="/admin/category/add" method="post">
          <div class = "form-group">
         <label for="name" class="control-label col-xs-2">Name</label> 
         
         <div class="col-xs-10">
-          <input type="text" required class="form-control" id="Name" name="category"/>
+        <input type="text" required class="form-control" id="Name" name="category"/>
           <button class="large button success right">Add Category</button>
+
           </div>
          </div>
           </div>
