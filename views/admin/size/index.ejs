@@ -42,10 +42,10 @@
           <th scope="row"><%= index + 1 %></th>
           <td><%= size.name %></td>
           <td><%= size.stock %></td>
-          <td><%= size.fashion %></td>
+          <td><%= fashion.name %></td>
           <td>
           <ul class="options">
-          <a href="/admin/size/update/<%= size._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a>
+          <li><a href="/admin/size/edit/<%= size._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
           </ul>
         </td>
       </tr>
