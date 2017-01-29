@@ -4,7 +4,7 @@
 
 var Fashion  = require('../models/fashion');
 var User     = require('../models/user');
-var Category = require('../models/category');
+var category = require('../models/category');
 var Size     = require('../models/size');
 
 module.exports = {
