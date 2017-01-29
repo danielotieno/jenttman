@@ -9,15 +9,33 @@ var Size     = require('../models/size');
 
 module.exports = {
   //route to view template with fashions already in the system
-  index : function(req, res){
+  /*index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
       res.render('admin/index',{
           fashion:fashion
       });
     });
-  },
+  },*/
 
+  index : function(req, res){
+    Fashion.aggregate([{
+      $lookup:
+      {
+        from:'categories',
+        localField:'category',
+        foreignField:'_id',
+        as:'categoryname'
+      }
+    }], function(err, fashion){
+      if(err) res.send(err);
+      console.log(fashion);
+      //res.send(fashion);
+      res.render('admin/index',{
+          fashion:fashion
+      });
+    });
+  },
   //route to get all fashion in the database to the browser
   get : function(req, res){
     Fashion.find({}, function(err, fashion){
