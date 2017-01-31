@@ -31,6 +31,7 @@ function isAdmin(req, res, next) {
 }
 
 router.get('/', homeRoutes.index);
+router.get('/:category', homeRoutes.categories);
 
 /*
  * @user routes
