@@ -34,7 +34,7 @@
               <div class="alert alert-info">
                 Please fill details to add new fashion
               </div>
-                 <form id="Fashion-form" action="/admin/fashion/add" method="post"> 
+                 <form id="Fashion-form" action="/admin/fashion/add" method="post" enctype="multipart/form-data"> 
               <div class="col-md-3">
                   <span>category</span>
                   </div>
@@ -45,6 +45,7 @@
                     <% } %>
                   </select>
                   </div>
+                    <div class="clearfix"></div>
             <div class="col-md-3">
                <span>Name</span>
                </div>
@@ -63,6 +64,13 @@
               <div class="col-md-9">
             <input type="text" required class="form-control" id="Desc" name="desc"/>
            </div>
+           <div class="col-md-3">
+              <span>Photo upload</span>
+              </div>
+              <div class="col-md-9">
+            <input type="file" required class="form-control" id="upload" name="upload"/>
+           </div>
+
            <div class="col-md-6">
             <!--<input type="submit" value="submit">-->
              <button class="large button success right">Add</button>
