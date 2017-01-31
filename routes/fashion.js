@@ -29,7 +29,7 @@ module.exports = {
       }
     }], function(err, fashion){
       if(err) res.send(err);
-      console.log(fashion);
+      console.log(fashion.categoryname);
       //res.send(fashion);
       res.render('admin/index',{
           fashion:fashion
@@ -63,7 +63,7 @@ module.exports = {
     });
   },
 
-  add : function(req, res){
+  add : function(req, res,next){
     Category.findOne({name:req.body.category}, function(err, foundCategory){    
       if(err) res.send(err);
       if(foundCategory){
@@ -78,6 +78,7 @@ module.exports = {
           fashion.category = foundCategory._id;
           fashion.brand    = req.body.brand;
           fashion.desc = req.body.desc;
+          fashion.photo = req.file.path;
           //fashion.slug  = req.params.slug;
           //fashion.user     = req.body._id;
         
