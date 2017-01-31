@@ -72,6 +72,8 @@ router.get('/admin/size/index',          sizeRoutes.index);
 router.get('/admin/size/create/:id',     sizeRoutes.new);
 router.get('/admin/sizes',               sizeRoutes.get);
 router.post('/admin/size/add',           sizeRoutes.add);
+router.get('/admin/size/edit/:id',       sizeRoutes.edit);
+router.post('/admin/size/update',        sizeRoutes.update);
 
 
 /*

@@ -20,6 +20,7 @@
     "express-session": "^1.14.2",
     "express-validator": "^3.1.1",
     "lingo": "0.0.5",
+    "mongo-join": "^1.0.0",
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.3",
     "morgan": "^1.7.0",
