@@ -51,4 +51,29 @@ module.exports = {
     });
   },
 
+      edit : function(req, res){
+      Size.findOne({ _id : req.params.id },function (err, size){
+        if(err) return err;
+        var message = '';
+        res.render('admin/size/edit', {
+            title   : "update",
+            size : size
+        });
+      });
+    },
+
+    update : function(req, res, next){
+    Size.findOne({_id : req.body.sizeid}, function(err, size){
+     
+      if(err) return next(err);
+      if(req.body.name) size.name   = req.body.name;
+      if(req.body.desc) size.stock   = req.body.stock;
+
+      size.save(function(err, size){
+        if(err) return next(err);
+        res.redirect('/admin/size/index');
+      });
+    });
+  }
+
 };
