@@ -5,7 +5,6 @@ var util = require('util');
 var mongodb =  require('mongodb');
 var mongoose = require('mongoose');
 var fs = require('fs');
-var multer = require('multer');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -25,7 +24,6 @@ var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
 
 var env = process.env.NODE_ENV || 'development';
-
 
 require('dotenv').config({silent: true})
 
