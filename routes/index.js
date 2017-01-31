@@ -9,6 +9,9 @@ var categoryRoutes = require('./category');
 var roleRoutes     = require('./role');
 var sizeRoutes     = require('./size');
 
+var multer = require('multer');
+var upload = multer({dest:'uploads/'});
+
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
     return next();
@@ -48,7 +51,7 @@ router.get('/logout',          sessionRoutes.delete);
 router.get('/admin/fashions',           fashionRoutes.index);
 router.get('/admin/fashion/item/:id',   fashionRoutes.single);
 router.get('/admin/fashion/create',     fashionRoutes.new);
-router.post('/admin/fashion/add',       fashionRoutes.add);
+router.post('/admin/fashion/add',       upload.single('upload'),     fashionRoutes.add);
 router.get('/admin/fashion/edit/:id',   fashionRoutes.edit);
 router.post('/admin/fashion/update',    fashionRoutes.update);
 router.get('/admin/fashion/delete/:id', fashionRoutes.delete);

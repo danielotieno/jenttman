@@ -1,17 +1,19 @@
 
 		<h1>NEW RELEASED</h1>
+   <% fashion.forEach(function(fashion){ %>
 		<div class="grid-in">
 			<div class="col-md-4 grid-top">
-				<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi11.jpg" alt="">
+				<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
+          <img class="img-responsive" src="<%= fashion.photo %>" alt="">
 							<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
-										<span>Shoe</span>
+                    <span><%= fashion.name %></span>
 									</h3>
 								</div>
 				</a>
-
-
-			<p><a href="single.html"> Contrary to popular </a></p>
+      </div>
+    <% }); %>
+			<!--<p><a href="single.html"> Contrary to popular </a></p>
 			</div>
 			<div class="col-md-4 grid-top">
 				<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi22.jpg" alt="">
@@ -68,4 +70,4 @@
 			</div>
 					<div class="clearfix"> </div>
 		</div>
-	
+      -->	
