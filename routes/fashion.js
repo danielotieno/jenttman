@@ -30,10 +30,10 @@ module.exports = {
     }], function(err, fashion){
       if(err) res.send(err);
       console.log(fashion.categoryname);
-      res.send(fashion);
-      /*res.render('admin/index',{
+      //res.send(fashion);
+      res.render('admin/index',{
           fashion:fashion
-      });*/
+      });
     });
   },
   //route to get all fashion in the database to the browser
