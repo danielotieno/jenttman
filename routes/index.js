@@ -51,6 +51,7 @@ router.get('/logout',          sessionRoutes.delete);
 */
 router.get('/admin/fashions',           fashionRoutes.index);
 router.get('/admin/fashion/item/:id',   fashionRoutes.single);
+router.get('/fashion/item/:id',   fashionRoutes.single);
 router.get('/admin/fashion/create',     fashionRoutes.new);
 router.post('/admin/fashion/add',       upload.single('upload'),     fashionRoutes.add);
 router.get('/admin/fashion/edit/:id',   fashionRoutes.edit);
