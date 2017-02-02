@@ -44,7 +44,17 @@ module.exports = {
     });
   },
 
-  //serves both admin and normal user, view description of specific fashion
+  //serves normal users to view various sizes of clothes in the db
+  item : function(req, res){
+    Fashion.findOne({_id:req.params.id}, function(err, fashion){
+      if(err) res.send(err);
+      res.render('pages/single',{
+        fashion:fashion
+      });
+    });
+  },
+
+  //serves both admin, view description of specific fashion
   single : function(req, res){
     Fashion.findOne({_id:req.params.id}, function(err, fashion){
       if(err) res.send(err);
