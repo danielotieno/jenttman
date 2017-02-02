@@ -35,6 +35,7 @@ require('./config/passport.js')(passport);
 // set static folder
 app.use(express.static(__dirname + '/assets'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/fashion/item/',  express.static(__dirname + '/assets'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
 
