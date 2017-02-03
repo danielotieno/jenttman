@@ -7,30 +7,31 @@
 					<div class="product col-md-3 service-image-left">
 
 						<center>
-							<img id="item-display" src="http://www.honeybuy.com/image/Round_Toe_Lace_Up_Black_Mens_Leather_Dress_Shoes__24__6205858358651483.png" alt=""></img>
+              
+              <img id="item-display" src="<%= fashion.photo %>" alt=""></img>
 						</center>
 					</div>
 
 					<div class="container service1-items col-sm-2 col-md-2 pull-left">
 						<center>
 							<a id="item-1" class="service1-item">
-								<img src="http://www.honeybuy.com/image/Round_Toe_Lace_Up_Black_Mens_Leather_Dress_Shoes__24__6205858358651483.png" alt=""></img>
+                <img src="<%= fashion.photo %>" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
-								<img src="http://www.honeybuy.com/image/Round_Toe_Lace_Up_Black_Mens_Leather_Dress_Shoes__24__6205858358651483.png" alt=""></img>
+                <img src="<%= fashion.photo %>" alt=""></img>
 							</a>
 							<a id="item-3" class="service1-item">
-								<img src="http://www.honeybuy.com/image/Round_Toe_Lace_Up_Black_Mens_Leather_Dress_Shoes__24__6205858358651483.png" alt=""></img>
+                <img src="<%= fashion.photo %>" alt=""></img>
 							</a>
 						</center>
 					</div>
 				</div>
 				<div class="col-md-7">
-					<div class="product-title">Black leather Shoes</div>
+          <div class="product-title"><%= fashion.name %></div>
 					<div class="product-desc">Round Toe Lace Up Black Leather Dress Shoes</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-					<div class="product-price">$ 1234.00</div>
+          <div class="product-price"><%= fashion.brand %></div>
 					<div class="product-stock">In Stock</div>
 					<hr>
 					<div class="btn-group cart">
