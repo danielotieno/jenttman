@@ -38,6 +38,7 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/fashion/item/',  express.static(__dirname + '/assets'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
+app.use('/fashion/item/uploads', express.static(__dirname + '/uploads'));
 
 app.use(session({
   resave    : true,
