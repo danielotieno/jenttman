@@ -48,9 +48,22 @@ module.exports = {
   item : function(req, res){
     Fashion.findOne({_id:req.params.id}, function(err, fashion){
       if(err) res.send(err);
-      res.render('pages/single',{
-        fashion:fashion
-      });
+
+      if(fashion){
+        Size.find({fashion:fashion._id}, function(err, sizes){
+          if(err) res.send(err);
+          if(sizes){
+            res.render('pages/single',{
+              fashion:fashion,
+              sizes:sizes
+            });
+          }else{
+            res.send("looks like you dont have any sizes in the database");
+          }
+        });
+      }else{
+        res.send("please call system admin to confirm some petty issues");
+      }
     });
   },
 
