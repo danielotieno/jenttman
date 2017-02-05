@@ -10,8 +10,8 @@ var Size     = require('./size');
 var FashionSchema = Schema({
   name:     {type:String, index:true},
   category: [{type: Schema.Types.ObjectId, ref:Category}],
-  brand:   {type: String},
-  slug  : {type : String, default : ""},
+  brand:    {type: String},
+  photo:    {type:String},
   desc:     { type:String},
   user:     [{type:Schema.Types.ObjectId, ref:User}]
 });

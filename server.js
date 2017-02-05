@@ -5,7 +5,6 @@ var util = require('util');
 var mongodb =  require('mongodb');
 var mongoose = require('mongoose');
 var fs = require('fs');
-var multer = require('multer');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -26,7 +25,6 @@ var dotenv = require('dotenv');
 
 var env = process.env.NODE_ENV || 'development';
 
-
 require('dotenv').config({silent: true})
 
 var db = require('./config/setting');
@@ -37,8 +35,10 @@ require('./config/passport.js')(passport);
 // set static folder
 app.use(express.static(__dirname + '/assets'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/fashion/item/',  express.static(__dirname + '/assets'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use('/uploads', express.static('uploads'));
+app.use('/fashion/item/uploads', express.static(__dirname + '/uploads'));
 
 app.use(session({
   resave    : true,

@@ -29,7 +29,7 @@ module.exports = {
       }
     }], function(err, fashion){
       if(err) res.send(err);
-      console.log(fashion);
+      console.log(fashion.categoryname);
       //res.send(fashion);
       res.render('admin/index',{
           fashion:fashion
@@ -44,7 +44,30 @@ module.exports = {
     });
   },
 
-  //serves both admin and normal user, view description of specific fashion
+  //serves normal users to view various sizes of clothes in the db
+  item : function(req, res){
+    Fashion.findOne({_id:req.params.id}, function(err, fashion){
+      if(err) res.send(err);
+
+      if(fashion){
+        Size.find({fashion:fashion._id}, function(err, sizes){
+          if(err) res.send(err);
+          if(sizes){
+            res.render('pages/single',{
+              fashion:fashion,
+              sizes:sizes
+            });
+          }else{
+            res.send("looks like you dont have any sizes in the database");
+          }
+        });
+      }else{
+        res.send("please call system admin to confirm some petty issues");
+      }
+    });
+  },
+
+  //serves both admin, view description of specific fashion
   single : function(req, res){
     Fashion.findOne({_id:req.params.id}, function(err, fashion){
       if(err) res.send(err);
@@ -63,7 +86,7 @@ module.exports = {
     });
   },
 
-  add : function(req, res){
+  add : function(req, res,next){
     Category.findOne({name:req.body.category}, function(err, foundCategory){    
       if(err) res.send(err);
       if(foundCategory){
@@ -78,6 +101,7 @@ module.exports = {
           fashion.category = foundCategory._id;
           fashion.brand    = req.body.brand;
           fashion.desc = req.body.desc;
+          fashion.photo = req.file.path;
           //fashion.slug  = req.params.slug;
           //fashion.user     = req.body._id;
         
