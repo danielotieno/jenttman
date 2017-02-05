@@ -44,7 +44,9 @@
           <tr>
           <th scope="row"><%= index + 1 %></th>
           <td><%= fashion.name %></td>
-          <td><%= fashion.category %></td>
+          <% Object.keys(fashion.categoryname).forEach(function(prop){  %>
+            <td><%- fashion.categoryname[prop].name %></td>
+          <% }); %>
           <td><%= fashion.brand %></td>
           <td><%= fashion.desc %></td>
           <td>
