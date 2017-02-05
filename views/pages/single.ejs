@@ -31,10 +31,12 @@
 					<div class="product-desc">Round Toe Lace Up Black Leather Dress Shoes</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
+				<p><b>Available Brands</b></p>
           <div class="product-price"><%= fashion.brand %></div>
+             <p><b>Available Sizes</b></p>
 					<div class="product-stock">
             <% sizes.forEach(function(size){ %>
-            <div><%= size.name %> </div>
+            <div><%= size.name %> = <%= size.stock %> </div>
             <% }); %>
           
           </div>
@@ -65,6 +67,7 @@
 						<div class="tab-pane fade in active" id="service-one">
 
 							<section class="container product-info">
+							<div class="product-desc"><%= fashion.desc %></div>
 								The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.
 
 								<h3>Corsair Gaming Series GS600 Features:</h3>
