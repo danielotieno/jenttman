@@ -126,7 +126,7 @@ a:hover {
   transition-delay: 300ms;
 }
 .sidebar-menu {
-  position: absolute;
+  position: fixed;
   float: left;
   width: 220px;
   height: 990px;

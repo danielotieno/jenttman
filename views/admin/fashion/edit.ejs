@@ -41,12 +41,20 @@
              <input type="text" class="form-control" id="Name" name="name" placeholder="<%= fashion.name %>"/>
            </div>
            <div>
-             <span>brands</span>
+             <span>Brands</span>
              <input type="text" class="form-control" id="Brand" name="brand" placeholder="<%= fashion.brand %>"/> 
+           </div>
+           <div>
+             <span>Price</span>
+             <input type="text" class="form-control" id="Price" name="price" placeholder="<%= fashion.price %>"/> 
            </div>
            <div>
               <span>Description</span>
               <input type="text" class="form-control" id="Desc" name="desc" placeholder="<%= fashion.desc %>"/>
+           </div>
+           <div>
+              <span>Photo</span>
+              <input type="file" class="form-control" id="upload" name="upload" placeholder="<%= fashion.photo %>"/>
            </div>
            <div>
              <input type="hidden" name = "fashionid" value = "<%= fashion._id %>"/>
