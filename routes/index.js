@@ -8,6 +8,7 @@ var fashionRoutes  = require('./fashion');
 var categoryRoutes = require('./category');
 var roleRoutes     = require('./role');
 var sizeRoutes     = require('./size');
+var cartRoutes     = require('./cart');
 
 var multer = require('multer');
 var upload = multer({dest:'uploads/'});
@@ -57,6 +58,8 @@ router.post('/admin/fashion/add',       upload.single('upload'),     fashionRout
 router.get('/admin/fashion/edit/:id',   fashionRoutes.edit);
 router.post('/admin/fashion/update',    fashionRoutes.update);
 router.get('/admin/fashion/delete/:id', fashionRoutes.delete);
+//router.get('/fashion/cart',          fashionRoutes.cart);
+
 
 /*
  * @category Routes
@@ -77,6 +80,8 @@ router.post('/admin/size/add',           sizeRoutes.add);
 router.get('/admin/size/edit/:id',       sizeRoutes.edit);
 router.post('/admin/size/update',        sizeRoutes.update);
 
+router.get('/fashion/cart/:id',          cartRoutes.item);
+router.get('/fashion/pay/:id',          cartRoutes.pay);
 
 /*
  * @Role routes

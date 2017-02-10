@@ -100,6 +100,7 @@ module.exports = {
           fashion.name     = req.body.name;
           fashion.category = foundCategory._id;
           fashion.brand    = req.body.brand;
+          fashion.price    = req.body.price;
           fashion.desc = req.body.desc;
           fashion.photo = req.file.path;
           //fashion.slug  = req.params.slug;
@@ -179,6 +180,8 @@ module.exports = {
       if(req.body.name) fashion.name   = req.body.name;
       if(req.body.desc) fashion.desc   = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
+      if(req.body.price) fashion.price = req.body.price;
+      if(req.body.photo) fashion.photo = req.body.photo;
 
       fashion.save(function(err, fashion){
         if(err) return next(err);
