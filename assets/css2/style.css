@@ -244,6 +244,17 @@ a:hover {
 .sidebar-icon:hover{
 	 color: #FFF;
 }
+
+.container {
+    padding-right: 5px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 190px;
+    margin-top: 0px;
+    position: fixed;
+}
+
+}
 .fa-html5 {
   color: #fff;
   margin-left: 50px;
@@ -252,7 +263,7 @@ a:hover {
 .header-main {
     background:#fff;
     padding: 1em 2em;
-    margin: 0px 0px 70px 0px;
+    margin: 0px 0px 0px 0px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
 .header-right {
