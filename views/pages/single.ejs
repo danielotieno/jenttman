@@ -3,7 +3,8 @@
     <div class="content-wrapper">
 		<div class="item-container">
 			<div class="container">
-				<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6">
 					<div class="product col-md-3 service-image-left">
 
 						<center>
@@ -27,30 +28,27 @@
 						</center>
 					</div>
 				</div>
+
+				<div class="com-md-6">
+           
+           </div>
+
+            </div>
 				<div class="col-md-7">
           <div class="product-title"><%= fashion.name %></div>
 					<div class="product-desc">Round Toe Lace Up Black Leather Dress Shoes</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-				<p><b>Available Brands</b></p>
-          <div class="product-price"><%= fashion.brand %></div>
-             <p><b>Available Sizes</b></p>
 					<div class="product-stock">
-            <% sizes.forEach(function(size){ %>
-            <div><%= size.name %> = <%= size.stock %> </div>
-            <% }); %>
+					Add to cart
           
-          </div>
 					<hr>
 					<div class="btn-group cart">
-					<a href="/fashion/cart/<%= fashion._id %>" class="btn btn-success" role="button">Add to cart</a>
+            <% sizes.forEach(function(size){ %>
+					<a href="/fashion/cart/<%= fashion._id %>" class="btn btn-success" role="button"><%= size.stock %></a>
+            <% }); %>
 					</div>
-					<div class="btn-group wishlist">
-						<button type="button" class="btn btn-danger">
-							Add to wishlist
-						</button>
-					</div>
-				</div>
+									</div>
 			</div>
 		</div>
 		<div class="container-fluid">
@@ -88,3 +86,21 @@
 	</div>
 </div>
 
+
+<section id="new">
+  <div id="modal3" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h5>New Post</h5>
+      <div class="row" id="edit">
+        <div class="input-field col s12 m6 l6">
+          <input placeholder="Say something about this photos" id="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s12 m6 l6">
+        <a href="#!" class="secondary-content modal-action modal-close waves-effect waves-red btn-flat ">Post</a>
+        </div>
+        </div>
+    </div>
+  <div class="modal-footer">
+</div>
+</div>
+</section>

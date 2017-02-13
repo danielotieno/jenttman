@@ -6,8 +6,41 @@ var User = require('../models/user');
 var Size= require('../models/size');
 var Fashion= require('../models/fashion')
 var Category = require('../models/category');
+var Cart= require('../models/cart')
 
 module.exports = {
+
+    new : function(req, res){
+    res.render('cart/new',{
+      id:req.params.id
+    });
+  },
+
+  add: function(req, res){
+    Fashion.findOne({_id :req.body.id}, function(err, foundFashion){
+      if(err) res.send(err);
+
+      if(foundFashion){
+        console.log(foundFashion); 
+        cart.quantity = req.body.quantity;
+        cart.size     = foundFashion._id;
+        cart.fashion  = foundFashion._id;
+
+        cart.save(function(err, cart){
+          if(err) res.send(err);
+
+          console.log("cart added successfully");
+          res.redirect('/pages/cart')
+ 
+        });
+      }
+      else{
+        res.send("fashion does not exist so fuck off dude");
+      }
+
+    });
+  },
+
   //serves normal users to view various sizes of clothes in the db
   item : function(req, res){
     Fashion.findOne({_id:req.params.id}, function(err, fashion){

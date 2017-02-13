@@ -80,8 +80,10 @@ router.post('/admin/size/add',           sizeRoutes.add);
 router.get('/admin/size/edit/:id',       sizeRoutes.edit);
 router.post('/admin/size/update',        sizeRoutes.update);
 
+router.get('/fashion/cart/create/:id',   cartRoutes.new);
+router.post('/fashion/cart/add',         cartRoutes.add);
 router.get('/fashion/cart/:id',          cartRoutes.item);
-router.get('/fashion/pay/:id',          cartRoutes.pay);
+router.get('/fashion/pay/:id',           cartRoutes.pay);
 
 /*
  * @Role routes
