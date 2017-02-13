@@ -10,7 +10,7 @@
 						<center>
               
               <img id="item-display" src="<%= fashion.photo %>" alt=""></img></br>
-                       <p>Price = $45</p>
+                       <p>Price = <%= fashion.price %></p>
 						</center>
 					</div>
 
@@ -29,11 +29,23 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-               <p>Price = <%= fashion.price %></p></br>
-               <p>Size  = <%= fashion.size %></p></br>
-               <p>Quantity = 15</p></br>
 
-                  <a href="/fashion/pay/<%= fashion._id %>" class="btn btn-success" role="button">Get it now</a>
+            <form  action="/fashion/cart/add" method="post">
+            <h3 class ="center" >Confirm Details</h3>  
+            <div>
+              <span>Item</span>
+            <input placeholder="<%= fashion.name %>" required class="form-control" id="Name" name="name"/>
+           </div>
+             <div>
+                  
+           </div>
+           <span>Quantity</span>
+            <input type="text" required class="form-control" id="Stock" name="stock"/>
+           </div></br></br>
+           <div>
+                 <button class="large button success ">Get it now</button>
+           </div>
+           </form>
 				</div>
 
 				</div>
