@@ -19,6 +19,7 @@
     "foundation": "^5.5.3",
     "jquery-ui": "^1.12.1",
     "font-awesome": "^4.7.0",
-    "lato": "^0.3.0"
+    "lato": "^0.3.0",
+    "store2": "^2.5.0"
   }
 }
