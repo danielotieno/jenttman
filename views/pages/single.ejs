@@ -50,17 +50,17 @@
     padding:5px;
     color:black;
   }
-  .sizes[checked="checked"] {
+  .checked {
     color:white;
     background:black;
   }
 </style>
             <% sizes.forEach(function(size){ %>
-            <span class="sizes" role="button" data-fashion-id="<%= fashion._id %>" data-name="<%= fashion.name %>" data-value="<%= size.name %>"><%= size.name %></span>
+            <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>"data-fashion-id="<%= fashion._id %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
             <% }); %>
 					</div>
 					<hr>
-          <button class="button">Add to cart</button>
+          <button class="button sizebutton">Add to cart</button>
 									</div>
 			</div>
 		</div>
@@ -119,10 +119,28 @@
 </section>
 
 <script>
+var cart = [];
 $(document).ready(function(){
+  if(localStorage.cart){
+    cart = JSON.parse(localStorage.cart);
+    showCart();
+  }
   $(".sizes").on('click' , function(){
-    $(".sizes").attr('checked', false);
-    $(this).attr('checked', true);
+    if($(this).hasClass("checked")){
+      $(this).removeClass('checked', false);
+    }else{
+      $(".sizes").removeClass('checked', false);
+      $(this).addClass('checked', true);
+    }
+  });
+  $(".sizebutton").on('click' , function(){
+    if($("span").hasClass("checked")){
+      var fashion_id = $(".checked").data("fashion-id");
+      var size_selected = $(".checked").data("size-name");
+      alert(size_selected);
+    }else{
+      alert("no size checked");
+    }
   });
 });
 </script>
