@@ -40,14 +40,27 @@
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
 					<div class="product-stock">
-					Add to cart
           
-					<hr>
 					<div class="btn-group cart">
+<style>
+  .sizes{
+    background:#f5f5f5;
+    border:0.5px solid #424242;
+    border-radius:4px;
+    padding:5px;
+    color:black;
+  }
+  .sizes[checked="checked"] {
+    color:white;
+    background:black;
+  }
+</style>
             <% sizes.forEach(function(size){ %>
-					<a href="/fashion/cart/<%= fashion._id %>" class="btn btn-success" role="button"><%= size.stock %></a>
+            <span class="sizes" role="button" data-fashion-id="<%= fashion._id %>" data-name="<%= fashion.name %>" data-value="<%= size.name %>"><%= size.name %></span>
             <% }); %>
 					</div>
+					<hr>
+          <button class="button">Add to cart</button>
 									</div>
 			</div>
 		</div>
@@ -104,3 +117,12 @@
 </div>
 </div>
 </section>
+
+<script>
+$(document).ready(function(){
+  $(".sizes").on('click' , function(){
+    $(".sizes").attr('checked', false);
+    $(this).attr('checked', true);
+  });
+});
+</script>
