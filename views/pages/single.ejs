@@ -120,6 +120,16 @@
 
 <script>
 var cart = [];
+function showCart(){
+  if(cart.length>0){
+    $(".myCart_quantity").text(cart.length);
+  }
+}
+function saveCart() {
+  if ( window.localStorage){
+    localStorage.cart = JSON.stringify(cart);
+  }
+}
 $(document).ready(function(){
   if(localStorage.cart){
     cart = JSON.parse(localStorage.cart);
@@ -137,7 +147,17 @@ $(document).ready(function(){
     if($("span").hasClass("checked")){
       var fashion_id = $(".checked").data("fashion-id");
       var size_selected = $(".checked").data("size-name");
-      alert(size_selected);
+      //Check if is in cart and prevent further addition to cart 
+      for (var i in cart) {
+        if(cart[i].fashion_id == name){
+          alert("Fashion already exists in cart");
+          return;
+        }
+      }
+      var item = {Fashion_id: fashion_id, Size_name: size_selected};
+      cart.push(item);
+      saveCart();
+      showCart();
     }else{
       alert("no size checked");
     }
