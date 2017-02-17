@@ -56,7 +56,7 @@
   }
 </style>
             <% sizes.forEach(function(size){ %>
-            <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>"data-fashion-id="<%= fashion._id %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
+            <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>" data-fashion-image="<%= fashion.photo %>" data-fashion-id="<%= fashion._id %>" data-fashion-price="<%= fashion.price %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
             <% }); %>
 					</div>
 					<hr>
@@ -117,50 +117,4 @@
 </div>
 </div>
 </section>
-
-<script>
-var cart = [];
-function showCart(){
-  if(cart.length>0){
-    $(".myCart_quantity").text(cart.length);
-  }
-}
-function saveCart() {
-  if ( window.localStorage){
-    localStorage.cart = JSON.stringify(cart);
-  }
-}
-$(document).ready(function(){
-  if(localStorage.cart){
-    cart = JSON.parse(localStorage.cart);
-    showCart();
-  }
-  $(".sizes").on('click' , function(){
-    if($(this).hasClass("checked")){
-      $(this).removeClass('checked', false);
-    }else{
-      $(".sizes").removeClass('checked', false);
-      $(this).addClass('checked', true);
-    }
-  });
-  $(".sizebutton").on('click' , function(){
-    if($("span").hasClass("checked")){
-      var fashion_id = $(".checked").data("fashion-id");
-      var size_selected = $(".checked").data("size-name");
-      //Check if is in cart and prevent further addition to cart 
-      for (var i in cart) {
-        if(cart[i].fashion_id == name){
-          alert("Fashion already exists in cart");
-          return;
-        }
-      }
-      var item = {Fashion_id: fashion_id, Size_name: size_selected};
-      cart.push(item);
-      saveCart();
-      showCart();
-    }else{
-      alert("no size checked");
-    }
-  });
-});
-</script>
+<script src="/js/cart.js"></script>
