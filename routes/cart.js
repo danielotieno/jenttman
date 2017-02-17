@@ -10,10 +10,8 @@ var Cart= require('../models/cart')
 
 module.exports = {
 
-    new : function(req, res){
-    res.render('cart/new',{
-      id:req.params.id
-    });
+  new : function(req, res){
+    res.render('pages/checkout');
   },
 
   add: function(req, res){

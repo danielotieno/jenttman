@@ -57,12 +57,8 @@ module.exports = {
               fashion:fashion,
               sizes:sizes
             });
-          }else{
-            res.send("looks like you dont have any sizes in the database");
           }
         });
-      }else{
-        res.send("please call system admin to confirm some petty issues");
       }
     });
   },
@@ -139,7 +135,7 @@ module.exports = {
         });
       }
       else{
-        res.send("fashion does not exist so fuck off dude");
+        res.send("Fashion does not exist in the system");
       }
 
     });

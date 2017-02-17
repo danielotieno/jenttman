@@ -60,6 +60,10 @@ router.post('/admin/fashion/update',    fashionRoutes.update);
 router.get('/admin/fashion/delete/:id', fashionRoutes.delete);
 //router.get('/fashion/cart',          fashionRoutes.cart);
 
+/*
+ * @cart routes
+ */
+router.get('/fashion/checkout',        cartRoutes.new);
 
 /*
  * @category Routes
