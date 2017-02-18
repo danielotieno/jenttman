@@ -19,7 +19,7 @@ module.exports = {
       if(err) res.send(err);
 
       if(foundFashion){
-        console.log(foundFashion); 
+        console.log(foundFashion);
         cart.quantity = req.body.quantity;
         cart.size     = foundFashion._id;
         cart.fashion  = foundFashion._id;
@@ -29,7 +29,7 @@ module.exports = {
 
           console.log("cart added successfully");
           res.redirect('/pages/cart')
- 
+
         });
       }
       else{
@@ -61,7 +61,6 @@ module.exports = {
       }
     });
   },
-
     pay : function(req, res){
     Fashion.findOne({_id:req.params.id}, function(err, fashion){
       if(err) res.send(err);
@@ -83,5 +82,4 @@ module.exports = {
       }
     });
   },
-
 };
