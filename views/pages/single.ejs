@@ -1,47 +1,39 @@
 <% layout('pages/indexlayout') -%>
-<div class="container-fluid">
+<div class="container">
     <div class="content-wrapper">
 		<div class="item-container">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="product col-md-3 service-image-left">
-
-						<center>
-              
-              <img id="item-display" src="<%= fashion.photo %>" alt=""></img>
-              <p><%= fashion.price %></p>
-						</center>
+					<div class="product col-md-4 service-image-left">
+					  <center>
+					   <img id="item-display" src="<%= fashion.photo %>" alt=""></img>
+                       <p><%= fashion.price %></p>
+					  </center>
 					</div>
 
 					<div class="container service1-items col-sm-2 col-md-2 pull-left">
 						<center>
-							<a id="item-1" class="service1-item">
-                <img src="<%= fashion.photo %>" alt=""></img>
-							</a>
-							<a id="item-2" class="service1-item">
-                <img src="<%= fashion.photo %>" alt=""></img>
-							</a>
-							<a id="item-3" class="service1-item">
-                <img src="<%= fashion.photo %>" alt=""></img>
-							</a>
+						  <a id="item-1" class="service1-item">
+                          <img src="<%= fashion.photo %>" alt=""></img>
+						  </a>
+						  <a id="item-2" class="service1-item">
+                          <img src="<%= fashion.photo %>" alt=""></img>
+						  </a>
+						  <a id="item-3" class="service1-item">
+                          <img src="<%= fashion.photo %>" alt=""></img>
+						  </a>
 						</center>
 					</div>
 				</div>
 
 				<div class="com-md-6">
-           
-           </div>
-
-            </div>
-				<div class="col-md-7">
-          <div class="product-title"><%= fashion.name %></div>
-					<div class="product-desc">Round Toe Lace Up Black Leather Dress Shoes</div>
-					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+                    <div class="product-title"> <h>Name : </h><%= fashion.name %></div>
+					  <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-					<div class="product-stock">
-          
-					<div class="btn-group cart">
+					  <div class="product-stock">
+
+					  <div class="btn-group cart">
 <style>
   .sizes{
     background:#f5f5f5;
@@ -55,66 +47,39 @@
     background:black;
   }
 </style>
-            <% sizes.forEach(function(size){ %>
-            <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>" data-fashion-image="<%= fashion.photo %>" data-fashion-id="<%= fashion._id %>" data-fashion-price="<%= fashion.price %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
-            <% }); %>
+                  <h>Sizes : </h> <% sizes.forEach(function(size){ %>
+                  <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>" data-fashion-image="<%= fashion.photo %>" data-fashion-id="<%= fashion._id %>" data-fashion-price="<%= fashion.price %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
+                  <% }); %>
 					</div>
 					<hr>
-          <button class="button sizebutton">Add to cart</button>
-									</div>
+                      <button class="button sizebutton">Add to cart</button>
+				</div>
 			</div>
 		</div>
-		<div class="container-fluid">
-			<div class="col-md-12 product-info">
-					<ul id="myTab" class="nav nav-tabs nav_tabs">
 
-						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+			<div class="product-info">
+					<ul id="myTab" class="nav nav-tabs nav_tabs">
+                        <li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
 						<li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
 						<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>
-
 					</ul>
-				<div id="myTabContent" class="tab-content">
+			<div id="myTabContent" class="tab-content">
 						<div class="tab-pane fade in active" id="service-one">
-
-							<section class="container product-info">
+                        	<section class="container product-info">
 							<div class="product-desc"><%= fashion.desc %></div>
-								
 							</section>
-
-						</div>
-					<div class="tab-pane fade" id="service-two">
-
-						<section class="container">
-
-						</section>
-
-					</div>
-					<div class="tab-pane fade" id="service-three">
-
-					</div>
+						    </div>
+					        <div class="tab-pane fade" id="service-two">
+                            <section class="container">
+                            </section>
+					        </div>
+					        <div class="tab-pane fade" id="service-three">
+                            </div>
+                  </div>
 				</div>
-				<hr>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<section id="new">
-  <div id="modal3" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h5>New Post</h5>
-      <div class="row" id="edit">
-        <div class="input-field col s12 m6 l6">
-          <input placeholder="Say something about this photos" id="first_name" type="text" class="validate">
-        </div>
-        <div class="input-field col s12 m6 l6">
-        <a href="#!" class="secondary-content modal-action modal-close waves-effect waves-red btn-flat ">Post</a>
-        </div>
-        </div>
-    </div>
-  <div class="modal-footer">
-</div>
-</div>
-</section>
+			</hr>
+      </div>
+   </div>
+ </div>
+ </div>
 <script src="/js/cart.js"></script>
