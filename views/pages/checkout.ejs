@@ -1,39 +1,47 @@
-	
 <% layout('pages/indexlayout') -%>
 <div class="container">
 	<div class="check">	 
-			 <h1>My Shopping Bag (2)</h1>
-		 <div class="col-md-9 cart-items">
+     <h1>My Shopping Bag (2)</h1>
+   <div class="col-md-9 cart-items">
 			
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-        if (localStorage.cart) {
-          cart = JSON.parse(localStorage.cart);  
-        }
-
-      $("#cartBody").empty();
-      for(var i in cart){
-        //var row = cart[i].Fashion_name;
-        var item  = cart[i];
-        
-        var row = "<div class='cart-header'> <div class='close1'> </div> <div class='cart-sec simpleCart_shelfItem'> <div class='cart-item cyc'> <img src='"+item.Fashion_image+"' class='img-responsive' alt=''/> </div> <div class='cart-item-info'> <h3><a href='#'>"+item.Fashion_name+"</a><span>Model No: 3578</span></h3> <ul class='qty'> <li><p>Size : "+item.Size_name+"</p></li> <li><p>Qty : 1</p></li> </ul> <div class='delivery'> <p>Price Charges : "+item.Fashion_price+"</p> <span>Delivered in 2-3 bussiness days</span> <div class='clearfix'></div> </div>	</div> <div class='clearfix'></div> </div> </div> ";
-        $("#cartBody").append(row);
-      }
-					});
-       </script>
-			 <script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-							$('.cart-header2').fadeOut('slow', function(c){
-						$('.cart-header2').remove();
-					});
-					});	  
-					});
-			 </script>
-       <div id="cartBody"></div>
+         
+<% if(products){%>
+<% products.forEach(function(product){ %>
+<div class='cart-header'> 
+  <div class='close1'> 
+  </div> 
+  <div class='cart-sec simpleCart_shelfItem'> 
+    <div class='cart-item cyc'> 
+      <img src='<%= product.fashionphoto %>' class='img-responsive' alt=''/> 
+    </div> 
+    <div class='cart-item-info'> 
+      <h3>
+        <a href='#'><%= product.fashionname %></a>
+        <span>Model No: 3578</span>
+      </h3> 
+      <ul class='qty'> 
+        <li>
+          <p style="font-size:13px;">Size : <%= product.size %></p>
+        </li> 
+        <li><p>Quantity :<%= product.qty %> 
+          </p>
+        </li> 
+      </ul> 
+      <div class='delivery'> 
+        <p>Price Charges : <span class='price'><%= product.price %></span></p> 
+        <span>Delivered in 2-3 bussiness days</span> 
+        <div class='clearfix'>
+        </div> 
+      </div>	
+    </div> 
+    <div class='clearfix'>
+    </div> 
+  </div> 
+</div> 
+<% });
+        }else{%>
+        <h2>No items in cart yet</h2>
+        <% } %>
 		 </div>
 		  <div class="col-md-3 cart-total">
 			 <a class="continue" href="#">Continue to basket</a>
@@ -68,4 +76,3 @@
 	 </div>
 	 </div>
 
-<script src="/js/cart.js"></script>
