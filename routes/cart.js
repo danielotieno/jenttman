@@ -7,12 +7,38 @@ var Size= require('../models/size');
 var Fashion= require('../models/fashion')
 var Category = require('../models/category');
 var Cart= require('../models/cart')
+var Sesscart = require('../models/sesscart');
 
 module.exports = {
 
   new : function(req, res){
-    res.render('pages/checkout');
+    if(!req.session.cart){
+      return res.render('pages/checkout', {product:null});
+    }
+    var cart = new Sesscart(req.session.cart);
+    res.render('pages/checkout', {products:cart.generateArray(), totalPrice:cart.totalPrice});
   },
+
+  addtocart: function(req, res, next){
+    var fashion_id = req.params.fashion_id;
+    var size_id = req.params.size_id;
+    var sesscart = new Sesscart(req.session.cart? req.session.cart : {items:{}});
+
+    Size.findById(size_id, function(err, size){
+      if(err) return err;
+      
+      Fashion.findOne({_id:size.fashion}, function(err, fashion){
+        if(err) return err;
+        console.log(size.name+" "+size._id+ " " +fashion.price);
+
+        sesscart.add(size._id, size.name, fashion.price, fashion._id, fashion.name, fashion.photo);
+        req.session.cart = sesscart;
+        console.log(req.session.cart);
+        res.redirect('/');
+      });
+    });
+  },
+
 
   add: function(req, res){
     Fashion.findOne({_id :req.body.id}, function(err, foundFashion){
