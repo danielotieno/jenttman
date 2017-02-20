@@ -22,6 +22,7 @@ var mongostore = require('connect-mongo')(session);
 var bcrypt = require('bcryptjs');
 var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
+var paypal = require('paypal-rest-sdk');
 
 var env = process.env.NODE_ENV || 'development';
 
