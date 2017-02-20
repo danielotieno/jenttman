@@ -49,7 +49,8 @@ app.use(session({
   resave    : true,
   saveUninitialized:true,
   secret  :db.getSecret(env),
-  store   : new mongostore({ url :db.getDB(env), autoReconnect:true})
+  store   : new mongostore({ url :db.getDB(env), autoReconnect:true}),
+  cookie : { maxAge: 180*60*1000}
 }));
 
 //Create EJS Engine view
@@ -74,6 +75,7 @@ app.use(flash());
 app.use(function(req,res,next){
   res.locals.user   = req.user;
   res.locals.message = req.flash();
+  res.locals.session = req.session;
   next();
 });
 
