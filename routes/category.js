@@ -11,7 +11,7 @@ module.exports = {
       });
     });
   },
-
+  
   new : function(req, res){
     //route should give template to add categories to db
     res.render('admin/category/new');
@@ -44,7 +44,7 @@ module.exports = {
     //route for adding category to database which first checks to avoid duplication
     Category.findOne({name:req.body.category}, function(err, foundCategory){
       if(err) res.send(err);
-      if(foundCategory){ 
+      if(foundCategory){
         res.send("category already exists idiot");
         console.log(foundCategory);
       }
@@ -54,7 +54,7 @@ module.exports = {
 
         category.save(function(err, category){
           if(err) res.send(err);
-          
+
           //res.flash('message', 'Category saved successfully');
           res.redirect('/admin/category/index');
         });

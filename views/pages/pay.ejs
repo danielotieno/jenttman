@@ -5,60 +5,34 @@
 			<div class="container">
 				<div class="col-lg-12">
 				<div class="col-lg-6">
-                      <p>pay with mpesa<p>
-                                 <div class="col-md-3">
-               <span>Name</span>
-               </div>
-               <div class="col-md-9"> 
-                <input type="text" required class="form-control" id="Name" name="name"/>
-           </div>
-           <div class="col-md-3">
-              <span>brands</span>
-              </div>
-              <div class="col-md-9">
-              <input type="text" required class="form-control" id="Brand" name="brand"/> 
-              </div>
-          <div class="col-md-3">
-              <span>Description</span>
-              </div>
-              <div class="col-md-9">
-            <input type="text" required class="form-control" id="Desc" name="desc"/>
-           </div>
-           <div class="col-md-6">
-            <!--<input type="submit" value="submit">-->
-             <button class="large button success right">Add</button>
-           </div>
-           <div class="clearfix"> </div>
-				</div>
-				<div class="col-lg-6">
-                      <p>pay with paypal<p>
-                                 <div class="col-md-3">
-               <span>Name</span>
-               </div>
-               <div class="col-md-9"> 
-                <input type="text" required class="form-control" id="Name" name="name"/>
-           </div>
-           <div class="col-md-3">
-              <span>brands</span>
-              </div>
-              <div class="col-md-9">
-              <input type="text" required class="form-control" id="Brand" name="brand"/> 
-              </div>
-          <div class="col-md-3">
-              <span>Description</span>
-              </div>
-              <div class="col-md-9">
-            <input type="text" required class="form-control" id="Desc" name="desc"/>
-           </div>
+    <form class="form-horizontal" role="form" id="paypalForm" method="post" action="/paynow">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="amount">Amount:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="amount" placeholder="Enter Amount" required="required" value="10">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="currency">Currency:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="currency" placeholder="Enter Currency Type" value="USD" required="required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="description">Description:</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" name="description" placeholder="Enter Description">My First Payment</textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="send" class="btn btn-primary btn-lg" type="submit">
+         <span class="glyphicon glyphicon-send" ></span> Pay Now
+      </button>
+    </div>
+  </div>
+</form>
 
-           <div class="col-md-6">
-            <!--<input type="submit" value="submit">-->
-             <button class="large button success right">Add</button>
-           </div>
-           <div class="clearfix"> </div>
-				</div>
-
-				</div>
 
 			</div>
 		</div>

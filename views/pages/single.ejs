@@ -47,8 +47,9 @@
     background:black;
   }
 </style>
-                  <h>Sizes : </h> <% sizes.forEach(function(size){ %>
-                  <span class="sizes" role="button" data-fashion-name="<%= fashion.name %>" data-fashion-image="<%= fashion.photo %>" data-fashion-id="<%= fashion._id %>" data-fashion-price="<%= fashion.price %>" data-size-stock="<%= size.stock %>" data-size-name="<%= size.name %>"><%= size.name %></span>
+                  <h>Sizes : </h> 
+                  <% sizes.forEach(function(size){ %>
+                  <a class="btn btn-success" href="/add-to-cart/<%= fashion._id %>/<%= size._id %>"><%= size.name %></a>
                   <% }); %>
 					</div>
 					<hr>
