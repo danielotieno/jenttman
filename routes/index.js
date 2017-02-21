@@ -9,7 +9,8 @@ var categoryRoutes = require('./category');
 var roleRoutes     = require('./role');
 var sizeRoutes     = require('./size');
 var cartRoutes     = require('./cart');
-var payRoutes     = require('./pay');
+var payRoutes      = require('./pay');
+var ordersRoutes   = require('./orders');
 
 var multer = require('multer');
 var upload = multer({dest:'uploads/'});
@@ -98,6 +99,16 @@ router.get('/paypal', payRoutes.index);
 router.post('/paynow', payRoutes.payment);
 router.get('/success', payRoutes.success);
 router.get('/cancel', payRoutes.cancel);
+
+
+/*
+ * @order routes
+ */
+router.get('/new',    ordersRoutes.index);
+router.get('/sold',    ordersRoutes.sold);
+router.get('/awaiting',    ordersRoutes.awaiting);
+router.get('/admin/product',    ordersRoutes.product);
+
 /*
  * @Role routes
  */
