@@ -65,7 +65,9 @@ router.get('/admin/fashion/delete/:id', fashionRoutes.delete);
  * @cart routes
  */
 router.get('/fashion/checkout',                 cartRoutes.new);
-router.get('/add-to-cart/:fashion_id/:size_id', cartRoutes.addtocart);
+router.get('/add-to-cart/:size_id', cartRoutes.addtocart);
+router.get('/remove-from-cart/:size_id', cartRoutes.removeonefromcart);
+router.get('/add-qty-to-cart/:size_id', cartRoutes.addqtytocart);
 
 /*
  * @category Routes

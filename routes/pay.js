@@ -27,11 +27,15 @@ module.exports = {
   index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
+      var cart = new Sesscart(req.session.cart);
       res.render('pages/pay',{
-          fashion : fashion
+          fashion : fashion,
+          products:cart.generateArray(),
+          totalPrice:cart.totalPrice
       });
     });
   },
+
   payment : function(req, res){
       // paypal payment configuration.
   var payment = {
