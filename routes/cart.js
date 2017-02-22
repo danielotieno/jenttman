@@ -79,6 +79,7 @@ module.exports = {
     var sesscart = new Sesscart(req.session.cart);
 
     sesscart.removeobject(size_id);
+    req.session.cart = sesscart;
     res.redirect('/fashion/checkout');
   },
 

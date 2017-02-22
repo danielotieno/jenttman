@@ -42,7 +42,7 @@ module.exports = function Sesscart(oldCart) {
     var storedItem = this.items[id];
     this.totalQty-=parseFloat(storedItem.qty);
     this.totalPrice-=parseFloat(storedItem.price);
-    console.log(this.totalQty);
+    console.log(storedItem.price);
     delete this.items[id];
   }
   
