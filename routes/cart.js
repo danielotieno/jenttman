@@ -74,6 +74,14 @@ module.exports = {
     });
   },
 
+  deletecart : function(req, res, next){
+    req.session.destroy(function(err){
+      if(err) return(err);
+      
+      res.redirect('/');
+    });
+  },
+
   removecartobject: function(req, res, next){
     var size_id = req.params.size_id;
     var sesscart = new Sesscart(req.session.cart);
