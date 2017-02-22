@@ -25,14 +25,14 @@
           </ul>
         </div>
        </div>      
-        <div class="col-md-9 compose-right scroll">
+        <div class="col-md-9 compose-right scroll_fashion">
           <div class="inbox-details-default">
             <div class="inbox-details-heading">
-              Add  Category 
+              Update Fashion
             </div>
             <div class="inbox-details-body">
               <div class="alert alert-info">
-                Please fill details to add new category
+                Please fill details to update fashion
               </div>
            <form id="Fashion-form" action="/admin/fashion/update" method="post"> 
         <div class="col-lg-4">
@@ -52,18 +52,23 @@
               <span>Description</span>
               <input type="text" class="form-control" id="Desc" name="desc" placeholder="<%= fashion.desc %>"/>
            </div>
-           <div>
-              <span>Photo</span>
-              <input type="file" class="form-control" id="upload" name="upload" placeholder="<%= fashion.photo %>"/>
-           </div>
-           <div>
+                      <div>
              <input type="hidden" name = "fashionid" value = "<%= fashion._id %>"/>
             <!--<input type="submit" value="submit">-->
-             <button class="large button success right">update</button>
+             <input type="submit" class="btn large button success right" value="update details">
            </div>
+            </div>
            <div class="clearfix"> </div>
         </form>
-            </div>
+        <form id="Fashion-form" action="/admin/fashion/image/update" method="post" enctype="multipart/form-data"> 
+          <div>
+            <span>Photo</span>
+            <input type="file" class="form-control" id="upload" name="upload" />
+             <input type="hidden" name = "fashionid" value = "<%= fashion._id %>"/>
+             <input type="submit" value="update photo" class="btn large button success right" >
+         </div>
+        </form>
+
           </div>
         </div>
       

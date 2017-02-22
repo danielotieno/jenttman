@@ -13,7 +13,7 @@ module.exports = {
 
   new : function(req, res){
     if(!req.session.cart){
-      return res.render('pages/checkout', {product:null});
+      return res.render('pages/checkout', {products:null, totalPrice:'0'});
     }
     var cart = new Sesscart(req.session.cart);
     console.log(cart.generateArray());
@@ -22,6 +22,7 @@ module.exports = {
 
   addtocart: function(req, res, next){
     var size_id = req.params.size_id;
+    var fashion_id = req.params.fashion_id;
     var sesscart = new Sesscart(req.session.cart? req.session.cart : {items:{}});
 
     Size.findById(size_id, function(err, size){
@@ -71,6 +72,14 @@ module.exports = {
         res.redirect('/fashion/checkout');
       });
     });
+  },
+
+  removecartobject: function(req, res, next){
+    var size_id = req.params.size_id;
+    var sesscart = new Sesscart(req.session.cart);
+
+    sesscart.removeobject(size_id);
+    res.redirect('/fashion/checkout');
   },
 
   add: function(req, res){
