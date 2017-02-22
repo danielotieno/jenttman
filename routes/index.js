@@ -71,6 +71,7 @@ router.get('/add-to-cart/:fashion_id/:size_id', cartRoutes.addtocart);
 router.get('/remove-from-cart/:size_id',        cartRoutes.removeonefromcart);
 router.get('/add-qty-to-cart/:size_id',         cartRoutes.addqtytocart);
 router.get('/remove-object/:size_id',           cartRoutes.removecartobject);
+router.get('/session/cart/delete',              cartRoutes.deletecart);
 
 /*
  * @category Routes
