@@ -177,12 +177,27 @@ module.exports = {
       if(req.body.desc) fashion.desc   = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
       if(req.body.price) fashion.price = req.body.price;
-      if(req.body.photo) fashion.photo = req.body.photo;
 
       fashion.save(function(err, fashion){
         if(err) return next(err);
         res.redirect('/admin/fashions');
       });
     });
+  },
+
+  updateimage : function(req, res, next){
+    console.log(req.file);
+    Fashion.findOne({_id:req.body.fashionid}, function(err, fashion){
+      console.log(fashion);
+      if(err) return next(err);
+
+      fashion.photo = req.file.path;
+      fashion.save(function(err, fashion){
+        if(err) return next(err);
+        res.redirect('/admin/fashions');
+      });
+    });
   }
+
+
 };

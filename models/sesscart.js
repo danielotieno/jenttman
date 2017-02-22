@@ -25,17 +25,26 @@ module.exports = function Sesscart(oldCart) {
 
   this.remove = function(id, fashionPrice){
     var storedItem = this.items[id];
-    if(storedItem.qty == 1)
-      delete storedItem;
+    if(storedItem.qty == 1){
+      this.totalQty--;
+      this.totalPrice-=parseFloat(fashionPrice);
+      delete this.items[id];
+    }
     else{
       storedItem.qty--;
       storedItem.price = parseFloat(fashionPrice * storedItem.qty);
       this.totalQty--;
       this.totalPrice-=parseFloat(fashionPrice);
     }
-
-
   };
+
+  this.removeobject = function(id){
+    var storedItem = this.items[id];
+    this.totalQty-=parseFloat(storedItem.qty);
+    this.totalPrice-=parseFloat(storedItem.price);
+    console.log(this.totalQty);
+    delete this.items[id];
+  }
   
   this.generateArray = function(){
     var arr = [];
