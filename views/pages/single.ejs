@@ -31,7 +31,7 @@
                     <div class="product-title"> <h>Name : </h><%= fashion.name %></div>
 					  <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-					  <div class="product-stock">
+					  <div>
 
 					  <div class="btn-group cart">
 <style>
@@ -47,13 +47,13 @@
     background:black;
   }
 </style>
-                  
+<p><i>Select size to add item to cart</i></p>
                   <% sizes.forEach(function(size){ %>
-                  <a class="btn btn-success" href="/add-to-cart/<%= fashion._id %>/<%= size._id %>"><%= size.name %></a>
+
+                  <a class="continue btn" href="/add-to-cart/<%= fashion._id %>/<%= size._id %>"><%= size.name %></a>
                   <% }); %>
 					</div>
 					<hr>
-                      <button class="button sizebutton">Add to cart</button>
 				</div>
 			</div>
 		</div>
