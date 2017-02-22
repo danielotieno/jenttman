@@ -43,7 +43,7 @@
 .skyblue,.skyblue>li.showhide{
 }
 .memenu>li.active>a {
-color:#EF5F21;
+color:#141414;
 
 }	
 .skyblue li>a,.skyblue>li.showhide span{color:#000}
@@ -118,7 +118,7 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 /* start memenu colors */
 
 .skyblue li a.color1:hover{
-	background:#EF5F21;
+	background:#999999;
 	color: #ffffff;
 }
 .skyblue li a.color2:hover{
@@ -135,7 +135,7 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 }
 
 .skyblue li a.color6:hover{
-	background:#00677C;
+	background:#999999;
 	color: #ffffff;
 }
 	

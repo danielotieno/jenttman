@@ -140,7 +140,7 @@ a.item_add {
 	  margin: 0 2em 0 0;
 }
 .header-left ul li a:hover{
-		color:  #EF5F21; 
+		color:  #999999; 
 }
 .logo{
 	float: left;
@@ -178,7 +178,7 @@ a.item_add {
   transition: all 0.3s ease-in-out;
 }
 .h_nav ul li a:hover{
-	color:#EF5F21;
+	color:#1a1a1a;
 	text-decoration:underline;
 }
 /*--banner--*/
@@ -289,13 +289,13 @@ height: 35px;
 	text-decoration: none;
 	color:#fff;
 	font-size:1.2em;
-	background: #EF5F21;
+	background: #141414;
 	padding: 0.4em 1em;
 	border-radius:5px;
 }
 .banner-text a:hover{
-	color: #EF5F21;
-	background: #fff;
+	color: #141414;
+	background: #d3d3d3;
 }
 /*--content-top--*/
 .content-top h1{
@@ -547,7 +547,7 @@ ul.nav-bottom li  a:hover{
 
 }
 .footer-class  p a{
-	color:#EF5F21;
+	color:#222222;
 	text-decoration:none;
 }
 .footer-class  p a:hover{
@@ -574,14 +574,14 @@ padding:1em 0 0;
   width: 20%;
   color: #FFF;
   font-size: 1em;
-  background:#EF5F21;
+  background:#141414;
   border: none;
   outline:none;
   padding: 0.5em;
 }
 .amet-sed input[type="submit"]:hover {
-background: #fff;
-color:#EF5F21;
+background: #999999;
+color:#000;
 }
 ul.social{
 	padding:1em 0 0;
@@ -1353,7 +1353,7 @@ a.add-re:hover{
 	position: relative;
 }
 .news-letter {
-	color: #EF5F21;
+	color: #000;
 	font-size: 1em;
 	margin-bottom: 1em;
 	display:inline-block;
@@ -1372,7 +1372,7 @@ a.add-re:hover{
 	width:20px;
 	height:20px;
 	outline: none;
-	border: 2px solid #EF5F21;
+	border: 2px solid #1a1a1a;
 }
 .checkbox input + i:after {
 	content: '';
@@ -1404,7 +1404,7 @@ a.add-re:hover{
 	color:#000;
 }
 .register-bottom-grid input[type="submit"] {
-	background: #EF5F21;
+	background: #000;
 	padding: 0.4em 1em;
 	color: #fff;
 	font-size:1.2em;
@@ -1417,7 +1417,7 @@ a.add-re:hover{
 	outline:none;
 }
 .register-bottom-grid input[type="submit"]:hover{
-	background:#000;
+	background:#999999;
 	
 }
 /*--//register--*/
@@ -1459,7 +1459,7 @@ a.add-re:hover{
 	padding:7px 20px;
 	color:#FFF;
 	cursor:pointer;
-	background:#EF5F21;
+	background:#000;
 	border:none;
 	width:20%;
    margin:1em auto 0;
@@ -1471,7 +1471,7 @@ a.add-re:hover{
 	font-size: 1.2em;
 }
 .account-top input[type="submit"]:hover{
-	background:#000;
+	background:#999999;
 }
 
 .account{
