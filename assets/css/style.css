@@ -155,6 +155,10 @@ a.item_add {
 	width: 165px;
 	height: 50px;
 }
+.logo-name a img{
+	width: 165px;
+	height: 50px;
+}
 .head-top {
   padding: 1em 0;
 }
