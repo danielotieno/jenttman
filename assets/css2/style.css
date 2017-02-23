@@ -24,6 +24,18 @@ a:hover {
   -o-transition: 0.5s all;
   text-decoration:none;
 }
+
+.btn-primary:hover, .btn-primary:focus{
+    color: #fff;
+    background-color: #1a1a1a;
+    border-color: #333;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #999999;
+}
 .fixed{
 	position: fixed;
 	top: 0;
@@ -301,6 +313,11 @@ width: 820px;
 	 color: #910048;
 }
 .logo-name a {
+    display:inline-block;
+}
+.logo-name a img {
+    width: 165px;
+    height: 50px;
     display:inline-block;
 }
 .nav > li > a:hover, .nav > li > a:focus {
@@ -821,7 +838,7 @@ ul.dropdown-menu.drp-mnu li {
 }
 .user-name p{
 	font-size:1em;
-	color:#FC8213;
+	color:#000;
 	line-height:1em;
 	font-weight:700;
 }
@@ -2229,7 +2246,7 @@ table ul li{
     padding: 1em 1em;
 }
 .mail-profile {
-    background: #FC8213;
+    background: #000;
     padding: 1em 1em;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
 }
@@ -2333,7 +2350,7 @@ ul.nav.tabs li a span {
 }
 .inbox h2 {
     font-size: 2em;
-    color: #68AE00;
+    color: #2c2c2c;
     margin-bottom: 1em;
     font-family: 'Carrois Gothic', sans-serif;
 }
