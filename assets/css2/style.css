@@ -25,6 +25,12 @@ a:hover {
   text-decoration:none;
 }
 
+.btn-primary:hover, .btn-primary:focus{
+    color: #fff;
+    background-color: #1a1a1a;
+    border-color: #333;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #000;
@@ -2344,7 +2350,7 @@ ul.nav.tabs li a span {
 }
 .inbox h2 {
     font-size: 2em;
-    color: #68AE00;
+    color: #2c2c2c;
     margin-bottom: 1em;
     font-family: 'Carrois Gothic', sans-serif;
 }
