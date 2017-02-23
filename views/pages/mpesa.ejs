@@ -1,7 +1,7 @@
 <% layout('pages/indexlayout') -%>
 <!--content-->
 <div class="container">
-    <div class="account">
+    <div class="account jumbotron">
     <div class="account-pass">
 <div class="col-md-6 account-top">
         <h2>Delivery details</h2>
@@ -55,8 +55,21 @@
         <div class="col-sm-10">
           <input type="text" name="currency" placeholder="Enter Currency Type" value="232345" required="required">
         </div>
+        <p> To make payment, follow steps below.</p>
+        <ol>
+             <li>Go to your mpesa menu.</li>
+             <li>Select Lipa na mpesa.</li>
+             <li>Select Paybill.</li>
+             <li>Enter Business Number .</li>
+             <li>Enter account number Jenttman .</li>
+             <li>Enter amount  .</li>
+             <li>Enter your mpesa pin and click Ok.</li>
+        <ol>
     </div>
-           <input type="submit" class="btn large button success right" value="Pay Now">
+     
+        <div class="alert alert-success">
+          <p>You will receive an email once your transaction is successful</p>
+       </div>
 
     </form>
     </div>
