@@ -3,8 +3,7 @@
 <div class="container">
 		<div class="account">
 		<div class="account-pass">
-<div class="col-md-8 account-top">
-		<div class="col-md-12 account-top">
+    <div class="col-md-8 account-top">
         <h2>Delivery details</h2>
 			<form action="/login" method="post">
 			<div>
@@ -38,39 +37,16 @@
       </div>
       </div>
 			</form>
-		</div>
-
-      <div class="col-md-12 account-top">
-      <h2>Paypal checkout</h2>
-        <form action="/paynow" method="post" >
-        <span class="col-sm-2">Amount :</span>
-        <div class="col-sm-10">
-          <input type="text" name="amount" placeholder="Enter Amount" required="required" value="<%= totalPrice %>">
+</div>
+  <div class="col-md-4 account-top ">
+       <div class="logo">
+         <h3>Checkout with :</h3></br>
+				 <a href="/paypal/:id"><img src="images/paypal1.jpg" alt=""></a>
+         <a href="/mpesa/:id"><img src="images/mpesa.jpg" alt=""></a>
         </div>
 
-        <span class="col-sm-2">Currency</span>
-        <div class="col-sm-10">
-          <input type="text" name="currency" placeholder="Enter Currency Type" value="USD" required="required">
-        </div>
-
-           <input type="submit" class="btn large button success right" value="Pay Now">
-
-    </form></br>
-          <a class="btn btn-success" href="#">Mpesa checkout</a>
-      </div>
 </div>
-		<div class="col-md-4 left-account ">
-			<a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
-			<div class="five">
-			<h2>25% </h2><span>discount</span>
-			</div>
-			<a href="/register" class="create">Create an account</a>
-      <div class="clearfix"> </div>
-		</div>
 
-<div class = "row">
-
-</div>
 
 	<div class="clearfix"> </div>
 </div>
