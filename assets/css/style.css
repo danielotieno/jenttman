@@ -8,6 +8,7 @@ body{
 	background:#fff;
 	font-family: 'Roboto', sans-serif;
 }
+
  a{
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -149,6 +150,10 @@ a.item_add {
 }
 .logo{
 	float: left;
+}
+.logo a img{
+	width: 165px;
+	height: 50px;
 }
 .head-top {
   padding: 1em 0;
@@ -308,7 +313,8 @@ height: 35px;
 	font-size: 2.2em;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
-    margin-bottom: 0.5em;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
 }
 .content-top {
 	text-align:center;
