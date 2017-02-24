@@ -17,7 +17,7 @@ order : function(req, res){
     Fashion.find({}, function(err, Fashion){
       if(err) res.send(err);
       var cart = new Sesscart(req.session.cart);
-      res.render('pages/pay',{
+      res.render('pages/billing',{
           products:cart.generateArray(),
           totalPrice:cart.totalPrice
       });
@@ -44,7 +44,7 @@ order : function(req, res){
           orders.save(function(err, orders){
             if(err) res.send(err);
 
-            res.redirect('/mpesa/:id');
+            res.redirect('/payment/:id');
           });
         });
     

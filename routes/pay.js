@@ -36,31 +36,20 @@ module.exports = {
     });
   },*/
 
-  mpesa : function(req, res){
+  payment : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
       var cart = new Sesscart(req.session.cart);
-      res.render('pages/mpesa',{
+      res.render('pages/payment',{
           fashion : fashion,
           products:cart.generateArray(),
           totalPrice:cart.totalPrice
       });
     });
   },
+
 
   paypal : function(req, res){
-    Fashion.find({}, function(err, fashion){
-      if(err) res.send(err);
-      var cart = new Sesscart(req.session.cart);
-      res.render('pages/paypal',{
-          fashion : fashion,
-          products:cart.generateArray(),
-          totalPrice:cart.totalPrice
-      });
-    });
-  },
-
-  payment : function(req, res){
       // paypal payment configuration.
   var payment = {
   "intent": "sale",
