@@ -15,6 +15,7 @@ body{
 	-o-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-ms-transition: 0.5s all;
+	color: #fff;
 }
 ul{
 	padding: 0;
@@ -571,7 +572,7 @@ ul.nav-bottom li  a:hover{
 
 }
 .footer-class  p a{
-	color:#222222;
+	color:#000;
 	text-decoration:none;
 }
 .footer-class  p a:hover{
@@ -614,7 +615,7 @@ ul.social li{
 	display: inline-block;
 }
 ul.social li i{
-	background: url(../images/img-sprite.png)no-repeat -9px -14px ;
+	background: url(../images/img-sprit.png)no-repeat -9px -14px ;
   width: 24px;
   height: 24px;
 	display: inline-block;
