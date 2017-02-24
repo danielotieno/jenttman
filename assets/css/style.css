@@ -15,6 +15,7 @@ body{
 	-o-transition: 0.5s all;
 	-moz-transition: 0.5s all;
 	-ms-transition: 0.5s all;
+	color: #fff;
 }
 ul{
 	padding: 0;
