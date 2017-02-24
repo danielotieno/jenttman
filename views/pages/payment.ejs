@@ -4,9 +4,9 @@
     <div class="account jumbotron">
     <div class="account-pass">
       <div class ="row">
-        <p class="center-align" style="font-size:35px; line-height:0.3em; ">CHECKOUT WITH :</p>
-    <div class="col-md-6 account-top ">
+        <p class="center-align" style="font-size:35px; line-height:0.3em; "><b>CHECKOUT WITH :</b></p>
 
+    <div class="col-md-4 account-top ">
       <div class="logo col-sm-12">
       <a href="/paypal/:id"><img src="images/mpesa.jpg" alt=""></a>
      </div>
@@ -36,7 +36,39 @@
     </form>
     </div>
 
-    <div class="col-md-6 account-top ">
+
+<div class="col-md-4 account-top ">
+  <div class="logo col-sm-12">
+  <a href="/paypal/:id"><img src="images/airtel.jpg" alt=""></a>
+ </div>
+    <form action="/" method="post" ></br></br>
+      <div>
+    <div>
+      <input type="hidden" name="amount" placeholder="Enter Amount" required="required" value="<%= totalPrice %>">
+    </div>
+  </div>
+  <div>
+    <p> To make payment, follow steps below.</p>
+    <ol>
+         <li>GO to your airtel money menu</li>
+         <li>Select on Make payments option</li>
+         <li>Choose on Pay bill</li>
+         <li>Then go to OTHER option</li>
+         <li>Choose on Jenttman</li>
+         <li>Then Enter the Amount to Pay in kshs </li>
+         <li>Click Send option
+         <li>After that input your PIN ****</li>
+    <ol>
+</div>
+
+    <div class="alert alert-success">
+      <p>You will receive an email once your transaction is successful</p>
+   </div>
+
+</form>
+</div>
+
+    <div class="col-md-4 account-top ">
       <div class="logo col-sm-12">
       <a href="#"><img src="images/paypal1.jpg" alt=""></a>
      </div>
@@ -55,16 +87,6 @@
            <input type="submit" class="btn large button success right" value="Pay Now">
 </div>
     </form>
-
-      <div class="logo col-sm-12">
-        <a href="#"><img src="images/equity.jpg" alt=""></a>
-          </div>
-        <div class="logo col-sm-12">
-          <a href="#"><img src="images/airtel.jpg" alt=""></a>
-            </div>
-          <div class="logo col-sm-12">
-            <a href="#"><img src="images/orange.jpg" alt=""></a>
-      </div>
     </div>
 
   </div>
