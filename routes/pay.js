@@ -24,7 +24,7 @@ paypal.configure(config.api);
 // Page will display after payment has beed transfered successfully
 
 module.exports = {
-  index : function(req, res){
+ /* index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
       var cart = new Sesscart(req.session.cart);
@@ -34,7 +34,7 @@ module.exports = {
           totalPrice:cart.totalPrice
       });
     });
-  },
+  },*/
 
   mpesa : function(req, res){
     Fashion.find({}, function(err, fashion){

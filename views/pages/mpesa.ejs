@@ -4,6 +4,7 @@
     <div class="account jumbotron">
     <div class="account-pass">
 <div class="col-md-6 account-top">
+
         <h2>BILLING DETAILS</h2>
       <form action="/login" method="post">
       <div>
@@ -29,14 +30,29 @@
         <div class="col-sm-10">
         <input type="text" name="location" required="required">
       </div>
+
+
+    <div class="col-md-6 account-top ">
+      <div class="logo col-sm-12">
+      <a href="/paypal/:id"><img src="images/paypal1.jpg" alt=""></a>
+     </div>
+        <form action="/paynow/:id" method="post" >
+          <div>
+        <div >
+          <input type="hidden" name="amount" placeholder="Enter Amount" required="required" value="<%= totalPrice %>">
+        </div>
+
       </div>
       <div>
-        <span class="col-sm-2">Postal Address</span>
         <div class="col-sm-10">
-        <input type="text" name="address" required="required">
-      </div>
-      </div>
-      </form>
+          <input type="hidden" name="currency" placeholder="Enter Currency Type" value="USD" required="required">
+        </div>
+    </div>
+    <div class="col-sm-12">
+           <input type="submit" class="btn large button success right" value="Pay Now">
+</div>
+    </form>
+    </div>
     </div>
 
     <div class="logo">
@@ -45,16 +61,12 @@
     <div class="col-md-6 account-top ">
         <form action="/" method="post" >
           <div>
-        <span class="col-sm-2">Amount :</span>
         <div class="col-sm-10">
-          <input type="text" name="amount" placeholder="Enter Amount" required="required" value="<%= totalPrice %>">
+          <input type="hidden" name="amount" placeholder="Enter Amount" required="required" value="<%= totalPrice %>">
         </div>
       </div>
       <div>
-        <span class="col-sm-2">Paybill:</span>
-        <div class="col-sm-10">
-          <input type="text" name="currency" placeholder="Enter Currency Type" value="232345" required="required">
-        </div>
+        <p><b>Paybill: 4793489</b></p>
         <p> To make payment, follow steps below.</p>
         <ol>
              <li>Go to your mpesa menu.</li>

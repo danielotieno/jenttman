@@ -53,8 +53,14 @@
                   <a class="continue btn" href="/add-to-cart/<%= fashion._id %>/<%= size._id %>"><%= size.name %></a>
                   <% }); %>
 					</div>
-					<hr>
+					</hr>
 				</div>
+        <hr>
+        		<div class="btn-group cart">
+                <p><i> Proceed to order <b><%= fashion.name %></b></i></p>
+        	     <a class="order" href="/pay/:id">Place Order</a>
+        	  </div>
+        </hr>
 			</div>
 		</div>
 

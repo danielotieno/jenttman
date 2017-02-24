@@ -6,29 +6,35 @@
 
     <div class="col-md-8 account-top">
         <h2>BILLING DETAILS</h2>
-			<form action="/login" method="post">
+			<form action="/billing" method="post">
 			<div>
-				<span class="col-sm-2"><b>Full Name</b></span>
+				<span class="col-sm-2"><b>First Name</b></span>
         <div class="col-sm-10">
-				<input type="text" name="username" required="required">
+				<input type="text" name="fname" required="required">
 			</div>
       </div>
 			<div>
-				<span class="col-sm-2"><b>Email</b></span>
+				<span class="col-sm-2"><b>Last Name</b></span>
         <div class="col-sm-10">
-				<input type="text" name="email" required="required">
+				<input type="text" name="lname" required="required">
 			</div>
       </div>
       <div>
-        <span class="col-sm-2"><b>Phone Number</b></span>
+        <span class="col-sm-2"><b>Company Name</b></span>
         <div class="col-sm-10">
-        <input type="text" name="phonenumber" required="required">
+        <input type="text" name="companyname" required="required">
       </div>
       </div>
       <div>
-        <span class="col-sm-2"><b>Location</b></span>
+        <span class="col-sm-2"><b>Email</b></span>
         <div class="col-sm-10">
-        <input type="text" name="location" required="required">
+        <input type="text" name="email" required="required">
+      </div>
+      </div>
+      <div>
+        <span class="col-sm-2"><b>Country</b></span>
+        <div class="col-sm-10">
+        <input type="text" name="country" required="required">
       </div>
       </div>
       <div>
@@ -37,22 +43,33 @@
         <input type="text" name="address" required="required">
       </div>
       </div>
+            <div>
+        <span class="col-sm-2"><b>Town/city</b></span>
+        <div class="col-sm-10">
+        <input type="text" name="town" required="required">
+      </div>
+      </div>
+      <div>
+            <div>
+        <span class="col-sm-2"><b>State/County</b></span>
+        <div class="col-sm-10">
+        <input type="text" name="county" required="required">
+      </div>
+      </div>
+                  <div>
+        <span class="col-sm-2"><b>Postalcode/Zip</b></span>
+        <div class="col-sm-10">
+        <input type="text" name="postalcode" required="required">
+      </div>
+      </div>
+      <div>
+      <input type="submit" value="submit">
+      </div>
 			</form>
 
 </div>
-  <div class="col-md-4 account-top ">
-       <div class="logo">
-         <h3>Checkout with :</h3></br>
-         <div class="col-sm-10">
-				 <a href="/paypal/:id"><img src="images/paypal1.jpg" alt=""></a>
-         </div>
-         <div class="col-sm-10">
-         <a href="/mpesa/:id"><img src="images/mpesa.jpg" alt=""></a>
-         </div>
-        </div>
 
 </div>
-
 
 
 	<div class="clearfix"> </div>
