@@ -28,7 +28,9 @@ p{
 	font-size: 20px;
 	padding-bottom: 10px;
 }
+.
 /*----*/
+
 .itemContainer{
 			width:100%;
 			float:left;
@@ -1471,7 +1473,9 @@ a.add-re:hover{
 
 	font-size:1em;
 }
-
+.center-align{
+	text-align: center;
+}
 .account-top textarea{
 	resize:none;
 	height:60px;
