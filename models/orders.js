@@ -7,6 +7,7 @@ var User     = require('./user');
 var Category = require('./category');
 var Size     = require('./size');
 var Sesscart = require('./sesscart');
+var Fashion  = require('./fashion')
 
 var OrderSchema = Schema({
   fname:       {type:String, index:true},
@@ -18,7 +19,8 @@ var OrderSchema = Schema({
   town:        {type:String},
   county:      {type:String},
   postalcode:  {type: Number},
-  user:        [{type:Schema.Types.ObjectId, ref:User}]
+  fashion:[{type:Schema.Types.ObjectId, ref:Fashion}],
+  user:     [{type:Schema.Types.ObjectId, ref:User}]
 });
 
 OrderSchema.methods.getOrderByEmail = function(email, callback){

@@ -1483,7 +1483,7 @@ a.add-re:hover{
 	cursor:pointer;
 	background:#000;
 	border:none;
-	width:50%;
+	width:20%;
    margin:1em auto 0;
    transition: 0.5s all;
 	-webkit-transition: 0.5s all;
