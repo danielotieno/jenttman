@@ -100,9 +100,9 @@ router.get('/fashion/pay/:id',           cartRoutes.pay);
 /*
  * @Paypal routes
  */
-router.get('/mpesa/:id',   payRoutes.mpesa);
+router.get('/payment/:id',   payRoutes.payment);
 router.get('/paypal/:id',  payRoutes.paypal);
-router.post('/paynow/:id', payRoutes.payment);
+router.post('/paynow/:id', payRoutes.paypal);
 router.get('/success/:id', payRoutes.success);
 router.get('/cancel/:id',  payRoutes.cancel);
 
