@@ -4,7 +4,8 @@ module.exports =  {
   new : function(req, res){
     res.render('pages/login', {
         message: req.flash('loginMessage'),
-        title: "Login Page"
+        title: "Login Page",
+        errors: ""
     });
   },
 
