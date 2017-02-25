@@ -10,6 +10,7 @@ module.exports = {
   index : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
+
       res.render('pages/index',{
           fashion : fashion
       });
@@ -25,7 +26,7 @@ module.exports = {
             Fashion.find({category:foundCategory._id}, function(err, fashion){
                 console.log(fashion);
                 res.render('pages/categories',{
-                    fashion:fashion
+                    fashion : fashion
                 });
             });
         }else{
