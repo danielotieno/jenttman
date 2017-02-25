@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "online clothing wear",
   "main": "server.js",
+  "scripts": {
+    "start": "npm install && bower install && rm -rf .tmp/ && nodemon -e css,html,js server.js -L",
+    "predev": "./bin/grunt",
+    "dev": "npm install && bower install && rm -rf .tmp/ & ./bin/nodedev server & ./bin/grunt watch"
+  },
   "dependencies": {
     "base64url": "^2.0.0",
     "bcrypt": "^1.0.1",
