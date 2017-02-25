@@ -8,7 +8,7 @@ module.exports = [
 
   {
     'environment': 'production',
-    'url'       : process.env.MONGOLAB_URI,
+    'url'       : process.env.MONGODB_URI,
     'secret'    : 'anystringoftext'
   }
 ];
