@@ -10,6 +10,12 @@ var UserSchema = Schema({
     fname: { type: String },
     lname: { type: String },
     email:    { type: String },
+    companyname: {type: String},
+    country:     {type:String},
+    address:     {type:String},
+    town:        {type:String},
+    county:      {type:String},
+    postalcode:  {type: Number},
     role:     [{type: Schema.Types.ObjectId, ref:Role }]
 });
 
@@ -36,4 +42,3 @@ module.exports.getUserByUsername = function(username, callback){
 module.exports.getUserById = function(id,callback){
   User.findById(id,callback);
 };
-
