@@ -8,7 +8,7 @@ var Category = require('../models/category');
 var Size     = require('../models/size');
 var Cart= require('../models/cart')
 var Sesscart = require('../models/sesscart');
-var Orders     = require('../models/orders');
+var Orders     = require('../models/user');
 
 module.exports = {
   //route to view template with fashions already in the system
@@ -28,26 +28,26 @@ order : function(req, res){
         User.findOne({username:req.body.username}, function(err, foundUser){
           if(err) res.send(err);
 
-          var orders      = new Orders();
-          orders.fname    = req.body.fname;
-          orders.lname    = req.body.lname;
-          orders.companyname    = req.body.companyname;
-          orders.email   = req.body.email;
-          orders.country    = req.body.country;
-          orders.address= req.body.address;
-          orders.town= req.body.town;
-          orders.county= req.body.county;
-          orders.postalcode  = req.body.postalcode;
+          var user      = new User();
+          user.fname    = req.body.fname;
+          user.lname    = req.body.lname;
+          user.companyname    = req.body.companyname;
+          user.email   = req.body.email;
+          user.country    = req.body.country;
+          user.address= req.body.address;
+          user.town= req.body.town;
+          user.county= req.body.county;
+          user.postalcode  = req.body.postalcode;
 
-          console.log("orders at this stage", orders);
-         
-          orders.save(function(err, orders){
+          console.log("orders at this stage", user);
+
+          user.save(function(err, user){
             if(err) res.send(err);
 
             res.redirect('/payment/:id');
           });
         });
-    
+
   },
 
 
