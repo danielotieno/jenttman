@@ -2,7 +2,6 @@
 <!--content-->
 <div class=" container">
 <div class=" login">
-	<h1>Login</h1>
 		  	  <form action="/login" method="post">
             <% if(errors.length>0){ %>
               <% for(var i=0; i<errors.length; i++){ %>
@@ -15,15 +14,15 @@
               <% } %>
             <% } %>
 				     <div class="col-md-6 register-bottom-grid">
-						    <h3>Login information</h3>
-							 <div>
-								<span>Password</span>
-								<input type="password" name="password">
-							 </div>
-							 <div>
-								<span>Confirm Password</span>
-								<input type="password" name="password2">
-							 </div>
+						<h3><b>Login information</b></h3>
+						    <div class="form-group">
+  							<label for="usr">Username:</label>
+  							<input type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group">
+  						<label for="pwd">Password:</label>
+  					<input type="password" class="form-control" id="pwd">
+				</div>
                <div>
                <a class="news-letter" href="#">
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
@@ -33,9 +32,6 @@
 					 </div>
 					 </form>
 
-        <div class="col-md-6 register-bottom-grid">
-					<a href="/"><img src="images/logo1.png" alt=""></a>
-        </div>
 					 <div class="clearfix"> </div>
 			</div>
 </div>
