@@ -8,7 +8,7 @@ var Category = require('../models/category');
 var Size     = require('../models/size');
 var Cart= require('../models/cart')
 var Sesscart = require('../models/sesscart');
-var Orders     = require('../models/user');
+var Order     = require('../models/orders');
 
 module.exports = {
   //route to view template with fashions already in the system
@@ -94,5 +94,19 @@ order : function(req, res){
       });
     });
   },
+
+  postorder : function(req, res, next){
+    var cart = req.session.cart;
+    console.log(cart);
+    var order = new Order();
+    order.cart = cart;
+
+    order.save(function(err, order){
+      if(err) return err;
+      req.flash('message', 'successfully bought items');
+      req.session.cart = null;
+      res.redirect('/');
+    });
+  }
 
 };
