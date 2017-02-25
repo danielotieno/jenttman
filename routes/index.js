@@ -100,7 +100,7 @@ router.get('/fashion/pay/:id',           cartRoutes.pay);
 /*
  * @Paypal routes
  */
-router.get('/payment/:id',   payRoutes.payment);
+router.get('/payment/:id', payRoutes.payment);
 router.get('/paypal/:id',  payRoutes.paypal);
 router.post('/paynow/:id', payRoutes.paypal);
 router.get('/success/:id', payRoutes.success);
@@ -110,12 +110,13 @@ router.get('/cancel/:id',  payRoutes.cancel);
 /*
  * @order routes
  */
-router.get('/pay/:id',    ordersRoutes.order);
-router.post('/billing',    ordersRoutes.billing);
-router.get('/new',    ordersRoutes.index);
-router.get('/sold',    ordersRoutes.sold);
-router.get('/awaiting',    ordersRoutes.awaiting);
-router.get('/admin/product',    ordersRoutes.product);
+router.get('/pay/:id',       ordersRoutes.order);
+router.post('/billing',      ordersRoutes.billing);
+router.get('/new',           ordersRoutes.index);
+router.get('/sold',          ordersRoutes.sold);
+router.get('/awaiting',      ordersRoutes.awaiting);
+router.get('/admin/product', ordersRoutes.product);
+router.get('/orders/post',   ordersRoutes.postorder);
 
 /*
  * @Role routes
