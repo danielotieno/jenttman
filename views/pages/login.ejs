@@ -1,9 +1,9 @@
-<% layout('pages/indexlayout') -%>	
+<% layout('pages/indexlayout') -%>
 <!--content-->
 <div class=" container">
-<div class=" register">
-	<h1>Register</h1>
-		  	  <form action="/signup" method="post"> 
+<div class=" login">
+	<h1>Login</h1>
+		  	  <form action="/login" method="post">
             <% if(errors.length>0){ %>
               <% for(var i=0; i<errors.length; i++){ %>
                 <p><%= errors[i].msg %></p>
@@ -14,32 +14,8 @@
                 <p><%= message[i] %></p>
               <% } %>
             <% } %>
-
-            <div>
-              <div></div>
-            </div>
-				 <div class="col-md-6 register-top-grid">
-					<h3>Personal infomation</h3>
-					 <div>
-						<span>First Name</span>
-						<input type="text" name="fname"> 
-					 </div>
-					 <div>
-						<span>Last Name</span>
-						<input type="text" name="lname"> 
-					 </div>
-					 <div>
-						 <span>Email Address</span>
-						 <input type="text" name="email"> 
-					 </div>
-           <div>
-						 <span>Username</span>
-						 <input type="text" name="username"> 
-					 </div>
-					 </div>
 				     <div class="col-md-6 register-bottom-grid">
 						    <h3>Login information</h3>
-           
 							 <div>
 								<span>Password</span>
 								<input type="password" name="password">
@@ -53,13 +29,14 @@
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
 					   </a>
                </div>
-             
-
 							 <input type="submit" value="submit">
-							
 					 </div>
+					 </form>
+
+        <div class="col-md-6 register-bottom-grid">
+					<a href="/"><img src="images/logo1.png" alt=""></a>
+        </div>
 					 <div class="clearfix"> </div>
-				</form>
 			</div>
 </div>
 <!--//content-->
