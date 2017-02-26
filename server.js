@@ -30,7 +30,7 @@ var env = process.env.NODE_ENV || 'development';
 
 var db = require('./config/setting');
 var options = {
-  authMechanism:'DEFAULT'
+  authMechanism:'SCRAM-SHA-1'
 }
 mongoose.connect(db.getDB(env), options);
 
