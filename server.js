@@ -26,7 +26,7 @@ var paypal = require('paypal-rest-sdk');
 
 var env = process.env.NODE_ENV || 'development';
 
-dotenv.load();
+//dotenv.load();
 
 var db = require('./config/setting');
 mongoose.connect(db.getDB(env));
