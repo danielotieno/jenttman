@@ -32,7 +32,8 @@ var db = require('./config/setting');
 var options = {
   authMechanism:'SCRAM-SHA-1'
 }
-mongoose.connect(db.getDB(env)+"/?authMechanism=SCRAM-SHA-1");
+var mongouri = db.getDB(env)+"?authMechanism=SCRAM-SHA-1";
+mongoose.connect(mongouri)
 
 require('./config/passport.js')(passport);
 
