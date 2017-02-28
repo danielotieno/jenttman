@@ -44,7 +44,7 @@ app.use('/fashion/item/',  express.static(__dirname + '/assets'));
 app.use('/category/',  express.static(__dirname + '/assets'));
 app.use('/category/uploads',  express.static(__dirname + '/uploads'));
 app.use(express.static(path.join(__dirname, 'views')));
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use('/fashion/item/uploads', express.static(__dirname + '/uploads'));
 app.use('/admin/product/uploads', express.static('/uploads'));
 app.use('/fashion/cart/', express.static(__dirname + '/assets'));
