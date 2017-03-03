@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@google-cloud/storage": "^0.7.0",
     "base64url": "^2.0.0",
     "bcrypt": "^1.0.1",
     "bcryptjs": "^2.4.0",
@@ -22,6 +23,8 @@
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "express-validator": "^3.1.1",
+    "google-cloud": "^0.47.0",
+    "googleapis": "^17.1.0",
     "lingo": "0.0.5",
     "mongo": "^0.1.0",
     "mongo-join": "^1.0.0",
@@ -35,6 +38,7 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "paypal-rest-sdk": "^1.7.1",
+    "pug": "^2.0.0-beta11",
     "query-string": "^4.2.3",
     "url": "^0.11.0",
     "util": "^0.10.3"
