@@ -128,6 +128,7 @@ router.get('/blog_single', blogRoutes.blog_single);
 router.get('/admin/blog/index',         blogRoutes.index);
 router.get('/admin/blog/create',        blogRoutes.new);
 router.get('/admin/blogs',              blogRoutes.get);
+router.get('/blog/item/:id',            blogRoutes.item);
 router.post('/admin/blog/add',          upload.single('upload'),  blogRoutes.add);
 router.get('/admin/blog/edit/:id',      blogRoutes.edit);
 router.post('/admin/blog/update',       blogRoutes.update);
