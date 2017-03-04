@@ -91,23 +91,39 @@ module.exports = {
 
           console.log(foundCategory);
           //console.log(user);
+          var blob = bucket.file(req.file.originalname);
+          var blobStream = blob.createWriteStream();
 
-          var fashion      = new Fashion();
-          fashion.name     = req.body.name;
-          fashion.category = foundCategory._id;
-          fashion.brand    = req.body.brand;
-          fashion.price    = req.body.price;
-          fashion.desc = req.body.desc;
-          fashion.photo = req.file.path;
-          //fashion.slug  = req.params.slug;
-          //fashion.user     = req.body._id;
-        
-          console.log("fashion at this stage", fashion);
-         
-          fashion.save(function(err, fashion){
-            if(err) res.send(err);
+          blobStream.on('error', (err)=> {
+            next(err);
+            return;
+          });
 
-            res.redirect('/admin/fashions');
+          blobStream.on('finish', () => {
+            var publicUrl = format("https://storage.googleapis.com/"+bucket.name+"/"+blob.name);
+            res.status(200).send(publicUrl);
+          });
+
+          blobStream.on('end', () => {
+
+            var fashion      = new Fashion();
+            fashion.name     = req.body.name;
+            fashion.category = foundCategory._id;
+            fashion.brand    = req.body.brand;
+            fashion.price    = req.body.price;
+            fashion.desc     = req.body.desc;
+            fashion.photo    = req.files.path;
+            fashion.photo    = publicUrl;
+            //fashion.slug  = req.params.slug;
+            //fashion.user     = req.body._id;
+          
+            console.log("fashion at this stage", fashion);
+           
+            fashion.save(function(err, fashion){
+              if(err) res.send(err);
+
+              res.redirect('/admin/fashions');
+            });
           });
         });
       }
