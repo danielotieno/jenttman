@@ -4,43 +4,7 @@
         <div class="logo col-sm-12 center-align mpesa">
       <a href="/paypal/:id"><img src="images/mpesa.jpg" alt=""></a>
      </div>
-  <h2>Order Details</h2>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>PRODUCT</th>
-        <th>AMOUNT</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Short</td>
-        <td>Ksh.5000</td>
-      </tr>
-    </tbody>
-  </table>
-
-    <h2>Customer Details</h2>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Country</th>
-        <th>Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Mercy</td>
-        <td>m.thirty100@gmail.com</td>
-        <td>Kenya</td>
-        <td>80100</td>
-      </tr>
-    </tbody>
-  </table>
-
-      <div class="col-md-12 account-top ">
+           <div class="col-md-12 account-top enter-align">
         <form action="/" method="post" ></br></br>
           <div>
         <div>
@@ -59,5 +23,50 @@
              <li>Enter your mpesa pin and click Ok.</li>
         <ol>
     </div>
+</div>
+  <h2>Order Details</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>PRODUCT</th>
+        <th>QUANTITY</th>
+        <th>SIZE</th>
+        <th>AMOUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+<% products.forEach(function(product){ %>
+      <tr>
+        <td><%= product.fashionname %></td>
+        <td><%= product.qty %></td>
+        <td><%= product.size %></td>
+        <td>Ksh.<%= product.price %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+    <h2>Customer Details</h2>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Country</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+         <% if(user) {%> 
+      <tr>
+        <td><%= user.fname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.country %></td>
+        <td><%= user.address %></td>
+      </tr>
+    </tbody>
+      <%}%>
+  </table>
 </div>
 <!--//content-->
