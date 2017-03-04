@@ -11,6 +11,7 @@ var sizeRoutes     = require('./size');
 var cartRoutes     = require('./cart');
 var payRoutes      = require('./pay');
 var ordersRoutes   = require('./orders');
+var blogRoutes   = require('./blog');
 
 var multer = require('multer');
 var upload = multer({dest:'uploads/'});
@@ -35,8 +36,6 @@ function isAdmin(req, res, next) {
 
 router.get('/', homeRoutes.index);
 router.get('/contact', homeRoutes.contact);
-router.get('/blog', homeRoutes.blog);
-router.get('/blog_single', homeRoutes.blog_single);
 router.get('/category/:category', homeRoutes.categories);
 
 /*
@@ -120,6 +119,20 @@ router.get('/sold',          ordersRoutes.sold);
 router.get('/awaiting',      ordersRoutes.awaiting);
 router.get('/admin/product', ordersRoutes.product);
 router.get('/orders/post',   ordersRoutes.postorder);
+
+/*
+ * @blog routes
+ */
+router.get('/blog', blogRoutes.blog);
+router.get('/blog_single', blogRoutes.blog_single);
+router.get('/admin/blog/index',         blogRoutes.index);
+router.get('/admin/blog/create',        blogRoutes.new);
+router.get('/admin/blogs',              blogRoutes.get);
+router.post('/admin/blog/add',          upload.single('upload'),  blogRoutes.add);
+router.get('/admin/blog/edit/:id',      blogRoutes.edit);
+router.post('/admin/blog/update',       blogRoutes.update);
+router.post('/admin/blog/image/update', upload.single('upload'),  blogRoutes.updateimage);
+router.get('/admin/blog/delete/:id',    blogRoutes.delete);
 
 /*
  * @Role routes
