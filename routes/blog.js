@@ -36,6 +36,15 @@ module.exports = {
     res.render('admin/blog/new');
   },
 
+  item : function(req, res){
+    Blog.findOne({_id:req.params.id}, function(err, blog){
+      if(err) res.send(err);
+            res.render('pages/blog_single',{
+              blog:blog
+            });
+        });
+  },
+
   get : function(req, res){
     //route should send blogs to front page
     Blog.find({}, function(err, blogs){
