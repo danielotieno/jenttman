@@ -34,6 +34,9 @@ function isAdmin(req, res, next) {
 }
 
 router.get('/', homeRoutes.index);
+router.get('/contact', homeRoutes.contact);
+router.get('/blog', homeRoutes.blog);
+router.get('/blog_single', homeRoutes.blog_single);
 router.get('/category/:category', homeRoutes.categories);
 
 /*
