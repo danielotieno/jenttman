@@ -1,0 +1,62 @@
+<% layout('admin/dashboard') -%>
+<div class=" container">
+<!--inner block start here-->
+<div class="inner-block">
+    <div class="inbox">
+      <h2><a href="/admin/blog/create"><button type="button" class="btn btn-primary">New Category</button></a></h2>
+       <div class="col-md-3 compose">
+        <div class="mail-profile">
+          <div class="mail-pic">
+            <a href="#"><img src="images/b3.png" alt=""></a>
+          </div>
+          <div class="mailer-name">
+              <h5><a href="#">Jenttman</a></h5>
+                 <h6><a href="mailto:info@example.com">Jenttman@gmail.com</a></h6>
+          </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="compose-bottom">
+          <ul>
+            <li><a class="hilate" href="#"><i class="fa fa-inbox"> </i>Inbox</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+            <li><a href="#"><i class="fa fa-star-o"> </i>Important</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+            <li><a href="#"><i class="fa fa-trash-o"> </i>Trash</a></li>
+          </ul>
+        </div>
+       </div>
+  </div>
+  <div class="col-md-9 compose-right scroll">
+
+<table class="table tab-border">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Photo</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+          <% blog.forEach(function(blog, index){ %>
+          <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= blog.title  %></td>
+          <td><%= blog.photo %></td>
+          <td><%= blog.content %></td>
+          <td>
+          <ul class="options">
+          <li><a href="/admin/blog/edit/<%= blog._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
+          <li><a href="/admin/blog/delete/<%= blog._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
+          </ul>
+        </td>
+      </tr>
+     <%});%>
+  </tbody>
+</table>
+
+    <div class="clearfix"> </div>
+   </div>
+</div>
+</div>
+<!--inner block end here-->
