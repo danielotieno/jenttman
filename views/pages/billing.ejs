@@ -2,19 +2,24 @@
 <!--content-->
 <div class="container ">
 		<div class="account">
+		<h5>Checkout</h5>
+		<div class="login">
+		<h>Are you a repeat customer ? </h><a href="/register"> Click here to Register</a>
+		</div>
 		<div class="account-pass">
 
     <div class="col-md-6 account-top">
+    <p class="center-align">  Billing Details</p>
 			<form action="/billing" method="post">
 
     <div class="col-md-12">
 				<div class="form-group col-md-6">
-	      <label for="billing_first_name">First Name</label>
-	         <input type="text" class="form-control" name="fname" placeholder="First name">
+	      <label for="billing_first_name">First Name:*</label>
+	         <input type="text" class="form-control" name="fname"required="required">
          </div>
          <div class="form-group col-md-6">
-	         <label for="billing_second_name">Second Name</label>
-	         <input type="text" class="form-control" name="lname" placeholder="Last name">
+	         <label for="billing_second_name">Second Name:*</label>
+	         <input type="text" class="form-control" name="lname" required="required">
          </div>
     </div>
 
@@ -26,7 +31,7 @@
 			<input type="text" class="form-control" name="email" required="required">
 		</div>
 		<div class="form-group col-md-6">
-		<label for="billing_first_name" class="">Phone Number</label>
+		<label for="billing_first_name" class="">Phone Number:*</label>
 		<input type="text" class="form-control" name="number" required="required">
 	</div>
 </div>
@@ -34,10 +39,10 @@
 <div class="col-md-12">
     <div class="form-group col-md-6">
        <label for="billing_first_name" class="">Company</label>
-       <input type="text" class="form-control" name="companyname" placeholder="Company">
+       <input type="text" class="form-control" name="companyname">
     </div>
 		<div class="form-group col-md-6">
-		   <label for="billing_first_name" class="">Country</label>
+		   <label for="billing_first_name" class="">Country:*</label>
        <select class="mdb-select colorful-select dropdown-primary">
           <option value="1">Kenya</option>
           <option value="2">Tanzania</option>
@@ -48,7 +53,7 @@
 
 <div class="col-md-12">
 		<div class="form-group col-md-6">
-			<label for="billing_first_name" class="">Postal Address</label>
+			<label for="billing_first_name" class="">Postal Address:*</label>
 			<input type="text" class="form-control" name="address" required="required">
 		</div>
 					<div class="form-group col-md-6">
@@ -67,16 +72,22 @@
 			<input type="text" class="form-control" name="postalcode" required="required">
 		</div>
 </div>
-	<div class="col-md-12">
-		<input type="submit" value="submit">
-		</div>
+
+</div>
+
+<div class="col-md-6 account-top">
+  <p for="ship-to-different-address-checkbox" class="checkbox">Shipping to a different address?</p>
+  <input id="ship-to-different-address-checkbox" class="input-checkbox" checked="checked" type="checkbox" name="ship_to_different_address" value="1">
+</div>
+
+	<div class="col-md-12 billing_footer">
+		<label>Lipa Na M-pesa</label>
+		<div class="alert alert-warning">
+		<h>Click on submit and then you will be prompted with details on how to pay via Lipa Na MPESA</h>
+        </div>
+      <input type="submit" value="submit">
 		</form>
-</div>
-</div>
-
-
-  <div class="col-md-6 account-top">
-	</div>
+    </div>
 
 	<div class="clearfix"> </div>
 </div>
