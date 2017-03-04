@@ -3,7 +3,6 @@
 <div class="blog">
 <div class="container">
 	       <div class="blog-top">
-	       <% blog.forEach(function(blog, index){ %>
 			  <div class=" grid_3 grid-1">
 					<h3><a href="/blog_single"><%= blog.title  %></a></h3>
 					<a href="/blog_single"><img src="images/1.jpg" class="img-responsive" alt=""/></a>
@@ -18,7 +17,6 @@
 				    <p><%= blog.content %></p>
 					</div>
 				<div class="single-bottom">
-		<%});%>
 			<h3>Leave A Comment</h3>
 				<form>
 						
