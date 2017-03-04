@@ -23,10 +23,49 @@ var bcrypt = require('bcryptjs');
 var expressValidator = require('express-validator');
 var dotenv = require('dotenv');
 var paypal = require('paypal-rest-sdk');
+var google = require('googleapis');
+var OAuth2 = google.auth.OAuth2;
+var Storage = require('@google-cloud/storage');
+var format = require('util').format;
+var projectId = 'jenttman';
 
 var env = process.env.NODE_ENV || 'development';
 
-//dotenv.load();
+var clientInfo = require('./config/clientinfo.js');
+
+var oauth2Client = new OAuth2(
+  clientInfo.client_id,
+  clientInfo.client_secret,
+  clientInfo.redirect_uris
+);
+
+google.auth.getApplicationDefault(function(err, authClient) {
+  if (err) {
+    return (err);
+  }
+  if (authClient.createScopedRequired && authClient.createScopedRequired()) {
+    authClient = authClient.createScoped(
+      ['https://www.googleapis.com/auth/devstorage.read_write']
+    );
+  }
+  var storage = google.storage('v1');
+  storage.buckets.list({
+    auth: authClient,
+    project: 'jenttman'
+  }, cb);
+});
+
+var storageClient = Storage({
+  projectId: projectId
+});
+
+var bucketName = 'jenttman';
+
+storageClient.createBucket(bucketName)
+  .then((results) => {
+    const bucket = results[0];
+    console.log(`Bucket ${bucket.name} created.`);
+  });
 
 var db = require('./config/setting');
 var options = {
