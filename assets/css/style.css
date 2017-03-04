@@ -21,9 +21,15 @@ ul{
 	padding: 0;
 	margin: 0;
 }
-h1,h2,h3,h4,h5,h6,label,p{
+h1,h2,h3,h4,h5,h6,p{
 	margin:0;
-
+}
+label{
+	margin-bottom: 5px;
+  font-weight: bold;
+	display: block;
+	line-height: 2;
+	font-size: 14px;
 }
 p{
 	font-size: 20px;
@@ -92,6 +98,9 @@ a.item_add {
 .header-top{
 	background: #000;
 	  padding: 15px 0;
+}
+.input{
+	padding-left: 5px;
 }
 .search{
 	position:relative;
@@ -1447,31 +1456,16 @@ a.add-re:hover{
 }
 /*--//register--*/
 /*--account--*/
-.account h1{
-	font-size: 3em;
-  font-family: 'Lato', sans-serif;
-  color: #000;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 1em;
-}
-.account-top span{
-	font-size:1em;
-	display: block;
-	padding: 0 0 0.5em;
-	color:#A09F9F;
-}
-.account-top div{
-	padding:0.5em 0;
-}
+
 .account-top input[type="text"],
 .account-top textarea,.account-top input[type="password"]{
-	padding:1em;
+	font: inherit;
 	width:100%;
 	background:none;
-	border: 1px solid #A09F9F;
-	outline:none;
-
+	box-sizing: border-box;
+	outline:0;
+  margin:0;
+	line-height: 1.45em;
 	font-size:1em;
 }
 .center-align{
