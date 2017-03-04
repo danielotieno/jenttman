@@ -12,8 +12,16 @@ var cartRoutes     = require('./cart');
 var payRoutes      = require('./pay');
 var ordersRoutes   = require('./orders');
 
+var Storage = require('@google-cloud/storage');
 var multer = require('multer');
-var upload = multer({dest:'uploads/'});
+//var upload = multer({dest:'uploads/'});
+
+var storage = Storage();
+var upload = multer({
+  storage:multer.memoryStorage(),
+});
+
+//var bucket = storage.bucket(process.env.GCLOUD_STORAGE_BUCKET);
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
