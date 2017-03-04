@@ -6,8 +6,8 @@
 			  <div class="blog-top">
 			   <% blog.forEach(function(blog, index){ %>
 			  <div class="col-md-6 grid_3">
-					<h3><a href="/blog_single"><%= blog.title  %></a></h3>
-					<a href="/blog_single"><img src="images/t1.jpg" class="img-responsive" alt=""/></a>
+					<h3><a href="/blog/item/<%= blog._id %>"><%= blog.title  %></a></h3>
+					<a href="/blog/item/<%= blog._id %>"><img src="images/t1.jpg" class="img-responsive" alt=""/></a>
 					
 					<div class="blog-poast-info">
 						<ul>
