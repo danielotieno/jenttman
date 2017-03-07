@@ -113,7 +113,7 @@ module.exports = {
             fashion.price    = req.body.price;
             fashion.desc     = req.body.desc;
             fashion.photo    = req.files.path;
-            fashion.photo    = publicUrl;
+            //fashion.photo    = publicUrl;
             //fashion.slug  = req.params.slug;
             //fashion.user     = req.body._id;
           
