@@ -56,7 +56,7 @@ router.get('/admin/fashions',              fashionRoutes.index);
 router.get('/admin/fashion/item/:id',      fashionRoutes.single);
 router.get('/fashion/item/:id',            fashionRoutes.item);
 router.get('/admin/fashion/create',        fashionRoutes.new);
-router.post('/admin/fashion/add',          fashionRoutes.add);
+router.post('/admin/fashion/add',          upload.single('upload'),  fashionRoutes.add);
 router.get('/admin/fashion/edit/:id',      fashionRoutes.edit);
 router.post('/admin/fashion/update',       fashionRoutes.update);
 router.post('/admin/fashion/image/update', upload.single('upload'),  fashionRoutes.updateimage);
