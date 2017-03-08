@@ -6,6 +6,13 @@ var Fashion  = require('../models/fashion');
 var User     = require('../models/user');
 var Category = require('../models/category');
 var Size     = require('../models/size');
+var cloudinary = require('cloudinary');
+
+cloudinary.config({
+  cloud_name:'dnkogjr1e',
+  api_key:'974522753437211',
+  api_secret:'5x4pOckiVKgAWqZmWiFxCp6LD_c'
+});
 
 module.exports = {
   //route to view template with fashions already in the system
@@ -90,21 +97,9 @@ module.exports = {
           if(err) res.send(err);
 
           console.log(foundCategory);
-          //console.log(user);
-          var blob = bucket.file(req.file.originalname);
-          var blobStream = blob.createWriteStream();
 
-          blobStream.on('error', (err)=> {
-            next(err);
-            return;
-          });
-
-          blobStream.on('finish', () => {
-            var publicUrl = format("https://storage.googleapis.com/"+bucket.name+"/"+blob.name);
-            res.status(200).send(publicUrl);
-          });
-
-          blobStream.on('end', () => {
+          cloudinary.uploader.upload(req.files.upload.path, function(result){
+            console.log(result);
 
             var fashion      = new Fashion();
             fashion.name     = req.body.name;
@@ -112,7 +107,8 @@ module.exports = {
             fashion.brand    = req.body.brand;
             fashion.price    = req.body.price;
             fashion.desc     = req.body.desc;
-            fashion.photo    = req.files.path;
+            fashion.photo    = result.url;
+            //fashion.photo    = req.files.path;
             //fashion.photo    = publicUrl;
             //fashion.slug  = req.params.slug;
             //fashion.user     = req.body._id;
@@ -202,15 +198,17 @@ module.exports = {
   },
 
   updateimage : function(req, res, next){
-    console.log(req.file);
     Fashion.findOne({_id:req.body.fashionid}, function(err, fashion){
-      console.log(fashion);
+      console.log(req.file);
       if(err) return next(err);
 
-      fashion.photo = req.file.path;
-      fashion.save(function(err, fashion){
-        if(err) return next(err);
-        res.redirect('/admin/fashions');
+      cloudinary.uploader.upload(req.file.path, function(result){
+        fashion.photo = result.url;
+        //fashion.photo = req.file.path;
+        fashion.save(function(err, fashion){
+          if(err) return next(err);
+          res.redirect('/admin/fashions');
+        });
       });
     });
   }
