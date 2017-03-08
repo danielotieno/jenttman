@@ -98,7 +98,7 @@ module.exports = {
 
           console.log(foundCategory);
 
-          cloudinary.uploader.upload(req.files.upload.path, function(result){
+          cloudinary.uploader.upload(req.file.path, function(result){
             console.log(result);
 
             var fashion      = new Fashion();
