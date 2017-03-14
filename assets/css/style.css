@@ -273,14 +273,14 @@ a.item_add {
 	text-decoration:underline;
 }
 /*--banner--*/
-
-.banner{
+/*.banner{
 	background: url(../images/1.jpg) no-repeat ;
 	background-size: cover;
 	width:100%;
 	min-height: 560px;
 	  position: relative;
 }
+  */
 /*--- slider-css --*/
 
 .rslides {
