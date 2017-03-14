@@ -1,0 +1,75 @@
+<% layout('admin/dashboard') -%>
+    <div class=" container">
+<!--inner block start here-->
+<div class="inner-block">
+    <div class="inbox">
+        <h2>Blogs</h2>
+       <div class="col-md-3 compose">       
+        <div class="mail-profile">
+          <div class="mail-pic">
+            <a href="#"><img src="images/b3.png" alt=""></a>
+          </div>
+          <div class="mailer-name">       
+              <h5><a href="#">Jentttman</a></h5>            
+                 <h6><a href="mailto:info@example.com">jenttman@gmail.com</a></h6>   
+          </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="compose-bottom">
+          <ul>
+            <li><a class="hilate" href="#"><i class="fa fa-inbox"> </i>Inbox</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+            <li><a href="#"><i class="fa fa-star-o"> </i>Important</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+            <li><a href="#"><i class="fa fa-trash-o"> </i>Trash</a></li>
+          </ul>
+        </div>
+       </div>      
+        <div class="col-md-9 compose-right scroll_fashion">
+          <div class="inbox-details-default">
+            <div class="inbox-details-heading">
+              New Blog 
+            </div>
+            <div class="inbox-details-body">
+                 <form id="Fashion-form" action="/admin/blog/add" method="post" enctype="multipart/form-data"> 
+            <div class = "alert alert-success alert-dismissable">
+   <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+      &times;
+   </button>
+  Please fill details to add new blog
+</div>
+            <div class="col-md-3">
+               <span>Title</span>
+               </div>
+               <div class="col-md-9"> 
+                <input type="text" required class="form-control" id="title" name="title"/>
+           </div>
+           <div class="col-md-3">
+              <span>Photo upload</span>
+              </div>
+              <div class="col-md-9">
+            <input type="file" required class="form-control" id="upload" name="upload"/>
+           </div>
+          <div class="col-md-3">
+              <span>Content</span>
+              </div>
+              <div class="col-md-9">
+            <input type="text" required class="form-control" id="content" name="content"/>
+           </div>
+           <div class="col-md-6">
+            <!--<input type="submit" value="submit">-->
+             <button class="large button success right">Add</button>
+           </div>
+           <div class="clearfix"> </div>
+    
+    </form>
+            </div>
+          </div>
+        </div>
+      
+          <div class="clearfix"> </div>     
+   </div>
+</div>
+</div>
+<!--inner block end here-->
+

@@ -1,0 +1,68 @@
+<% layout('admin/dashboard') -%>
+    <div class=" container">
+<!--inner block start here-->
+<div class="inner-block">
+    <div class="inbox">
+        <h2>Blogs</h2>
+       <div class="col-md-3 compose">       
+        <div class="mail-profile">
+          <div class="mail-pic">
+            <a href="#"><img src="images/b3.png" alt=""></a>
+          </div>
+          <div class="mailer-name">       
+              <h5><a href="#">Jenttman</a></h5>            
+                 <h6><a href="mailto:info@example.com">jenttman@gmail.com</a></h6>   
+          </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="compose-bottom">
+          <ul>
+            <li><a class="hilate" href="#"><i class="fa fa-inbox"> </i>Inbox</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"> </i>Sent Mail</a></li>
+            <li><a href="#"><i class="fa fa-star-o"> </i>Important</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"> </i>Drafts</a></li>
+            <li><a href="#"><i class="fa fa-trash-o"> </i>Trash</a></li>
+          </ul>
+        </div>
+       </div>      
+        <div class="col-md-9 compose-right scroll_fashion">
+          <div class="inbox-details-default">
+            <div class="inbox-details-heading">
+              Update Blog
+            </div>
+            <div class="inbox-details-body">
+              <div class="alert alert-info">
+                Please fill details to update blog
+              </div>
+           <form id="Fashion-form" action="/admin/blog/update" method="post"> 
+        <div class="col-lg-4">
+           <div>
+             <span>Title</span> 
+             <input type="text" class="form-control" id="Title" name="title" placeholder="<%= blog.title %>"/>
+           </div>
+           <div>
+              <span>Content</span>
+              <input type="text" class="form-control" id="content" name="content" placeholder="<%= blog.content %>"/>
+           </div>
+             <input type="submit" class="btn large button success right" value="update details">
+           </div>
+            </div>
+           <div class="clearfix"> </div>
+        </form>
+        <form id="Fashion-form" action="/admin/blog/image/update" method="post" enctype="multipart/form-data"> 
+          <div>
+            <span>Photo</span>
+            <input type="file" class="form-control" id="upload" name="upload" />
+             <input type="submit" value="update photo" class="btn btn-success right" >
+         </div>
+        </form>
+
+          </div>
+        </div>
+      
+          <div class="clearfix"> </div>     
+   </div>
+</div>
+</div>
+<!--inner block end here-->
+

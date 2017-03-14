@@ -17,6 +17,10 @@ module.exports = {
     });
   },
 
+  contact : function(req, res){
+      res.render('pages/contact')
+  },
+
   categories : function(req, res){
     Category.findOne({name:req.params.category}, function(err, foundCategory){
     console.log(req.params.category);
