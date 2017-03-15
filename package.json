@@ -31,7 +31,7 @@
     "mongo-join": "^1.0.0",
     "mongodb": "^2.2.24",
     "mongojs": "^2.4.0",
-    "mongoose": "^4.8.5",
+    "mongoose": "^4.9.0",
     "morgan": "^1.7.0",
     "mpesa-c2b": "0.0.0",
     "multer": "^1.3.0",
