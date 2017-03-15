@@ -38,7 +38,7 @@ module.exports = {
       });
      });
   },
-  
+
   new : function(req, res){
     //route should give template to add blog to db
     res.render('admin/blog/new');
@@ -89,8 +89,8 @@ module.exports = {
 
 
   update : function(req, res, next){
-   Blog.findOne({_id : req.body.blogid}, function(err, blog){
-     
+   Blog.findOne({name:req.body.title}, function(err, blog){
+
       if(err) return next(err);
       if(req.body.title) blog.name     = req.body.name;
       if(req.body.content) blog.desc   = req.body.desc;
@@ -103,11 +103,12 @@ module.exports = {
   },
 
   updateimage : function(req, res, next){
-    Blog.findOne({_id:req.body.blogid}, function(err, blog){
-      console.log(req.file);
+    Blog.findOne({name:req.body.title}, function(err, blog){
+      console.log(blog);
       if(err) return next(err);
 
       cloudinary.uploader.upload(req.file.path, function(result){
+        console.log(result)
         blog.photo = result.url;
 
         blog.save(function(err, blog){
@@ -127,14 +128,14 @@ module.exports = {
         console.log(foundBlog);
       }
       else{
-        cloudinary.uploader(req.file.path, function(result){
+        cloudinary.uploader.upload(req.file.path, function(result){
           console.log(result);
 
           var blog     = new Blog();
           blog.title   = req.body.title;
           blog.content = req.body.content;
           blog.photo   = result.url;
-        
+
           blog.save(function(err, blog){
             if(err) res.send(err);
 
