@@ -44,6 +44,18 @@ nput[type="radio"], input[type="checkbox"] {
     line-height: normal;
 }
 
+.card{
+	height: 400px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.card1{
+	height: 523px;
+  width: 960px;
+  object-fit: cover;
+}
+
 .login{
 	background-color: rgb(247, 246, 247);
 border-top-color: rgb(0, 0, 0);
@@ -91,7 +103,7 @@ padding-left: 49px;
 padding-right: 28px;
 padding-top: 14px;
 position: relative;
-width: 1170px;	
+width: 1170px;
 }
 
 .login a{
@@ -862,7 +874,7 @@ ul.social li i:hover{
 	color:#fff;
 	font-size: 1em;
 	text-transform: uppercase;
-	background: #EF5F21;
+	background:#808080;
 	padding: 0.4em 1em;
 	text-decoration: none;
 		text-decoration:none;
