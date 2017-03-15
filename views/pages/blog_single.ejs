@@ -5,8 +5,9 @@
 	       <div class="blog-top">
 			  <div class=" grid_3 grid-1">
 					<h3><a href="/blog_single"><%= blog.title  %></a></h3>
-					<a href="/blog_single"><img src="images/1.jpg" class="img-responsive" alt=""/></a>
-					
+					<div class ="card1">
+					<a href="#"><img src="<%= blog.photo %>" class="img-responsive" alt=""/></a>
+				</div>
 					<div class="blog-poast-info">
 						<ul>
 							<li><a class="admin" href="#"><i> </i> Admin </a></li>
@@ -19,18 +20,18 @@
 				<div class="single-bottom">
 			<h3>Leave A Comment</h3>
 				<form>
-						
+
 						<input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
-						
+
 						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						
+
 						<input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
-						
-						
+
+
 						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-						
+
 							<input type="submit" value="Send">
-						
+
 				</form>
 			</div>
 			  </div>
