@@ -26,6 +26,7 @@ order : function(req, res){
 
   billing : function(req, res,next){
         User.findOne({username:req.body.username}, function(err, foundUser){
+          console.log(req.body);
           if(err) res.send(err);
 
           var user      = new User();

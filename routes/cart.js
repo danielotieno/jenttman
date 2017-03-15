@@ -16,7 +16,6 @@ module.exports = {
       return res.render('pages/checkout', {products:null, totalPrice:'0'});
     }
     var cart = new Sesscart(req.session.cart);
-    console.log(cart.generateArray());
     res.render('pages/checkout', {products:cart.generateArray(), totalPrice:cart.totalPrice});
   },
 
@@ -30,11 +29,9 @@ module.exports = {
 
       Fashion.findOne({_id:size.fashion}, function(err, fashion){
         if(err) return err;
-        console.log(size._id+ " " +fashion.price);
 
         sesscart.add(size._id, size.name, fashion.price, fashion._id, fashion.name, fashion.photo);
         req.session.cart = sesscart;
-        console.log(req.session.cart);
         res.redirect('/fashion/item/'+fashion_id);
       });
     });
@@ -50,7 +47,6 @@ module.exports = {
       Fashion.findOne({_id:size.fashion}, function(err, fashion){
         if(err) return(err);
 
-        console.log(size._id+ " " +fashion.price);
         sesscart.addqty(size._id, fashion.price);
         req.session.cart = sesscart;
         res.redirect('/fashion/checkout');
@@ -66,7 +62,6 @@ module.exports = {
 
       Fashion.findOne({_id:size.fashion}, function(err, fashion){
         if(err) return err;
-        console.log(size._id+ " " +fashion.price);
         sesscart.remove(size._id, fashion.price);
         req.session.cart = sesscart;
         res.redirect('/fashion/checkout');
@@ -96,7 +91,6 @@ module.exports = {
       if(err) res.send(err);
 
       if(foundFashion){
-        console.log(foundFashion);
         cart.quantity = req.body.quantity;
         cart.size     = foundFashion._id;
         cart.fashion  = foundFashion._id;
@@ -104,7 +98,6 @@ module.exports = {
         cart.save(function(err, cart){
           if(err) res.send(err);
 
-          console.log("cart added successfully");
           res.redirect('/pages/cart')
 
         });
