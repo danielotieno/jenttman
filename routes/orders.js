@@ -57,7 +57,7 @@ order : function(req, res){
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
       res.render('admin/order/new',{
-          fashion:fashion
+          product:product
       });
     });
   },
