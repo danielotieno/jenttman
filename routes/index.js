@@ -15,6 +15,7 @@ var blogRoutes   = require('./blog');
 
 var multer = require('multer');
 var upload = multer({dest:'uploads/'});
+var blogupload = multer({dest:'bloguploads/'});
 
 function isLoggedIn(req, res, next) {
   if(req.isAuthenticated()){
@@ -123,16 +124,16 @@ router.get('/orders/post',   ordersRoutes.postorder);
 /*
  * @blog routes
  */
-router.get('/blog', blogRoutes.blog);
-router.get('/blog_single', blogRoutes.blog_single);
+router.get('/blog',                     blogRoutes.blog);
+router.get('/blog_single',              blogRoutes.blog_single);
 router.get('/admin/blog/index',         blogRoutes.index);
 router.get('/admin/blog/create',        blogRoutes.new);
 router.get('/admin/blogs',              blogRoutes.get);
 router.get('/blog/item/:id',            blogRoutes.item);
-router.post('/admin/blog/add',          upload.single('upload'),  blogRoutes.add);
+router.post('/admin/blog/add',          blogupload.single('upload'),  blogRoutes.add);
 router.get('/admin/blog/edit/:id',      blogRoutes.edit);
 router.post('/admin/blog/update',       blogRoutes.update);
-router.post('/admin/blog/image/update', upload.single('upload'),  blogRoutes.updateimage);
+router.post('/admin/blog/image/update', blogupload.single('upload'),  blogRoutes.updateimage);
 router.get('/admin/blog/delete/:id',    blogRoutes.delete);
 
 /*

@@ -2,6 +2,14 @@ var User     = require('../models/user');
 var Blog     = require('../models/blog');
 var cloudinary = require('cloudinary');
 
+
+cloudinary.config({
+  cloud_name:'dnkogjr1e',
+  api_key:'974522753437211',
+  api_secret:'5x4pOckiVKgAWqZmWiFxCp6LD_c'
+});
+
+
 module.exports = {
   index : function(req, res){
       //route should assist viewing and getting blog in the db and displaying in template form
@@ -119,16 +127,20 @@ module.exports = {
         console.log(foundBlog);
       }
       else{
-        var blog     = new Blog();
-        blog.title   = req.body.title;
-        blog.content = req.body.content;
-        //blog.photo   = result.url;
-        
-        blog.save(function(err, blog){
-          if(err) res.send(err);
+        cloudinary.uploader(req.file.path, function(result){
+          console.log(result);
 
-          //res.flash('message', 'Category saved successfully');
-          res.redirect('/admin/blog/index');
+          var blog     = new Blog();
+          blog.title   = req.body.title;
+          blog.content = req.body.content;
+          blog.photo   = result.url;
+        
+          blog.save(function(err, blog){
+            if(err) res.send(err);
+
+            //res.flash('message', 'Category saved successfully');
+            res.redirect('/admin/blog/index');
+          });
         });
       }
     });
