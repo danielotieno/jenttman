@@ -40,10 +40,15 @@ module.exports = {
     Fashion.find({}, function(err, fashion){
       if(err) res.send(err);
       var cart = new Sesscart(req.session.cart);
-      res.render('pages/payment',{
+      console.log(req.session.email);
+      User.findOne({email:req.session.email}, function(err, user){
+        if(err) return(err);
+        res.render('pages/payment',{
+          user:user,
           fashion : fashion,
           products:cart.generateArray(),
           totalPrice:cart.totalPrice
+        });
       });
     });
   },

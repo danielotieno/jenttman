@@ -41,6 +41,7 @@ order : function(req, res){
           user.postalcode  = req.body.postalcode;
 
           console.log("orders at this stage", user);
+          req.session.email = req.body.email;
 
           user.save(function(err, user){
             if(err) res.send(err);
