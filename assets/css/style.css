@@ -112,6 +112,22 @@ width: 1170px;
 }
 /*----*/
 
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    line-height: 1;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-indicators li {
+	background-color: transparent;
+    border:transparent;
+	}
+
+.carousel-indicators .active {
+	background-color: transparent;
+	}
+
 .itemContainer{
 			width:100%;
 			float:left;
@@ -371,12 +387,13 @@ height: 35px;
   background-position:-91px -98px;
   right: 0;
  }
-.banner-text{
- padding:10em 0 1em;
+
+.carousel-caption{
+ text-align: center;
  color:#fff;
    width: 50%;
 }
-.banner-text h3 {
+.carousel-caption h3 {
   font-size: 3.2em;
   font-weight: 800;
   font-family: 'Lato', sans-serif;
@@ -384,11 +401,11 @@ height: 35px;
   letter-spacing: 6px;
   line-height: 1.2em;
 }
-.banner-text p{
+.carousel-caption p{
 	font-size:1.2em;
 	margin: 0.3em 0 1em;
 }
-.banner-text a{
+.carousel-caption a{
 	text-decoration: none;
 	color:#fff;
 	font-size:1.2em;
@@ -396,7 +413,7 @@ height: 35px;
 	padding: 0.4em 1em;
 	border-radius:5px;
 }
-.banner-text a:hover{
+.carousel-caption a:hover{
 	color: #141414;
 	background: #d3d3d3;
 }
