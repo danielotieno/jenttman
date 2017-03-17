@@ -35,8 +35,9 @@ function isAdmin(req, res, next) {
   res.redirect('/login');
 }
 
-router.get('/', homeRoutes.index);
-router.get('/contact', homeRoutes.contact);
+router.get('/',                   homeRoutes.index);
+router.get('/contact',            homeRoutes.contact);
+router.post('/mailer',            homeRoutes.mailer);
 router.get('/category/:category', homeRoutes.categories);
 
 /*
