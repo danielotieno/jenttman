@@ -783,7 +783,7 @@ ul.social li i:hover{
 .send input[type="submit"]{
 	width: 14%;
 	font-size: 1.1em;
-	background:#EF5F21;
+	background:#2d2d2d;
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
@@ -792,7 +792,7 @@ ul.social li i:hover{
 	-webkit-appearance: none;
 }
 .send input[type="submit"]:hover{
-	background:#2d2d2d;
+	background:#000;
 }
 .contact-form {
 	padding: 3em 0;
