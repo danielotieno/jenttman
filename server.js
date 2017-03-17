@@ -27,6 +27,7 @@ var google = require('googleapis');
 var OAuth2 = google.auth.OAuth2;
 var Storage = require('@google-cloud/storage');
 var format = require('util').format;
+var now = require('moment');
 
 var env = process.env.NODE_ENV || 'development';
 

@@ -9,7 +9,7 @@ var BlogSchema = Schema({
   title  :{type:String},
   photo  :{type:String},
   content:{type:String},
-  timestamps   :[{type:Date, createdAt:'created_at',   updatedAt:'updated_at'}],
+  timestamps   :{type:Date},
   User   :[{type : Schema.Types.ObjectId, ref:User }]
 });
 

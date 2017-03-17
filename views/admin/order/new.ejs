@@ -32,15 +32,30 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Name</th>
-        <th>Model</th>
-        <th>Size</th>
+        <th>Product</th>
         <th>Quantity</th>
-        <th>Action</th>
+        <th>Size</th>
+        <th>Amount</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Country</th>
+        <th>Town</th>
       </tr>
     </thead>
     <tbody>
-
+      <% products.forEach(function(product){ %>
+        <tr>
+          <td><%= product.fashionname %></td>
+          <td><%= product.qty %></td>
+          <td><%= product.size %></td>
+          <td>Ksh.<%= product.price %></td>
+          <ul class="options">
+          <li><a href="/admin//edit/<%= size._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
+          </ul>
+        </td>
+      </tr>
+     <%});%>
   </tbody>
 </table>
       
