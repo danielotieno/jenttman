@@ -7,8 +7,8 @@ var Fashion    = require('../models/fashion.js');
 var Category   = require('../models/category.js');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
-var secrets = require('../config/secret.js');
-var config = require('../config/client-secret.js');
+//var secrets = require('../config/secret.js');
+//var config = require('../config/client-secret.js');
 var xouath2 = require('xoauth2');
 
 /*var transporter = nodemailer.createTransport(smtpTransport({
