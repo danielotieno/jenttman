@@ -7,6 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 body{
 	background:#fff;
 	font-family: 'Roboto', sans-serif;
+	overflow-x:hidden;
 }
 
  a{
@@ -649,6 +650,7 @@ height: 35px;
 }
 .footer-top-at {
   padding: 4em 0;
+  padding-bottom: 0px;
 }
  ul.nav-bottom li{
 	list-style:none;
@@ -699,7 +701,7 @@ padding:1em 0 0;
   border: none;
  }
  .amet-sed input[type="submit"] {
-  width: 20%;
+  width: 40%;
   color: #FFF;
   font-size: 1em;
   background:#141414;
