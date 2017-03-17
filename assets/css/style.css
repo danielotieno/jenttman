@@ -636,6 +636,7 @@ height: 35px;
 
 /*--//content--*/
 /*--footer--*/
+
 .footer{
 	background:#141414;
 }
@@ -643,7 +644,6 @@ height: 35px;
 	font-size: 1.5em;
   	color: #fff;
      font-family: 'Lato', sans-serif;
-	margin: 0 0 1em;
 	  text-transform: uppercase;
   font-weight: 700;
 }
@@ -705,7 +705,7 @@ padding:1em 0 0;
   background:#141414;
   border: none;
   outline:none;
-  padding: 0.5em;
+  padding: 0.1em;
 }
 .amet-sed input[type="submit"]:hover {
 background: #999999;
@@ -723,7 +723,7 @@ ul.social li i{
   height: 24px;
 	display: inline-block;
 	vertical-align: middle;
-	margin: 0 5px 0 0;
+	margin: 0 3px 0 0;
 }
 ul.social li  i.twitter{
 	background-position:  -43px -14px;
