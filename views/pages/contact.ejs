@@ -7,13 +7,13 @@
 			<div class="contact-form">
 				
 				<div class="col-md-8 contact-grid">
-					<form>	
-						<input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+					<form method="post" action="/mailer">	
+						<input type="text" value="Enter your Name" name="names" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 					
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						<input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+						<input type="text" value="Enter Email" name="email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter Email';}">
+						<input type="text" value="Subject" name="subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
 						
-						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<textarea cols="77" rows="6" name="message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
 						<div class="send">
 							<input type="submit" value="Send">
 						</div>
