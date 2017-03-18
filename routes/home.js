@@ -7,21 +7,16 @@ var Fashion    = require('../models/fashion.js');
 var Category   = require('../models/category.js');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
-//var secrets = require('../config/secret.js');
-//var config = require('../config/client-secret.js');
-var xouath2 = require('xoauth2');
+var env = process.env.NODE_ENV || 'development'; 
+var secrets = require('../config/setting.js');
 
-/*var transporter = nodemailer.createTransport(smtpTransport({
+var transporter = nodemailer.createTransport(smtpTransport({
   service : "Gmail",
-  xouath2 : {
-    user : secrets.username,
-    pass : secrets.password,
-    clientId : config.client_id,
-    clientSecret : config.client_secret,
-    refreshToken : '1/7SIJEjPYGlqA71nw9_THVhdDENYFNIk9WTnERvoXpANthlqnwVnm0xD0hHJa_yle'
+  auth : {
+    user : secrets.getEmail(env),
+    pass : secrets.getPassword(env)
   }
 }));
-*/
 
 module.exports = {
   index : function(req, res){
@@ -39,8 +34,7 @@ module.exports = {
   },
 
   mailer : function(req, res, next){
-   /* var mailOptions = {
-      from : 'yourdaddy@gmail.com ',
+    var mailOptions = {
       to : 'bmirauri@gmail.com',
       subject : 'testing out nodemailer',
       text : 'just hoping it works out properly'
@@ -49,8 +43,6 @@ module.exports = {
       if(err) return next(err);
       return res.send("mail sent successfully");
     });
-    */
-    res.send("Node mail sender under configuration");
   },
 
   categories : function(req, res){
