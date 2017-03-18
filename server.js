@@ -100,5 +100,6 @@ app.use(routes);
 app.set('port', (process.env.PORT || 8080));
 app.listen(app.get('port'), function() {
   console.log("connected to mongo ", db.getDB(env));
-  console.log('Hurray am running on port ' + app.get('port'))
+  console.log('Hurray am running on port ' + app.get('port'));
+  console.log("running nodemailer on email ", db.getEmail(env));
 });
