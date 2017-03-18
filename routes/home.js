@@ -34,10 +34,24 @@ module.exports = {
   },
 
   mailer : function(req, res, next){
+    req.checkBody('names','Please fill in your names for processing').notEmpty();
+    req.checkBody('email','Email is required for sending of mail').notEmpty();
+    req.checkBody('subject','Fill in the subject of the message').notEmpty();
+    req.checkBody('message','Cant leave the message field empty').notEmpty();
+
+    var errors = req.validationErrors();
+    if(errors){
+     res.render('pages/contact',{
+        errors:errors,
+      });
+    }
+
     var mailOptions = {
       to : 'bmirauri@gmail.com',
-      subject : 'testing out nodemailer',
-      text : 'just hoping it works out properly'
+      subject : 'Email from client jenntman contact us form',
+      text : 'This is an email from one of your clients from contact us form\n'+
+        req.body.names + ' with email '+req.body.email+' subject being\n\n'+
+        req.body.subject+' and message : ' + req.body.message +'\n\n'
     };
     transporter.sendMail(mailOptions, function(err,info){
       if(err) return next(err);
