@@ -15,5 +15,17 @@ module.exports = {
     for(i=0; i < envs.length; i++){
       return (envs[i].environment === environment)? (envs[i].secret) : defaultSecret;
     }
+  },
+
+  getEmail : function(environment){
+
+    for(i=0; i< envs.length; i++){
+      return(envs[i].environment === environment)? (envs[i].email) : process.env.USEREMAIL;
+    }
+  },
+  getPassword: function(environment){
+    for(i=0; i<envs.length; i++){
+      return(envs[i].environment === environment)? (envs[i].password) : process.env.PASSWORD;
+    }
   }
 };
