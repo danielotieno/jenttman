@@ -8,12 +8,10 @@
 			</div>
 				<div class="col-md-8 contact-grid">
 					<form method="post" action="/mailer">	
-						<input type="text" value="Enter your Name" name="names" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
-					
-						<input type="text" value="Enter Email" name="email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter Email';}">
-						<input type="text" value="Subject" name="subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
-						
-						<textarea cols="77" rows="6" name="message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<input type="text" placeholder="Enter your Name" name="names">
+            <input type="text" placeholder="Enter Email" name="email"> 
+            <input type="text" placeholder="Subject" name="subject"> 
+						<textarea cols="77" rows="6" name="message" placeholder="Enter a pretty long boring message"></textarea>
 						<div class="send">
 							<input type="submit" value="Send">
 						</div>
