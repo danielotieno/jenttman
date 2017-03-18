@@ -8,8 +8,7 @@ module.exports = [
     'url'       : 'mongodb://localhost/jenttman',
     'secret'    : 'anystringoftext',
     'email'       : 'YOUR EMAIL ADDRESS',
-    'password'    : 'PASSWORD FOR YOUR EMAIL ADDRESS'
-
+    'password'    : 'YOUR EMAIL ADDRESS PASSWORD'
   },
 
   {
