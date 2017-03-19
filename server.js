@@ -102,4 +102,5 @@ app.listen(app.get('port'), function() {
   console.log("connected to mongo ", db.getDB(env));
   console.log('Hurray am running on port ' + app.get('port'));
   console.log("running nodemailer on email ", db.getEmail(env));
+  console.log("running nodemailer on email password ", db.getPassword(env));
 });
