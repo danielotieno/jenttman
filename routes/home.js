@@ -47,7 +47,7 @@ module.exports = {
     }
 
     var mailOptions = {
-      to : 'bmirauri@gmail.com',
+      to : 'hafswasalim@hotmail.com',
       subject : 'Email from client jenntman contact us form',
       text : 'This is an email from one of your clients from contact us form\n'+
         req.body.names + ' with email '+req.body.email+' subject being\n\n'+
