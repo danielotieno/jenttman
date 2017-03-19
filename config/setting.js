@@ -25,7 +25,7 @@ module.exports = {
   },
   getPassword: function(environment){
     for(i=0; i<envs.length; i++){
-      return(envs[i].environment === environment)? (envs[i].password) : process.env.PASSWORD;
+      return(envs[i].environment === environment)? (envs[i].password) : process.env.USERPASSWORD;
     }
   }
 };
