@@ -11,15 +11,14 @@
 					<ul>
 						<li><a href="/login">Login</a></li>
 						<li><a href="/register">Register </a></li>
-
 					</ul>
 					<div class="cart box_1">
 						<a href="/fashion/checkout">
 						<h3> <div class="total">
                 <% if(session.cart){%>
-                <span class="total"></span><%= session.cart.totalQty %> (<span id="quantity" class="quantity"></span> items)</div>
+                <span class="total"></span><%= session.cart.totalQty %><span id="quantity" class="quantity"></span> items-ksh <%= session.cart.totalPrice %></div>
               <% }else{ %>
-                <span class="total"></span>0(<span id="quantity" class="quantity"></span> items)</div>
+                <span class="total"></span>0<span id="quantity" class="quantity"></span> items-ksh 0</div>
           <%}%>
 							<img src="images/cart.png" alt=""/></h3>
 			</a>
