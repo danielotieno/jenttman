@@ -1,5 +1,5 @@
 
-		<h1><b>NEW TREND</b></h1>
+		<h1 style="font-family:Helvetica;"><b>New Trend</b></h1>
    <% fashion.forEach(function(fashion){ %>
 
 		 <div class="col-md-4 grid-top">
@@ -7,7 +7,7 @@
            <div class="col-md-12"><img class="img-responsive" src="<%= fashion.photo %>" height="320" alt=""></div>
 				<div class="b-wrapper">
 					<h3 class="b-animate b-from-left    b-delay03 ">
-            <span><%= fashion.name %></span>
+            <span style="text-transform:capitalize;"><%= fashion.name %></span>
             <p>Ksh.<%= fashion.price %></p>
 					</h3>
 		    </div>
