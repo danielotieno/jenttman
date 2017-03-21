@@ -397,12 +397,11 @@ height: 35px;
 .carousel-caption h3 {
   font-size: 3.2em;
   font-weight: 800;
-  font-family: 'Lato', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 6px;
+  font-family: 'Helvetica', sans-serif;
   line-height: 1.2em;
 }
 .carousel-caption p{
+  font-family: 'Helvetica', sans-serif;
 	font-size:1.2em;
 	margin: 0.3em 0 1em;
 }
@@ -644,7 +643,7 @@ height: 35px;
 .amet-sed h4{
 	font-size: 1.5em;
   	color: #fff;
-     font-family: 'Lato', sans-serif;
+     font-family: 'ariel';
 	  text-transform: uppercase;
   font-weight: 700;
 }
@@ -656,9 +655,10 @@ height: 35px;
 	list-style:none;
 }
 ul.nav-bottom li  a{
+  font-family:ariel;
 	text-decoration:none;
 	color:#989696;
-	font-size:1.1em;
+	font-size:1.2em;
 	display: inline-block;
 	  margin: 0.2em 0;
 }
@@ -666,6 +666,7 @@ ul.nav-bottom li  a:hover{
 	color:#EF5F21;
 }
 .amet-sed p{
+  font-family:ariel;
 	color:#989696;
 	font-size: 1.2em;
 	  margin: 0 0 0.3em;
@@ -2306,10 +2307,7 @@ a.item_add p.number {
   margin-bottom: 1em;
   padding: 0;
 }
-.amet-sed h4 {
-  font-size: 1.2em;
-  margin: 0 0 0.3em;
-}
+
 ul.nav-bottom li a {
   font-size: 0.9em;
 }
