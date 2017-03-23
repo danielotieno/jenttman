@@ -489,6 +489,10 @@ height: 35px;
 .content-bottom {
   padding: 3em 0;
 }
+ .img-responsive{
+	display: inline-block !important;
+	
+}
 /*--//content--*/
 .col-md2 {
   padding: 30px 0 0;
