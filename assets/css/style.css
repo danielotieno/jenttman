@@ -53,7 +53,7 @@ input[type="radio"], input[type="checkbox"] {
 
 /* TEXT ON SLIDER IMAGE */
 
-.main-text
+.banner-text
 {
     position: absolute;
     top: 150px;
@@ -516,10 +516,8 @@ height: 35px;
 .content-bottom {
   padding: 3em 0;
 }
- .img-responsive{
-	display: inline-block !important;
 
-}
+
 /*--//content--*/
 .col-md2 {
   padding: 30px 0 0;
@@ -674,7 +672,7 @@ height: 35px;
 .amet-sed h4{
 	font-size: 1.5em;
   	color: #fff;
-     font-family: 'ariel';
+     font-family:sans-serif;
 	  text-transform: uppercase;
   font-weight: 700;
 }
@@ -686,7 +684,7 @@ height: 35px;
 	list-style:none;
 }
 ul.nav-bottom li  a{
-  font-family:ariel;
+  font-family:sans-serif;
 	text-decoration:none;
 	color:#989696;
 	font-size:1.2em;
@@ -697,13 +695,14 @@ ul.nav-bottom li  a:hover{
 	color:#EF5F21;
 }
 .amet-sed p{
-  font-family:ariel;
+  font-family:sans-serif;
 	color:#989696;
 	font-size: 1.2em;
 	  margin: 0 0 0.3em;
 }
 
 .footer-class  p{
+  font-family:sans-serif;
 	color:#fff;
 	font-size:1.2em;
 
@@ -722,8 +721,10 @@ ul.nav-bottom li  a:hover{
 }
 .amet-sed form{
 padding:1em 0 0;
+font-family:sans-serif;
 }
 .amet-sed input[type="text"], .amet-sed input[type="submit"] {
+  font-family:sans-serif;
   width: 69%;
   padding: 0.5em;
   outline: none;
@@ -733,6 +734,7 @@ padding:1em 0 0;
   border: none;
  }
  .amet-sed input[type="submit"] {
+  font-family:sans-serif;
   width: 40%;
   color: #FFF;
   font-size: 1em;
@@ -742,6 +744,7 @@ padding:1em 0 0;
   padding: 0.1em;
 }
 .amet-sed input[type="submit"]:hover {
+  font-family:sans-serif;
 background: #999999;
 color:#000;
 }
@@ -787,7 +790,7 @@ ul.social li i:hover{
 }
 .contact h1{
 	font-size: 3em;
-	font-family: 'Lato', sans-serif;
+	font-family: sans-serif;
 	color:#000;
 	text-align: center;
 	  font-weight: 600;
@@ -1996,6 +1999,20 @@ h6.best2 {
 .available ul li.size-in select {
   margin-left: 13%;
 }
+@media(max-width:431px){
+  .banner-text h1{
+    font-size:2.3em;
+  }
+}
+@media(max-width:385px){
+  .banner-text h1{
+    font-size:2.0em;
+  }
+}
+@media(max-width:340px){
+  .banner-text h1{
+    font-size:1.7em;
+  }
 }
 @media(max-width:768px){
 .h_menu4 {
