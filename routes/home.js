@@ -20,7 +20,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 
 module.exports = {
   index : function(req, res){
-    Fashion.find({}, function(err, fashion){
+    Fashion.find({'trending':'true'}, function(err, fashion){
       if(err) res.send(err);
 
       res.render('pages/index',{

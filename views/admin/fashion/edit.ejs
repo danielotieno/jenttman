@@ -35,7 +35,9 @@
                 Please fill details to update fashion
               </div>
            <form id="Fashion-form" action="/admin/fashion/update" method="post"> 
-        <div class="col-lg-4">
+             <fieldset>
+               <legend>update form details</legend>
+        <div class="col-lg-7">
            <div>
              <span>Name</span> 
              <input type="text" class="form-control" id="Name" name="name" placeholder="<%= fashion.name %>"/>
@@ -49,6 +51,14 @@
              <input type="text" class="form-control" id="Price" name="price" placeholder="<%= fashion.price %>"/> 
            </div>
            <div>
+             <span>Set Trending</span>
+             <select name="trending" class="btn dropdown-toggle btn-default">
+               <option value="">Choose One</option>
+               <option value="true">Trending</option>
+               <option value="false">Not Trending</option>
+             </select>
+           </div>
+           <div>
               <span>Description</span>
               <input type="text" class="form-control" id="Desc" name="desc" placeholder="<%= fashion.desc %>"/>
            </div>
@@ -59,6 +69,7 @@
            </div>
             </div>
            <div class="clearfix"> </div>
+             </fieldset>
         </form>
         <form id="Fashion-form" action="/admin/fashion/image/update" method="post" enctype="multipart/form-data"> 
           <div>

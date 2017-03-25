@@ -14,6 +14,8 @@ var FashionSchema = Schema({
   price:    {type: String},
   photo:    {type:String},
   desc:     { type:String},
+  instock:  {type:Boolean, default: false},
+  trending: {type:Boolean, default:false},
   user:     [{type:Schema.Types.ObjectId, ref:User}]
 });
 
