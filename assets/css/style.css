@@ -29,11 +29,12 @@ h5{
 	font-size: 36px;
 }
 label{
-	margin-bottom: 5px;
-  font-weight: bold;
-	display: block;
 	line-height: 2;
 	font-size: 14px;
+	display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 p{
 	font-size: 20px;
@@ -1487,9 +1488,10 @@ a.add-re:hover{
   margin-bottom: 1em;
 }
 .register-top-grid h3, .register-bottom-grid h3 {
+	font-family: 'Roboto', sans-serif;
 	font-size: 1.5em;
-	margin-top: 30px;
-	margin-bottom: 15px;
+	margin-top: 35px;
+	margin-bottom: 30px;
   color: #000;
   margin-bottom: 0.5em;
   text-transform: uppercase;
