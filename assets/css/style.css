@@ -510,15 +510,15 @@ height: 35px;
 	display:inline-block;
 	padding: 10px;
 	float:left;
-    border-left: none;
-    width: 16.666%;
+  border-left: none;
+  width: 16.666%;
 }
 .content-bottom {
   padding: 3em 0;
 }
  .img-responsive{
 	display: inline-block !important;
-	
+
 }
 /*--//content--*/
 .col-md2 {
