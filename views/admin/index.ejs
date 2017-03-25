@@ -4,7 +4,7 @@
 <div class="inner-block">
     <div class="inbox">
         <h2><a href="/admin/fashion/create"><button type="button" class="btn btn-primary">New Product</button></a></h2>
-       <div class="col-md-3 compose">
+       <div class="col-md-3 hidden-sm-down compose">
         <div class="mail-profile">
           <div class="mailer-name">
               <h5><a href="#">Jenttman</a></h5>
@@ -24,7 +24,21 @@
        </div>
   </div>
   <div class="col-md-9 compose-right scroll_fashion">
-
+<style>
+  ul li{
+    display:inline;
+  }
+  ul li a{
+    font-size:13px;
+  }
+  tr td{
+    font-size:13px;
+    text-transform:capitalize;
+  }
+  tr th{
+    font-size:13px
+  }
+</style>
 <table class="table tab-border">
     <thead>
       <tr>
@@ -33,7 +47,8 @@
         <th>Category</th>
         <th>Brand</th>
         <th>Price</th>
-        <th>Description</th>
+        <th>Trending</th>
+        <th>In stock</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -47,12 +62,14 @@
           <% }); %>
           <td><%= fashion.brand %></td>
           <td><%= fashion.price %></td>
-          <td><%= fashion.desc %></td>
+          <td><%= fashion.trending %></td>
+          <td><%= fashion.instock %></td>
           <td>
           <ul class="options">
           <li><a href="/admin/fashion/edit/<%= fashion._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> update</a></li>
+          <li><a href="/admin/fashion/size/<%= fashion._id %>" title="Edit"><i class="fa fa-eye" aria-hidden="true"></i>View Sizes</a></li>
           <li><a href="/admin/fashion/delete/<%= fashion._id %>" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i>delete</a></li>
-          <li><a href="/admin/size/create/<%= fashion._id %>" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Add sizes</a></li>
+          <li><a href="/admin/size/create/<%= fashion._id %>" title="Edit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add sizes</a></li>
           </ul>
         </td>
       </tr>
