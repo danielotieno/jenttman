@@ -61,19 +61,19 @@ module.exports = {
 
   categories : function(req, res){
     Category.findOne({name:req.params.category}, function(err, foundCategory){
-    console.log(req.params.category);
-        if(err) res.send(err);
-        if(foundCategory){
-            console.log(foundCategory);
-            Fashion.find({category:foundCategory._id}, function(err, fashion){
-                console.log(fashion);
-                res.render('pages/categories',{
-                    fashion : fashion
-                });
+      if(err) res.send(err);
+      if(foundCategory){
+          console.log(foundCategory);
+          Fashion.find({category:foundCategory._id}, function(err, fashion){
+            res.render('pages/categories',{
+                fashion : fashion
             });
-        }else{
-            res.send("no category was found");
-        }
+          });
+      }else{
+        res.render('pages/categories',{
+          fashion:''
+        });
+      }
     });
   }
 };
