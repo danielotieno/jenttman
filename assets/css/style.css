@@ -508,13 +508,17 @@ height: 35px;
 /*--content-bottom--*/
 .content-bottom ul li{
 	display:inline-block;
-	border:1px solid #eee;
+	padding: 10px;
 	float:left;
-  border-left: none;
-  width: 16.666%;
+    border-left: none;
+    width: 16.666%;
 }
 .content-bottom {
   padding: 3em 0;
+}
+ .img-responsive{
+	display: inline-block !important;
+	
 }
 /*--//content--*/
 .col-md2 {
