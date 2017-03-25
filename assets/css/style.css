@@ -53,7 +53,7 @@ input[type="radio"], input[type="checkbox"] {
 
 /* TEXT ON SLIDER IMAGE */
 
-.main-text
+.banner-text
 {
     position: absolute;
     top: 150px;
@@ -1992,6 +1992,20 @@ h6.best2 {
 .available ul li.size-in select {
   margin-left: 13%;
 }
+@media(max-width:431px){
+  .banner-text h1{
+    font-size:2.3em;
+  }
+}
+@media(max-width:385px){
+  .banner-text h1{
+    font-size:2.0em;
+  }
+}
+@media(max-width:340px){
+  .banner-text h1{
+    font-size:1.7em;
+  }
 }
 @media(max-width:768px){
 .h_menu4 {
