@@ -508,7 +508,7 @@ height: 35px;
 /*--content-bottom--*/
 .content-bottom ul li{
 	display:inline-block;
-	border:1px solid #eee;
+	padding: 10px;
 	float:left;
   border-left: none;
   width: 16.666%;
@@ -516,6 +516,8 @@ height: 35px;
 .content-bottom {
   padding: 3em 0;
 }
+
+
 /*--//content--*/
 .col-md2 {
   padding: 30px 0 0;
