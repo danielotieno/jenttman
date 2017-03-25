@@ -189,6 +189,7 @@ module.exports = {
       if(req.body.desc) fashion.desc   = req.body.desc;
       if(req.body.brand) fashion.brand = req.body.brand;
       if(req.body.price) fashion.price = req.body.price;
+      if(req.body.trending) fashion.trending = req.body.trending;
 
       fashion.save(function(err, fashion){
         if(err) return next(err);
