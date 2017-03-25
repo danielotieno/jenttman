@@ -29,11 +29,12 @@ h5{
 	font-size: 36px;
 }
 label{
-	margin-bottom: 5px;
-  font-weight: bold;
-	display: block;
 	line-height: 2;
 	font-size: 14px;
+	display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 p{
 	font-size: 20px;
@@ -87,7 +88,6 @@ input[type="radio"], input[type="checkbox"] {
 .login{
 	background-color: rgb(247, 246, 247);
 border-top-color: rgb(0, 0, 0);
-border-top-style: solid;
 border-top-width: 3px;
 box-sizing: border-box;
 color: rgb(81, 81, 81);
@@ -1488,8 +1488,10 @@ a.add-re:hover{
   margin-bottom: 1em;
 }
 .register-top-grid h3, .register-bottom-grid h3 {
+	font-family: 'Roboto', sans-serif;
 	font-size: 1.5em;
-  font-family: 'Lato', sans-serif;
+	margin-top: 35px;
+	margin-bottom: 30px;
   color: #000;
   margin-bottom: 0.5em;
   text-transform: uppercase;

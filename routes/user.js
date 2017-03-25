@@ -43,7 +43,7 @@ module.exports    = {
       //user.role     = role._id;
 
       User.getUserByUsername({username: req.body.username}, function(err, foundUser, done){
-        var message = 'That username is already taken';
+        var message = 'That Username is already taken';
         var errors  = '';
         if(err) throw err;
 
@@ -61,7 +61,7 @@ module.exports    = {
                 console.log(user);
                 res.redirect('/');
               } else{
-                console.log("there was an error ", err);
+                console.log("There was an error i", err);
               }
             });
           });
