@@ -4,7 +4,7 @@ var Fashion= require('../models/fashion')
 
 module.exports = {
   index : function(req, res){
-    Size.find({}, function(err, size){
+    Size.find({fashion:req.params.fashion_id}, function(err, size){
       if(err) res.send(err);
       res.render('admin/size/index',{
           size:size
@@ -51,18 +51,18 @@ module.exports = {
     });
   },
 
-      edit : function(req, res){
-      Size.findOne({ _id : req.params.id },function (err, size){
-        if(err) return err;
-        var message = '';
-        res.render('admin/size/edit', {
-            title   : "update",
-            size : size
-        });
+  edit : function(req, res){
+    Size.findOne({ _id : req.params.id },function (err, size){
+      if(err) return err;
+      var message = '';
+      res.render('admin/size/edit', {
+          title   : "update",
+          size : size
       });
-    },
+    });
+  },
 
-    update : function(req, res, next){
+  update : function(req, res, next){
     Size.findOne({_id : req.body.sizeid}, function(err, size){
      
       if(err) return next(err);

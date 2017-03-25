@@ -64,8 +64,8 @@ width: 820px;
 
 .scroll_fashion{
 overflow-y: scroll;
-height: 450px;
-width: 820px;
+/*height: 450px;
+width: 820px;*/
 }
 .left-content {
     float: right;
@@ -857,6 +857,7 @@ ul.dropdown-menu.drp-mnu li {
 .inner-block {
     padding: 2em 2em 4em 2em;
     background: #fafafa;
+    overflow:scroll;
 }
 .market-update-block {
     padding: 2em 2em;

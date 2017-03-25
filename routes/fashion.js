@@ -143,7 +143,10 @@ module.exports = {
         size.save(function(err, size){
           if(err) res.send(err);
 
-          res.send("size added successfully");
+          foundFashion.instock = 'true';
+          foundFashion.save(function(err, fashion){
+            res.send("size added successfully");
+          });
         });
       }
       else{
