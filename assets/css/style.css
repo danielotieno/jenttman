@@ -1485,21 +1485,22 @@ a.add-re:hover{
 /*--register--*/
 .register h1{
 	font-size: 3em;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #000;
   text-align: center;
-  font-weight: 600;
-  margin-bottom: 1em;
+  font-weight: bold;
+	margin-top: 15px;
+  margin-bottom: 10px;
+
 }
 .register-top-grid h3, .register-bottom-grid h3 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5em;
-	margin-top: 35px;
-	margin-bottom: 30px;
+	margin-top: 10px;
   color: #000;
-  margin-bottom: 0.5em;
+  margin-bottom: 5px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: bold;;
 }
 .register-top-grid span, .register-bottom-grid span {
 	  font-size: 1em;
