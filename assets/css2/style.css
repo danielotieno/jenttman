@@ -203,10 +203,8 @@ width: 820px;*/
   padding: 0;
 }
 #menu li ul {
-  position: absolute;
-  visibility: hidden;
-  left: 100%;
   top: 20px;
+  visibility: hidden;
   background-color: #2b303a;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -214,8 +212,13 @@ width: 820px;*/
   border-top: 1px solid rgba(69, 74, 84, 0.7);
 }
 #menu li:hover > ul {
+  position: absolute;
+  top: 20px;
+  left: 100%;
   visibility: visible;
   opacity: 1;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(69, 74, 84, 0.7);
 }
 #menu li li ul {
   right: 100%;

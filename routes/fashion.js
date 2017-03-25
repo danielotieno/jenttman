@@ -106,12 +106,12 @@ module.exports = {
             fashion.category = foundCategory._id;
             fashion.brand    = req.body.brand;
             fashion.price    = req.body.price;
-            fashion.desc     = req.body.desc;
+            fashion.trending = req.body.trending;
             fashion.photo    = result.url;
-            //fashion.photo    = req.files.path;
-            //fashion.photo    = publicUrl;
-            //fashion.slug  = req.params.slug;
-            //fashion.user     = req.body._id;
+            //fashion.photo  = req.files.path;
+            //fashion.photo  = publicUrl;
+            //fashion.slug   = req.params.slug;
+            //fashion.user   = req.body._id;
           
             console.log("fashion at this stage", fashion);
            
