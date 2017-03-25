@@ -89,12 +89,12 @@ router.get('/admin/category/delete/:id', categoryRoutes.delete);
 /*
  * @size Routes
  */
-router.get('/admin/size/index',          sizeRoutes.index);
-router.get('/admin/size/create/:id',     sizeRoutes.new);
-router.get('/admin/sizes',               sizeRoutes.get);
-router.post('/admin/size/add',           sizeRoutes.add);
-router.get('/admin/size/edit/:id',       sizeRoutes.edit);
-router.post('/admin/size/update',        sizeRoutes.update);
+router.get('/admin/fashion/size/:fashion_id', sizeRoutes.index);
+router.get('/admin/size/create/:id',          sizeRoutes.new);
+router.get('/admin/sizes',                    sizeRoutes.get);
+router.post('/admin/size/add',                sizeRoutes.add);
+router.get('/admin/size/edit/:id',            sizeRoutes.edit);
+router.post('/admin/size/update',             sizeRoutes.update);
 
 router.get('/fashion/cart/create/:id',   cartRoutes.new);
 router.post('/fashion/cart/add',         cartRoutes.add);
