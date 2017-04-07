@@ -72,9 +72,9 @@ input[type="radio"], input[type="checkbox"] {
 }
 .btn-clear
 {
-    color: #FFF;
-    background-color: transparent;
-    border-color: #FFF;
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
     margin-right: 15px;
 }
 .btn-clear:hover
@@ -300,13 +300,17 @@ a.item_add {
 	width: 165px;
 	height: 50px;
 }
+.header-left p{
+	font-size: 20px;
+    padding: 5px 0px 5px 20px;
+}
 .head-top {
   padding: 1em 0;
 }
 /* start menu */
 .h_menu4 {
   margin: 7px 0 0px;
-  float: right;
+  margin-left: 250px;
 }
 .h_nav h4{
 	border-bottom:1px solid rgb(236, 236, 236);
@@ -591,19 +595,19 @@ height: 35px;
 
 /* lt-ie9 */
 .b-animate-go:hover .b-animate{
-	visibility:visible;
+	visibility:inherit;
 }
 .b-from-left{
   position: relative;
   left: -100%;
-  background:inherit;
+  background:transparent;
   background-size: 100% 100%;
   top: 0px;
   margin: 0;
   min-height: 350px;
 }
 .b-wrapper h3 span{
-	color: #fff;
+	color: #000;
 }
 .grid-top:hover .b-from-left{
 	left:0;
