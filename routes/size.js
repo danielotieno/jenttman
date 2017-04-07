@@ -40,7 +40,7 @@ module.exports = {
           if(err) res.send(err);
 
           console.log("size added successfully");
-          res.redirect('/admin/size/index')
+          res.render('admin/size/index')
  
         });
       }
