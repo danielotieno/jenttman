@@ -1,12 +1,6 @@
 
 		<div class="container">
-			<div class="search">
-					<form>
-						<form action="/" method="post">
-						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-						<input type="submit" value="Go">
-					</form>
-			</div>
+			<a href ="/"><img src="images/logo.jpg" alt=""/></a>
 			<div class="header-left">
 					<ul>
 						<li><a href="/login">Login</a></li>
@@ -16,13 +10,13 @@
 						<a href="/fashion/checkout">
 						<h3> <div class="total">
                 <% if(session.cart){%>
-                <span class="total"></span><%= session.cart.totalQty %><span id="quantity" class="quantity"></span> Items-Ksh <%= session.cart.totalPrice %></div>
+                <h class="total"><img src="images/cart.png" alt=""/> - Ksh <%= session.cart.totalPrice %></h>
+                <p><a href="/fashion/checkout" id="quantity" class="quantity" role="button" style="color:white"><%= session.cart.totalQty %> Items</a><p></div>
               <% }else{ %>
                 <span class="total"></span>0<span id="quantity" class="quantity"></span> Items-Ksh 0</div>
           <%}%>
-							<img src="images/cart.png" alt=""/></h3>
+							
 			</a>
-			<p><a href="/session/cart/delete" role="button" style="color:white"> Empty Cart </a></p>
 
 		</div>
 		<div class="clearfix"> </div>
