@@ -1,12 +1,12 @@
 
 		<div class="container">
-			<div class="search">
+		<!--	<div class="search">
 					<form>
 						<form action="/" method="post">
 						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 						<input type="submit" value="Go">
 					</form>
-			</div>
+			</div> -->
 			<div class="header-left">
 					<ul>
 						<li><a href="/login">Login</a></li>
@@ -18,7 +18,7 @@
                 <% if(session.cart){%>
                 <span class="total"></span><%= session.cart.totalQty %><span id="quantity" class="quantity"></span> Items-Ksh <%= session.cart.totalPrice %></div>
               <% }else{ %>
-                <span class="total"></span>0<span id="quantity" class="quantity"></span> Items-Ksh 0</div>
+                <span class="total"></span><span id="quantity" class="quantity"></span> Items 0</div>
           <%}%>
 							<img src="images/cart.png" alt=""/></h3>
 			</a>
