@@ -40,7 +40,7 @@ module.exports = {
           if(err) res.send(err);
 
           console.log("size added successfully");
-          res.render('admin/size/index')
+           res.redirect('/admin/fashions');
  
         });
       }
@@ -71,7 +71,7 @@ module.exports = {
 
       size.save(function(err, size){
         if(err) return next(err);
-        res.redirect('/admin/size/index');
+        res.redirect('/admin/fashions');
       });
     });
   }
