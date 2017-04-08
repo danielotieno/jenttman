@@ -48,8 +48,7 @@ module.exports = {
     }
 
     var mailOptions = {
-      /*to : 'hafswasalim@hotmail.com',*/
-      to : 'bmirauri@hotmail.com',
+      to : 'hafswasalim@hotmail.com',
       subject : req.body.firstname +' '+req.body.surname,
       text : 'message from contact form of website viewer with email:'+req.body.email+', phone number'+req.body.phone+' and message: ' + req.body.message +'\n\n'
     };
