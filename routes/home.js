@@ -37,6 +37,10 @@ module.exports = {
       res.render('pages/term')
   },
 
+  track : function(req, res){
+      res.render('pages/track')
+  },
+
   contact : function(req, res){
       res.render('pages/contact')
   },
