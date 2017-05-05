@@ -40,7 +40,7 @@ module.exports = {
           if(err) res.send(err);
 
           console.log("size added successfully");
-          res.render('admin/size/index')
+           res.redirect('/admin/fashions');
  
         });
       }
@@ -63,7 +63,7 @@ module.exports = {
   },
 
   update : function(req, res, next){
-    Size.findOne({_id : req.body.sizeid}, function(err, size){
+    Size.findOne({_id : req.body.id}, function(err, size){
      
       if(err) return next(err);
       if(req.body.name) size.name   = req.body.name;
@@ -71,7 +71,7 @@ module.exports = {
 
       size.save(function(err, size){
         if(err) return next(err);
-        res.redirect('/admin/size/index');
+        res.redirect('/admin/fashions');
       });
     });
   }

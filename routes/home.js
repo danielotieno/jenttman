@@ -6,11 +6,11 @@
 var Fashion    = require('../models/fashion.js');
 var Category   = require('../models/category.js');
 var nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+//var smtpTransport = require('nodemailer-smtp-transport');
 var env = process.env.NODE_ENV || 'development'; 
 var secrets = require('../config/setting.js');
 
-var transporter = nodemailer.createTransport(smtpTransport({
+var transporter = nodemailer.createTransport(({
   service : "Gmail",
   auth : {
     user : secrets.getEmail(env),
@@ -34,9 +34,10 @@ module.exports = {
   },
 
   mailer : function(req, res, next){
-    req.checkBody('names','Please fill in your names for processing').notEmpty();
+    req.checkBody('firstname','Please fill in your names for processing').notEmpty();
+    req.checkBody('surname','Please fill in your names for processing').notEmpty();
     req.checkBody('email','Email is required for sending of mail').notEmpty();
-    req.checkBody('subject','Fill in the subject of the message').notEmpty();
+    req.checkBody('phone','Phone number is required').notEmpty();
     req.checkBody('message','Cant leave the message field empty').notEmpty();
 
     var errors = req.validationErrors();
@@ -48,10 +49,8 @@ module.exports = {
 
     var mailOptions = {
       to : 'hafswasalim@hotmail.com',
-      subject : 'Email from client jenntman contact us form',
-      text : 'This is an email from one of your clients from contact us form\n'+
-        req.body.names + ' with email '+req.body.email+' subject being\n\n'+
-        req.body.subject+' and message : ' + req.body.message +'\n\n'
+      subject : req.body.firstname +' '+req.body.surname,
+      text : 'message from contact form of website viewer with email:'+req.body.email+', phone number'+req.body.phone+' and message: ' + req.body.message +'\n\n'
     };
     transporter.sendMail(mailOptions, function(err,info){
       if(err) return next(err);

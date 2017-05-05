@@ -1,36 +1,10 @@
 <% layout('pages/indexlayout') -%>
-<!--content-->
-<!--
-<div class="contact">
-			<div class="container">
-				<h1>Contact</h1>
-			<div class="contact-form">
-			<div class="col-md-2 contact-grid">
-			</div>
-				<div class="col-md-8 contact-grid">
-					<form method="post" action="/mailer">
-						<input type="text" placeholder="Enter your Name" name="names">
-            <input type="text" placeholder="Enter Email" name="email">
-            <input type="text" placeholder="Subject" name="subject">
-						<textarea cols="77" rows="6" name="message" placeholder="Enter a pretty long boring message"></textarea>
-						<div class="send">
-							<input type="submit" value="Send">
-						</div>
-					</form>
-				</div>
-			<div class="col-md-2 contact-grid">
-			</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
 
-	</div>
--->
 <!--//content-->
 <div class="contact">
 <div class="container">
 	<h3> Contact Us </h3>
-<form id="contact-form" method="post" action="#" role="form">
+<form id="contact-form" method="post" action="/mailer" role="form">
 
     <div class="messages"></div>
 
@@ -40,7 +14,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="form_name">Firstname *</label>
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <input id="form_name" type="text" name="firstname" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
