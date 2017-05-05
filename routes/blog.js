@@ -89,11 +89,10 @@ module.exports = {
 
 
   update : function(req, res, next){
-   Blog.findOne({name:req.body.title}, function(err, blog){
-
+   Blog.findOne({_id:req.body.blogid}, function(err, blog){
       if(err) return next(err);
-      if(req.body.title) blog.name     = req.body.name;
-      if(req.body.content) blog.desc   = req.body.desc;
+      if(req.body.title) blog.title     = req.body.title;
+      if(req.body.content) blog.content   = req.body.content;
 
       blog.save(function(err, blog){
         if(err) return next(err);

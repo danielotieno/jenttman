@@ -46,10 +46,19 @@ input[type="radio"], input[type="checkbox"] {
     line-height: normal;
 }
 
+.memenu > li.active > a {
+    color: #000;
+}
+
 .card{
-	height: 400px;
-  width: 400px;
-  object-fit: cover;
+	height: 300px;
+	width: 450px;
+	object-fit: cover;
+	text-align: center;	
+}
+.card a img{
+	text-align: center;
+	margin-left: 40px;
 }
 
 .text-center{
@@ -89,6 +98,36 @@ input[type="radio"], input[type="checkbox"] {
     color: #000;
     background-color: #FFF;
 }
+.about h1{
+	text-align: center;
+	margin: 15px 15px;
+	color: #000;
+}
+.about .image{
+	margin-top: 7px;
+	line-height: 400px;
+	object-fit: cover;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.about p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  text-align: justify;
+   letter-spacing: 1px;
+
+}
+.blog-top h3{
+	text-align: center;
+}
+.blog-top .image{
+	text-align: center;
+}
+
+.blog-top p{
+	text-align: justify;
+}
+
 
 .terms h2{
 	margin-top: 20px;
@@ -486,8 +525,8 @@ height: 35px;
 	font-size: 2.2em;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
-  margin-top: 0.3em;
-  margin-bottom: 0.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .content-top {
 	text-align:center;
