@@ -47,9 +47,14 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .card{
-	height: 400px;
-  width: 400px;
-  object-fit: cover;
+	height: 300px;
+	width: 450px;
+	object-fit: cover;
+	text-align: center;	
+}
+.card a img{
+	text-align: center;
+	margin-left: 40px;
 }
 
 .text-center{
@@ -89,6 +94,35 @@ input[type="radio"], input[type="checkbox"] {
     color: #000;
     background-color: #FFF;
 }
+.about h1{
+	text-align: center;
+	margin: 15px 15px;
+	color: #000;
+}
+.about .image{
+	margin-top: 7px;
+	line-height: 400px;
+	object-fit: cover;
+	text-align: center;
+}
+.about p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  text-align: justify;
+   letter-spacing: 1px;
+
+}
+.blog-top h3{
+	text-align: center;
+}
+.blog-top .image{
+	text-align: center;
+}
+
+.blog-top p{
+	text-align: justify;
+}
+
 /* TEXT ON IMAGE ENDS HERE */
 .card1{
 	height: 523px;

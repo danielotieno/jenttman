@@ -1,0 +1,109 @@
+
+		<div class="header-right">
+				<ul class="memenu skyblue">
+				<li><a href ="/"><img src="images/logom.PNG" alt="" height="90px"/></a></li>
+					  <li class="active grid"><a class="color8" href="/">Home</a></li>
+				      <li><a class="color1" href="#">Categories</a>
+				      	<div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Clothing</h4>
+									<ul>
+										<li><a href="/category/tshirts">T-shirts</a></li>
+										<li><a href="/category/trousers">Trousers</a></li>
+										<li><a href="/category/shirts">Shirts</a></li>
+										<li><a href="/category/sweats">Sweats</a></li>
+										<li><a href="/category/sportwear">Sport Wear</a></li>
+										<li><a href="/category/jackets"> Jackets</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Shoes & Boots</h4>
+									<ul>
+										<li><a href="/category/saddle">Saddle</a></li>
+										<li><a href="/category/laced">Leather Laced</a></li>
+										<li><a href="/category/canvas">Canvas</a></li>
+										<li><a href="/category/loafer">Leather Loafer</a></li>
+										<li><a href="/category/shirts">Sandles</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Accessories</h4>
+									<ul>
+										<li><a href="/category/watches">Watches</a></li>
+										<li><a href="/category/sunglasses">Sunglasses</a></li>
+										<li><a href="/category/jewellery">Jewellery</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Grooming</h4>
+									<ul>
+										<li><a href="/category/watches">Watches</a></li>
+										<li><a href="/category/sunglasses">Sunglasses</a></li>
+										<li><a href="/category/jewellery">Jewellery</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>International Brands</h4>
+									<ul>
+										<li><a href="/category/newlook">New look</a></li>
+										<li><a href="/category/pull">Pull & Bear</a></li>
+										<li><a href="/category/zara">Zara</a></li>
+										<li><a href="/category/bershka">Bershka</a></li>
+										<li><a href="/categorys/aldo">Aldo</a></li>
+										<li><a href="/category/jack">Jack & Jones</a></li>
+										<li><a href="/category/spring">Call it Spring</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>African Brands</h4>
+									<ul>
+										<li><a href="/category/newlook">New look</a></li>
+										<li><a href="/category/pull">Pull & Bear</a></li>
+										<li><a href="/category/zara">Zara</a></li>
+									</ul>
+								</div>
+							</div>
+						  </div>
+						</div>
+					</li>
+				<li><a class="color6" href="/about">About Us</a></li>
+				<li><a class="color6" href="/blog">Blog</a></li>
+				<li><a class="color6" href="/contact">Contact Us</a></li>
+			  </ul>
+		</div>
+			<div class="header-left">
+					<ul>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register </a></li>
+
+					<div class="cart box_1">
+						<a href="/fashion/checkout">
+						<h3> <div class="total">
+                <% if(session.cart){%>
+                <h class="total"><img src="images/cart.png" alt=""/> - Ksh <%= session.cart.totalPrice %></h>
+                <p><a href="/fashion/checkout" id="quantity" class="quantity" role="button" style="color:white"><%= session.cart.totalQty %> Items</a><p></div>
+              <% }else{ %>
+                <span class="total"></span><span id="quantity" class="quantity"></span> Items 0</div>
+          <%}%></li>
+
+			</a>
+
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div class="clearfix"> </div>
+
+<div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
