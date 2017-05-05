@@ -34,7 +34,6 @@ function isAdmin(req, res, next) {
   req.session.returnTo = req.path;
   res.redirect('/login');
 }
-
 router.get('/',                   homeRoutes.index);
 router.get('/about',              homeRoutes.about);
 router.get('/term',              homeRoutes.term);
