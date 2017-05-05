@@ -4,7 +4,7 @@
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	
+
 
 }
 .memenu>li.active>a{color:#00405d;}
@@ -43,9 +43,9 @@
 .skyblue,.skyblue>li.showhide{
 }
 .memenu>li.active>a {
-color:#141414;
+color:#999999;
 
-}	
+}
 .skyblue li>a,.skyblue>li.showhide span{color:#000}
 .skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}.
 skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
@@ -138,5 +138,3 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 	background:#999999;
 	color: #ffffff;
 }
-	
-

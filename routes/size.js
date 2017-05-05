@@ -63,7 +63,7 @@ module.exports = {
   },
 
   update : function(req, res, next){
-    Size.findOne({_id : req.body.sizeid}, function(err, size){
+    Size.findOne({_id : req.body.id}, function(err, size){
      
       if(err) return next(err);
       if(req.body.name) size.name   = req.body.name;

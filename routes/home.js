@@ -7,7 +7,7 @@ var Fashion    = require('../models/fashion.js');
 var Category   = require('../models/category.js');
 var nodemailer = require('nodemailer');
 //var smtpTransport = require('nodemailer-smtp-transport');
-var env = process.env.NODE_ENV || 'development'; 
+var env = process.env.NODE_ENV || 'development';
 var secrets = require('../config/setting.js');
 
 var transporter = nodemailer.createTransport(({
@@ -29,9 +29,22 @@ module.exports = {
     });
   },
 
+  about : function(req, res){
+      res.render('pages/about')
+  },
+
+  term : function(req, res){
+      res.render('pages/term')
+  },
+
+  track : function(req, res){
+      res.render('pages/track')
+  },
+
   contact : function(req, res){
       res.render('pages/contact')
   },
+
 
   mailer : function(req, res, next){
     req.checkBody('firstname','Please fill in your names for processing').notEmpty();
