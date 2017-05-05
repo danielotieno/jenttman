@@ -71,7 +71,7 @@ input[type="radio"], input[type="checkbox"] {
     top: 230px;
     width: 96.66666666666666%;
     color: #FFF;
- 
+
 }
 .banner-text p{
 	   font-style: oblique;
@@ -94,6 +94,7 @@ input[type="radio"], input[type="checkbox"] {
     color: #000;
     background-color: #FFF;
 }
+<<<<<<< HEAD
 .about h1{
 	text-align: center;
 	margin: 15px 15px;
@@ -123,6 +124,17 @@ input[type="radio"], input[type="checkbox"] {
 	text-align: justify;
 }
 
+=======
+
+.terms h2{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.terms{
+	text-align: justify;
+}
+>>>>>>> cb94b66f9fb9f4f0f22c5aed0c114130638bbcd9
 /* TEXT ON IMAGE ENDS HERE */
 .card1{
 	height: 523px;

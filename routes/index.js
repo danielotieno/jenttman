@@ -37,6 +37,8 @@ function isAdmin(req, res, next) {
 
 router.get('/',                   homeRoutes.index);
 router.get('/about',              homeRoutes.about);
+router.get('/term',              homeRoutes.term);
+router.get('/track',              homeRoutes.track);
 router.get('/contact',            homeRoutes.contact);
 router.post('/mailer',            homeRoutes.mailer);
 router.get('/category/:category', homeRoutes.categories);
@@ -48,14 +50,14 @@ router.get('/register',           userRoutes.new);
 router.post('/signup',            userRoutes.create);
 
 /*
- * @session routes 
+ * @session routes
 */
 router.get('/login',           sessionRoutes.new);
 router.post('/login',          sessionRoutes.create);
 router.get('/logout',          sessionRoutes.delete);
 
 /*
- * @fashion routes 
+ * @fashion routes
 */
 router.get('/admin/fashions',              fashionRoutes.index);
 router.get('/admin/fashion/item/:id',      fashionRoutes.single);
