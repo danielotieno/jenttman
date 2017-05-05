@@ -36,6 +36,7 @@ function isAdmin(req, res, next) {
 }
 
 router.get('/',                   homeRoutes.index);
+router.get('/about',              homeRoutes.about);
 router.get('/contact',            homeRoutes.contact);
 router.post('/mailer',            homeRoutes.mailer);
 router.get('/category/:category', homeRoutes.categories);

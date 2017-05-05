@@ -29,9 +29,14 @@ module.exports = {
     });
   },
 
+  about : function(req, res){
+      res.render('pages/about')
+  },
+
   contact : function(req, res){
       res.render('pages/contact')
   },
+
 
   mailer : function(req, res, next){
     req.checkBody('firstname','Please fill in your names for processing').notEmpty();
