@@ -44,6 +44,7 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "paypal-rest-sdk": "^1.7.1",
+    "pg": "^6.2.3",
     "pug": "^2.0.0-beta11",
     "query-string": "^4.2.3",
     "url": "^0.11.0",
