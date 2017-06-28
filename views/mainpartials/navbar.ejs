@@ -1,7 +1,5 @@
 
-		<div class="header-right">
-				<ul class="memenu skyblue">
-				<li><a href ="/"><img src="images/logom.PNG" alt="" height="90px"/></a></li>
+		<div class="header-right"> <ul class="memenu skyblue"> <li><a href ="/"><img src="images/logom.PNG" alt="" height="90px"/></a></li>
 					  <li class="active grid"><a class="color8" href="/">Home</a></li>
 				      <li><a class="color1" href="#">Categories</a>
 				      	<div class="mepanel">
@@ -92,8 +90,7 @@
 						<a href="/fashion/checkout">
 						<h3> <div class="total">
                 <% if(session.cart){%>
-                <h class="total"><img src="images/cart.png" alt=""/> - Ksh <%= session.cart.totalPrice %></h>
-                <p><a href="/fashion/checkout" id="quantity" class="quantity" role="button" style="color:white"><%= session.cart.totalQty %> Items</a><p></div>
+                <h class="total"><img src="images/cart.png" alt=""/> <%= session.cart.totalQty %> item(s)</a>- Ksh <%= session.cart.totalPrice %></h>
               <% }else{ %>
                 <span class="total"></span><span id="quantity" class="quantity"></span> Items 0</div>
           <%}%></li>

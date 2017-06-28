@@ -92,8 +92,8 @@
 						<a href="/fashion/checkout">
 						<h3> <div class="total">
                 <% if(session.cart){%>
-                <h class="total"><img src="images/cart.png" alt=""/> - Ksh <%= session.cart.totalPrice %></h>
-                <p><a href="/fashion/checkout" id="quantity" class="quantity" role="button" style="color:white"><%= session.cart.totalQty %> Items</a><p></div>
+                <h class="total"><img src="images/cart.png" alt=""/> <%= session.cart.totalQty %> item(s)- Ksh <%= session.cart.totalPrice %></h>
+                </div>
               <% }else{ %>
                 <span class="total"></span><span id="quantity" class="quantity"></span> Items 0</div>
           <%}%></li>
